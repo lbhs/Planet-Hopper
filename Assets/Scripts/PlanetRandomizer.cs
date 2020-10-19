@@ -19,9 +19,4 @@ public class PlanetRandomizer : MonoBehaviour
         gm.AddForce(-y*25, x*25, 0);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
