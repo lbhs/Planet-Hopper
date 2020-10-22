@@ -32,46 +32,20 @@ public class Gravity : MonoBehaviour
     [SerializeField] private float G;
 
     // the name of the object that will be attracting this object.
-    private string attractorName;
+    [SerializeField] private string attractorName;
     private GameObject attractor;
 
     // the initial velocity of the object
-    //[SerializeField] private float initialVelocity;
+    [SerializeField] private float initialVelocity;
 
     // the rigibody of the object effected by gravity
     private Rigidbody r;
-
-    [SerializeField] private int max;
-    [SerializeField] private int min;
-    [SerializeField] private float gForceConstant;
-
+    
     void Start()
     {
         r = this.GetComponent<Rigidbody>();
-        attractorName = "Sun";
         attractor = GameObject.Find(attractorName);
-        // r.velocity = (initialVelocity * Vector3.down);
-        //gm = GetComponent<Rigidbody>();
-
-        int x = Random.Range(min, max);
-        int y = Random.Range(min, max);
-
-        if (Random.Range(1, 3) == 1)
-        {
-            x = x * -1;
-        }
-
-
-        if (Random.Range(1, 3) == 1)
-        {
-            y = y * -1;
-        }
-
-        float gForce = CalculateGravitationalForceWithoutDirection(transform.position, this.GetComponent<Rigidbody>().mass);
-        float distance = Vector3.Distance(this.transform.position, attractor.transform.position);
-        r.transform.position = new Vector3(x, y, 0);
-        Debug.Log(gForce);
-        r.AddForce(-y * gForceConstant * Mathf.Sqrt((gForce * this.GetComponent<Rigidbody>().mass) / distance), x * gForceConstant * Mathf.Sqrt((gForce * this.GetComponent<Rigidbody>().mass) / distance), 0);
+        r.velocity = (initialVelocity * Vector3.down);
     }
 
     void FixedUpdate()
@@ -103,23 +77,4 @@ public class Gravity : MonoBehaviour
         // the final force is equal to the magnitude of the force multiplied by the direction
         return magnitude * direction;
     }
-
-    private float CalculateGravitationalForceWithoutDirection(Vector3 pos1, float m1)
-    {
-
-        Vector3 attractorLocation = attractor.transform.position;
-        float attractorMass = attractor.GetComponent<Rigidbody>().mass;
-
-        // finds the direction of the force
-
-        // finds the distancee between the two gameobjects
-        float distance = Vector3.Distance(pos1, attractorLocation);
-
-        // finds the magnitude of the force
-        float magnitude = (G * m1 * attractorMass) / (distance * distance);
-
-        // the final force is equal to the magnitude of the force multiplied by the direction
-        return magnitude;
-    }
-
 }
