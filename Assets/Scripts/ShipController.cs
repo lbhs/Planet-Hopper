@@ -1,19 +1,23 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ShipController : MonoBehaviour
 {
 
     float rotationspeed = 50.0f;
-
     private Rigidbody gm;
+    public float Fuel;
+    private Text T;
 
     private void Start()
     {
+        Fuel = 100;
         gm = GetComponent<Rigidbody>();
+        T = GameObject.Find("FuelValue").GetComponent<Text>();
     }
-    void Update()
+    void FixedUpdate()
     {
 
         float vertical = Input.GetAxis("Vertical");
@@ -22,6 +26,8 @@ public class ShipController : MonoBehaviour
         if (Input.GetKey(KeyCode.UpArrow))
         {
             gm.GetComponent<Rigidbody>().AddForce(transform.up/4);
+            Fuel = (Fuel - .01f);
+            T.text = "Fuel: " + Fuel;
         }
 
     }
