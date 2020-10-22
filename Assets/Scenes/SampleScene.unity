@@ -133,6 +133,8 @@ GameObject:
   - component: {fileID: 28631557}
   - component: {fileID: 28631556}
   - component: {fileID: 28631555}
+  - component: {fileID: 28631561}
+  - component: {fileID: 28631560}
   m_Layer: 0
   m_Name: Venus
   m_TagString: Untagged
@@ -214,6 +216,38 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &28631560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 28631554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 761719ce190b044688b3efaf51610c68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  G: 0.01
+  max: 35
+  min: 30
+  gForceConstant: 30
+--- !u!54 &28631561
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 28631554}
+  serializedVersion: 2
+  m_Mass: 100
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &157166741
 GameObject:
   m_ObjectHideFlags: 0
@@ -226,6 +260,7 @@ GameObject:
   - component: {fileID: 157166744}
   - component: {fileID: 157166743}
   - component: {fileID: 157166742}
+  - component: {fileID: 157166747}
   m_Layer: 0
   m_Name: Sun
   m_TagString: Untagged
@@ -307,6 +342,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &157166747
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 157166741}
+  serializedVersion: 2
+  m_Mass: 25000
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &427949405
 GameObject:
   m_ObjectHideFlags: 0
@@ -319,6 +370,8 @@ GameObject:
   - component: {fileID: 427949408}
   - component: {fileID: 427949407}
   - component: {fileID: 427949406}
+  - component: {fileID: 427949411}
+  - component: {fileID: 427949410}
   m_Layer: 0
   m_Name: Jupiter
   m_TagString: Untagged
@@ -400,6 +453,38 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &427949410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 427949405}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 761719ce190b044688b3efaf51610c68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  G: 0.01
+  max: 80
+  min: 75
+  gForceConstant: 60
+--- !u!54 &427949411
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 427949405}
+  serializedVersion: 2
+  m_Mass: 100
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &428235775
 GameObject:
   m_ObjectHideFlags: 0
@@ -412,6 +497,8 @@ GameObject:
   - component: {fileID: 428235778}
   - component: {fileID: 428235777}
   - component: {fileID: 428235776}
+  - component: {fileID: 428235782}
+  - component: {fileID: 428235781}
   m_Layer: 0
   m_Name: Mars
   m_TagString: Untagged
@@ -493,6 +580,38 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &428235781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 428235775}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 761719ce190b044688b3efaf51610c68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  G: 0.01
+  max: 65
+  min: 60
+  gForceConstant: 50
+--- !u!54 &428235782
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 428235775}
+  serializedVersion: 2
+  m_Mass: 100
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -546,7 +665,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 125.33766
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -588,6 +707,8 @@ GameObject:
   - component: {fileID: 930159120}
   - component: {fileID: 930159119}
   - component: {fileID: 930159118}
+  - component: {fileID: 930159123}
+  - component: {fileID: 930159124}
   m_Layer: 0
   m_Name: Earth
   m_TagString: Untagged
@@ -669,6 +790,38 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &930159123
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 930159117}
+  serializedVersion: 2
+  m_Mass: 100
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &930159124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 930159117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 761719ce190b044688b3efaf51610c68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  G: 0.01
+  max: 50
+  min: 45
+  gForceConstant: 40
 --- !u!1 &1079091357
 GameObject:
   m_ObjectHideFlags: 0
@@ -681,6 +834,8 @@ GameObject:
   - component: {fileID: 1079091360}
   - component: {fileID: 1079091359}
   - component: {fileID: 1079091358}
+  - component: {fileID: 1079091363}
+  - component: {fileID: 1079091362}
   m_Layer: 0
   m_Name: Mercury
   m_TagString: Untagged
@@ -762,6 +917,38 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1079091362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1079091357}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 761719ce190b044688b3efaf51610c68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  G: 0.01
+  max: 20
+  min: 15
+  gForceConstant: 20
+--- !u!54 &1079091363
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1079091357}
+  serializedVersion: 2
+  m_Mass: 100
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1486254595
 GameObject:
   m_ObjectHideFlags: 0
@@ -774,6 +961,8 @@ GameObject:
   - component: {fileID: 1486254598}
   - component: {fileID: 1486254597}
   - component: {fileID: 1486254596}
+  - component: {fileID: 1486254601}
+  - component: {fileID: 1486254600}
   m_Layer: 0
   m_Name: Uranus
   m_TagString: Untagged
@@ -855,6 +1044,38 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1486254600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1486254595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 761719ce190b044688b3efaf51610c68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  G: 0.01
+  max: 110
+  min: 105
+  gForceConstant: 80
+--- !u!54 &1486254601
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1486254595}
+  serializedVersion: 2
+  m_Mass: 100
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1659373320
 GameObject:
   m_ObjectHideFlags: 0
@@ -867,6 +1088,8 @@ GameObject:
   - component: {fileID: 1659373323}
   - component: {fileID: 1659373322}
   - component: {fileID: 1659373321}
+  - component: {fileID: 1659373326}
+  - component: {fileID: 1659373325}
   m_Layer: 0
   m_Name: Saturn
   m_TagString: Untagged
@@ -948,6 +1171,38 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1659373325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1659373320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 761719ce190b044688b3efaf51610c68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  G: 0.01
+  max: 95
+  min: 90
+  gForceConstant: 70
+--- !u!54 &1659373326
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1659373320}
+  serializedVersion: 2
+  m_Mass: 100
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1698366604
 GameObject:
   m_ObjectHideFlags: 0
@@ -1053,6 +1308,8 @@ GameObject:
   - component: {fileID: 1923098716}
   - component: {fileID: 1923098715}
   - component: {fileID: 1923098714}
+  - component: {fileID: 1923098719}
+  - component: {fileID: 1923098718}
   m_Layer: 0
   m_Name: Neptune
   m_TagString: Untagged
@@ -1134,6 +1391,38 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1923098718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1923098713}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 761719ce190b044688b3efaf51610c68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  G: 0.01
+  max: 125
+  min: 120
+  gForceConstant: 90
+--- !u!54 &1923098719
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1923098713}
+  serializedVersion: 2
+  m_Mass: 100
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &2095543824
 GameObject:
   m_ObjectHideFlags: 0
