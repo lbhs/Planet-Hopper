@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class PlanetActiveToggle : MonoBehaviour
 {
-    private bool isSelected = true;
+    public bool isSelected = true;
     private Image image;
     [SerializeField] private Sprite activeCheck;
     [SerializeField] private Sprite cross;
