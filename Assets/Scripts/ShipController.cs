@@ -23,9 +23,22 @@ public class ShipController : MonoBehaviour
         float vertical = Input.GetAxis("Vertical");
         gm.GetComponent<Rigidbody>().transform.Rotate(0, 0, -Input.GetAxis("Horizontal")/4);
 
+        if (Input.GetKey(KeyCode.LeftArrow))
+        {
+            Fuel = (Fuel - .005f);
+            T.text = "Fuel: " + Fuel;
+        }
+
+
+        if (Input.GetKey(KeyCode.RightArrow))
+        {
+            Fuel = (Fuel - .005f);
+            T.text = "Fuel: " + Fuel;
+        }
+
         if (Input.GetKey(KeyCode.UpArrow))
         {
-            gm.GetComponent<Rigidbody>().AddForce(transform.up/4);
+            gm.GetComponent<Rigidbody>().AddForce(transform.up/2);
             Fuel = (Fuel - .01f);
             T.text = "Fuel: " + Fuel;
         }
