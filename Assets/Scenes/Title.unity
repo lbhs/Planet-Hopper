@@ -169,7 +169,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -539,7 +539,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 40
+    m_FontSize: 25
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -595,7 +595,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 102, y: -72}
+  m_AnchoredPosition: {x: -522, y: 57}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &404190539
@@ -610,6 +610,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e59fb92ef26e4678afd3c7a1ae40471, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isSelected: 1
   activeCheck: {fileID: 21300000, guid: 255ddef1186054e3dbeb96c89dea317a, type: 3}
   cross: {fileID: 21300000, guid: 6b313204ba8d64009ab7896c444e280a, type: 3}
   planet: {fileID: 311662957}
@@ -890,6 +891,49 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &639686978
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 639686980}
+  - component: {fileID: 639686979}
+  m_Layer: 0
+  m_Name: Info
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &639686979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 639686978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26c1ea50307f744259a1fdf637e3dd6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &639686980
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 639686978}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &650549821
 GameObject:
   m_ObjectHideFlags: 0
@@ -926,7 +970,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 102, y: -72}
+  m_AnchoredPosition: {x: -522, y: 57}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &650549823
@@ -1032,6 +1076,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e59fb92ef26e4678afd3c7a1ae40471, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isSelected: 1
   activeCheck: {fileID: 21300000, guid: 255ddef1186054e3dbeb96c89dea317a, type: 3}
   cross: {fileID: 21300000, guid: 6b313204ba8d64009ab7896c444e280a, type: 3}
   planet: {fileID: 1314912503}
@@ -1071,7 +1116,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 102, y: -72}
+  m_AnchoredPosition: {x: -522, y: 57}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &737344214
@@ -1086,6 +1131,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e59fb92ef26e4678afd3c7a1ae40471, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isSelected: 1
   activeCheck: {fileID: 21300000, guid: 255ddef1186054e3dbeb96c89dea317a, type: 3}
   cross: {fileID: 21300000, guid: 6b313204ba8d64009ab7896c444e280a, type: 3}
   planet: {fileID: 920902544}
@@ -1214,8 +1260,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -150}
-  m_SizeDelta: {x: 1000, y: 200}
+  m_AnchoredPosition: {x: 0, y: -125}
+  m_SizeDelta: {x: 1000, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &776631485
 MonoBehaviour:
@@ -1238,7 +1284,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 100
+    m_FontSize: 50
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
@@ -1294,8 +1340,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 150}
-  m_SizeDelta: {x: 200, y: 100}
+  m_AnchoredPosition: {x: 0, y: 100}
+  m_SizeDelta: {x: 150, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &800279856
 MonoBehaviour:
@@ -1339,7 +1385,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 800279857}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 639686979}
+        m_MethodName: StartGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &800279857
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1506,7 +1563,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 102, y: -72}
+  m_AnchoredPosition: {x: -522, y: 57}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &954404786
@@ -1521,6 +1578,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e59fb92ef26e4678afd3c7a1ae40471, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isSelected: 1
   activeCheck: {fileID: 21300000, guid: 255ddef1186054e3dbeb96c89dea317a, type: 3}
   cross: {fileID: 21300000, guid: 6b313204ba8d64009ab7896c444e280a, type: 3}
   planet: {fileID: 557399703}
@@ -1651,7 +1709,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 102, y: -72}
+  m_AnchoredPosition: {x: -522, y: 57}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1279252599
@@ -1666,6 +1724,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e59fb92ef26e4678afd3c7a1ae40471, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isSelected: 1
   activeCheck: {fileID: 21300000, guid: 255ddef1186054e3dbeb96c89dea317a, type: 3}
   cross: {fileID: 21300000, guid: 6b313204ba8d64009ab7896c444e280a, type: 3}
   planet: {fileID: 1968268231}
@@ -1980,9 +2039,9 @@ RectTransform:
   m_Father: {fileID: 63479541}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 102, y: -72}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -1183.5, y: 57}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1416265948
@@ -1997,6 +2056,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e59fb92ef26e4678afd3c7a1ae40471, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isSelected: 1
   activeCheck: {fileID: 21300000, guid: 255ddef1186054e3dbeb96c89dea317a, type: 3}
   cross: {fileID: 21300000, guid: 6b313204ba8d64009ab7896c444e280a, type: 3}
   planet: {fileID: 190141723}
@@ -2127,7 +2187,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 102, y: -72}
+  m_AnchoredPosition: {x: -522, y: 57}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1493706464
@@ -2142,6 +2202,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e59fb92ef26e4678afd3c7a1ae40471, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isSelected: 1
   activeCheck: {fileID: 21300000, guid: 255ddef1186054e3dbeb96c89dea317a, type: 3}
   cross: {fileID: 21300000, guid: 6b313204ba8d64009ab7896c444e280a, type: 3}
   planet: {fileID: 570389617}
@@ -2448,7 +2509,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 102, y: -72}
+  m_AnchoredPosition: {x: -522, y: 57}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1962658623
@@ -2463,6 +2524,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e59fb92ef26e4678afd3c7a1ae40471, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isSelected: 1
   activeCheck: {fileID: 21300000, guid: 255ddef1186054e3dbeb96c89dea317a, type: 3}
   cross: {fileID: 21300000, guid: 6b313204ba8d64009ab7896c444e280a, type: 3}
   planet: {fileID: 1359578090}
