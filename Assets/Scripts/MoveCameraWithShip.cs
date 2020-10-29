@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MoveCamera : MonoBehaviour
+public class MoveCameraWithShip : MonoBehaviour
 {
+    Transform RocketPosition;
+
     // Start is called before the first frame update
     void Start()
     {
-        Transform RocketPosition = GameObject.Find("Starship").transform;
+        RocketPosition = GameObject.Find("Starship").transform;
     }
 
     // Update is called once per frame
