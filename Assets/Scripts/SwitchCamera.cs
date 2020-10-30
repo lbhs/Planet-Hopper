@@ -13,6 +13,7 @@ public class SwitchCamera : MonoBehaviour
     void Start()
     {
         GetTexture = MinimapRawImage.GetComponent<RawImage>().texture;
+        ToggleOn = MinimapRawImage.GetComponent<Toggle>().texture
     }
 
     public void SwitchCameraFunction()
