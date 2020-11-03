@@ -16,6 +16,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class InfoScript : MonoBehaviour
@@ -33,7 +34,12 @@ public class InfoScript : MonoBehaviour
     /* This is the player's score. Currently, it doesn't do anything, but it is
      * useful to keep track of it here.
      */
-    private int score = 0;
+    public int score = 0;
+
+    /* This is a constant score value that is given on a successful landing.
+     * (This is really just being used for testing the SES).
+     */
+    private const int missionSuccessConstant = 1000;
 
     // This function starts the game and assigns values to the planet bools based on the user's selections.
     public void StartGame()
@@ -48,7 +54,14 @@ public class InfoScript : MonoBehaviour
         neptuneEnabled = GameObject.Find("Neptune Toggle").GetComponent<PlanetActiveToggle>().isSelected;
 
         DontDestroyOnLoad(gameObject);
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(2); // change me back to 1 later!!
+    }
+
+    public void UpdateScore()
+    {
+        score += missionSuccessConstant;
+        Debug.Log(score);
+        // GameObject.Find("Score Text").GetComponent<Text>().text = "Score: " + score; TODO: add `Score Text` into the scene. 
     }
 
 }
