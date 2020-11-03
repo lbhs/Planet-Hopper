@@ -61,7 +61,7 @@ public class InfoScript : MonoBehaviour
     {
         score += missionSuccessConstant;
         Debug.Log(score);
-        // GameObject.Find("Score Text").GetComponent<Text>().text = "Score: " + score; TODO: add `Score Text` into the scene. 
+        GameObject.Find("Score Text").GetComponent<Text>().text = "Score: " + score;
     }
 
 }
