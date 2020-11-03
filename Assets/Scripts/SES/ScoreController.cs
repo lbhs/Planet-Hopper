@@ -5,8 +5,9 @@ using UnityEngine;
 
 public class ScoreController : MonoBehaviour
 {
-    private GameObject info; 
-    // Start is called before the first frame update
+    private GameObject info;
+    public int id;
+
     void Start()
     {
         info = GameObject.Find("Info");
@@ -14,13 +15,19 @@ public class ScoreController : MonoBehaviour
         ScoreEvents.current.onLeaving += OnLeaving;
     }
 
-    private void OnLanding()
+    private void OnLanding(int id)
     {
-        info.GetComponent<InfoScript>().UpdateScore();
+        if (id == this.id)
+        {
+            info.GetComponent<InfoScript>().UpdateScore();
+        }
     }
 
-    private void OnLeaving()
+    private void OnLeaving(int id)
     {
-        Destroy(gameObject);
+        if (id == this.id)
+        {
+            Destroy(gameObject);
+        }
     }
 }

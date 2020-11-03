@@ -12,15 +12,15 @@ public class ScoreEvents : MonoBehaviour
         current = this;
     }
 
-    public event Action onLanding;
-    public void Landing()
+    public event Action<int> onLanding;
+    public void Landing(int id)
     {
-        onLanding?.Invoke();
+        onLanding?.Invoke(id);
     }
 
-    public event Action onLeaving;
-    public void Leaving()
+    public event Action<int> onLeaving;
+    public void Leaving(int id)
     {
-        onLeaving?.Invoke();
+        onLeaving?.Invoke(id);
     }
 }
