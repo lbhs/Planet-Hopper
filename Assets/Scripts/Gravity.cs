@@ -57,7 +57,7 @@ public class Gravity : MonoBehaviour
         f = CalculateGravitationalForce(transform.position, this.GetComponent<Rigidbody>().mass);
 
         // applies that force to the object
-        r.AddForce(f);
+        r.AddForce(f * Time.fixedDeltaTime);
     }
 
     private Vector3 CalculateGravitationalForce(Vector3 pos1, float m1) {
@@ -74,6 +74,7 @@ public class Gravity : MonoBehaviour
         // finds the magnitude of the force
         float magnitude = (G * m1 * attractorMass) / (distance * distance);
 
+        Debug.Log(magnitude);
         // the final force is equal to the magnitude of the force multiplied by the direction
         return magnitude * direction;
     }
