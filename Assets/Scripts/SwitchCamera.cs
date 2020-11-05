@@ -8,17 +8,28 @@ public class SwitchCamera : MonoBehaviour
     public GameObject MinimapRawImage;
     public Texture MainCameraRenderTexture;
     public Texture MinimapRenderTexture;
-    private Texture GetTexture;
+    public Toggle CameraToggle;
+    public Camera MainCamera;
+    public Camera MinimapCamera;
 
     void Start()
     {
-        GetTexture = MinimapRawImage.GetComponent<RawImage>().texture;
+        CameraToggle.GetComponent<Toggle>().isOn = false;
     }
 
-    public void SwitchCameraFunction()
+    public void FixedUpdate()
     {
-        if (GetTexture == MinimapRenderTexture)
-            GetTexture = MainCameraRenderTexture;
-        else GetTexture = MinimapRenderTexture;
+        if (CameraToggle.GetComponent<Toggle>().isOn == true)
+        {
+            MinimapRawImage.GetComponent<RawImage>().texture = MainCameraRenderTexture;
+            MinimapCamera.enabled = true;
+            MainCamera.enabled = false;
+        }
+        if (CameraToggle.GetComponent<Toggle>().isOn == false)
+        {
+            MinimapRawImage.GetComponent<RawImage>().texture = MinimapRenderTexture;
+            MinimapCamera.enabled = false;
+            MainCamera.enabled = true;
+        }
     }
 }
