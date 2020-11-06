@@ -8,13 +8,19 @@ public class ScoreTriggerArea : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Trigger Entered.");
-        ScoreEvents.current.Landing(id);
+        if (other.name == "Starship")
+        {
+            Debug.Log("Trigger Entered.");
+            ScoreEvents.current.Landing(id);
+        }
     }
 
-    private void OnTriggerExit()
+    private void OnTriggerExit(Collider other)
     {
-        Debug.Log("Trigger Exited.");
-        ScoreEvents.current.Leaving(id);
+        if (other.name == "Starship")
+        {
+            Debug.Log("Trigger Exited.");
+            ScoreEvents.current.Leaving(id);
+        }
     }
 }

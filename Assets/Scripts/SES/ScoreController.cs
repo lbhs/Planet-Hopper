@@ -11,6 +11,7 @@ public class ScoreController : MonoBehaviour
     void Start()
     {
         info = GameObject.Find("Info");
+
         ScoreEvents.current.onLanding += OnLanding;
         ScoreEvents.current.onLeaving += OnLeaving;
     }
