@@ -1,81 +1,82 @@
-﻿/**
- *
- * Gravity.cs
- * Written by Gavin Gee
- *
- * This script can be placed on a Gameobject in Unity and will attract this
- * object to another according to Newton's Law of Gravitational Force with the
- * exception that the force is not mutual among both objects– only the object
- * that this script is on will have a force applied to it. In order to achieve
- * realistic gravitation in which both objects are attracted to each other, this
- * script must be put on both objects and the "Attractor" field in the editor
- * must be set to the target object.
- *
- * Editor Variables:
- *
- *  G: the gravitational constant used in the Gravitational Force equation.
- * 
- *  Attractor Name: the name of the object that will attract this object.
- * 
- *  Initial Velocity: the initial downward force placed on this object. Useful for
- *  simulating orbits.
- *  
- */
-
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Gravity : MonoBehaviour
 {
-    // Gravitational Constant
-    [SerializeField] private float G;
 
-    // the name of the object that will be attracting this object.
-    [SerializeField] private string attractorName;
-    private GameObject attractor;
 
-    // the initial velocity of the object
-    [SerializeField] private float initialVelocity;
+    [SerializeField] public float G;
 
-    // the rigibody of the object effected by gravity
-    private Rigidbody r;
-    
-    void Start()
+    [SerializeField] public float InitialDistance;
+
+    private void Start()
     {
-        r = this.GetComponent<Rigidbody>();
-        attractor = GameObject.Find(attractorName);
-        r.velocity = (initialVelocity * Vector3.down);
-    }
+        int RandomInt = Random.Range(1, 5);
 
+        float xDistance = Random.Range(0, InitialDistance + 1);
+        float yDistance = Mathf.Sqrt(Mathf.Pow(InitialDistance, 2) - Mathf.Pow(xDistance, 2));
+        Debug.Log(Mathf.Pow(xDistance, 2) + Mathf.Pow(yDistance, 2));
+        float initialAngle = Mathf.Atan(yDistance / xDistance) * (180 / Mathf.PI);
+        Debug.Log(initialAngle);
+        float finalAngle = 0;
+
+
+        if (RandomInt == 1)
+        {
+            xDistance = xDistance;
+            yDistance = yDistance;
+            finalAngle = initialAngle + 90;
+        }
+
+        if (RandomInt == 2)
+        {
+            xDistance = xDistance * -1;
+            yDistance = yDistance;
+            finalAngle = 90 + (90 - initialAngle) + 90;
+        }
+
+        if (RandomInt == 3)
+        {
+            xDistance = xDistance * -1;
+            yDistance = yDistance * -1;
+            finalAngle = 180 + (90 - initialAngle) + 90;
+        }
+
+        if (RandomInt == 4)
+        {
+            xDistance = xDistance;
+            yDistance = yDistance * -1;
+            finalAngle = 270 + (90 - initialAngle) + 90 ;
+        }
+
+        this.GetComponent<Rigidbody>().position = new Vector3(xDistance, yDistance, 0);
+
+        Debug.Log(finalAngle);
+        this.transform.rotation = Quaternion.AngleAxis(finalAngle, transform.forward);
+        this.GetComponent<Rigidbody>().velocity = transform.right * Mathf.Sqrt((G * GameObject.Find("Sun").GetComponent<Rigidbody>().mass) / InitialDistance);
+        Debug.Log(this.GetComponent<Rigidbody>().rotation);
+        Debug.Log(this.GetComponent<Rigidbody>().velocity);
+
+    }
+    // Update is called once per frame
     void FixedUpdate()
     {
-        // declaring the gravitational force on the object
-        Vector3 f;
-
-        // calculates the gravitational force on the object
-        f = CalculateGravitationalForce(transform.position, this.GetComponent<Rigidbody>().mass);
-
-        // applies that force to the object
-        r.AddForce(f * Time.fixedDeltaTime);
+        Attract(this.GetComponent<Rigidbody>());
     }
 
-    private Vector3 CalculateGravitationalForce(Vector3 pos1, float m1) {
+    void Attract(Rigidbody objToAttract)
+    {
 
-        Vector3 attractorLocation = attractor.transform.position;
-        float attractorMass = attractor.GetComponent<Rigidbody>().mass;
+        Vector3 direction = GameObject.Find("Sun").GetComponent<Rigidbody>().position - this.GetComponent<Rigidbody>().position;
+        float distance = direction.magnitude;
 
-        // finds the direction of the force
-        Vector3 direction = attractorLocation - pos1;
+        float forceMagnitude = (G * GameObject.Find("Sun").GetComponent<Rigidbody>().mass * this.GetComponent<Rigidbody>().mass) / Mathf.Pow(distance, 2);
+        Vector3 force = direction.normalized * forceMagnitude;
 
-        // finds the distancee between the two gameobjects
-        float distance = Vector3.Distance(pos1, attractorLocation);
+        this.GetComponent<Rigidbody>().AddForce(force);
 
-        // finds the magnitude of the force
-        float magnitude = (G * m1 * attractorMass) / (distance * distance);
-
-        Debug.Log(magnitude);
-        // the final force is equal to the magnitude of the force multiplied by the direction
-        return magnitude * direction;
     }
+
 }
+
