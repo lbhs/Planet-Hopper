@@ -12,6 +12,11 @@ public class Gravity : MonoBehaviour
 
     private void Start()
     {
+        StartCoroutine(SetShipPosition());
+    }
+
+    IEnumerator SetShipPosition()
+    {
         int RandomInt = Random.Range(1, 5);
 
         float xDistance = Random.Range(0, InitialDistance + 1);
@@ -47,18 +52,31 @@ public class Gravity : MonoBehaviour
         {
             xDistance = xDistance;
             yDistance = yDistance * -1;
-            finalAngle = 270 + (90 - initialAngle) + 90 ;
+            finalAngle = 270 + (90 - initialAngle) + 90;
         }
 
         this.GetComponent<Rigidbody>().position = new Vector3(xDistance, yDistance, 0);
 
         Debug.Log(finalAngle);
         this.transform.rotation = Quaternion.AngleAxis(finalAngle, transform.forward);
-        this.GetComponent<Rigidbody>().velocity = transform.right * Mathf.Sqrt((G * GameObject.Find("Sun").GetComponent<Rigidbody>().mass) / InitialDistance);
+        Vector3 initialVelocity = transform.right * Mathf.Sqrt((G * GameObject.Find("Sun").GetComponent<Rigidbody>().mass) / InitialDistance);
+        this.GetComponent<Rigidbody>().velocity = initialVelocity;
         Debug.Log(this.GetComponent<Rigidbody>().rotation);
         Debug.Log(this.GetComponent<Rigidbody>().velocity);
 
+        yield return new WaitForSeconds(.05f);
+
+        GameObject.Find("Starship").transform.position = GameObject.Find("Earth").transform.position + new Vector3(0, 10, 0);
+
+        GameObject.Find("Starship").GetComponent<Rigidbody>().velocity = (GameObject.Find("Earth").GetComponent<Rigidbody>().velocity) + new Vector3(1, 0, 0);
+
+        print("Earth");
+        Debug.Log(GameObject.Find("Starship").GetComponent<Rigidbody>().velocity);
+        print("Starship");
+        Debug.Log(GameObject.Find("Earth").GetComponent<Rigidbody>().velocity);
+
     }
+
     // Update is called once per frame
     void FixedUpdate()
     {
