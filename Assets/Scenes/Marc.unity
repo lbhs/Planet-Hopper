@@ -1030,6 +1030,29 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &790998441
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 790998438}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a660803685579f843b4a1c3a87cb52db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  G: 10
+  planets:
+  - {fileID: 157166746}
+  - {fileID: 1079091363}
+  - {fileID: 28631560}
+  - {fileID: 930159123}
+  - {fileID: 428235781}
+  - {fileID: 427949411}
+  - {fileID: 1659373326}
+  - {fileID: 1486254601}
+  - {fileID: 1923098719}
 --- !u!1 &930159117
 GameObject:
   m_ObjectHideFlags: 0
@@ -1044,7 +1067,6 @@ GameObject:
   - component: {fileID: 930159118}
   - component: {fileID: 930159123}
   - component: {fileID: 930159122}
-  - component: {fileID: 930159124}
   m_Layer: 0
   m_Name: Earth
   m_TagString: Untagged
@@ -1156,29 +1178,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &930159124
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 930159117}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a660803685579f843b4a1c3a87cb52db, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  G: 10
-  planets:
-  - {fileID: 157166746}
-  - {fileID: 1079091363}
-  - {fileID: 28631560}
-  - {fileID: 930159123}
-  - {fileID: 428235781}
-  - {fileID: 427949411}
-  - {fileID: 1659373326}
-  - {fileID: 1486254601}
-  - {fileID: 1923098719}
 --- !u!1 &1079091357
 GameObject:
   m_ObjectHideFlags: 0
