@@ -14,18 +14,6 @@ public class ShipGravity : MonoBehaviour
     void Start()
     {
 
-        //planets.Add(GameObject.Find("Sun").GetComponent<Rigidbody>());
-        //planets.Add(GameObject.Find("Mercury").GetComponent<Rigidbody>());
-        //planets.Add(GameObject.Find("Venus").GetComponent<Rigidbody>());
-        //planets.Add(GameObject.Find("Earth").GetComponent<Rigidbody>());
-        //planets.Add(GameObject.Find("Mars").GetComponent<Rigidbody>());
-        //planets.Add(GameObject.Find("Jupiter").GetComponent<Rigidbody>());
-        //planets.Add(GameObject.Find("Saturn").GetComponent<Rigidbody>());
-        //planets.Add(GameObject.Find("Uranus").GetComponent<Rigidbody>());
-        //planets.Add(GameObject.Find("Neptune").GetComponent<Rigidbody>());
-
-        // GameObject.Find("Starship").transform.position = GameObject.Find("Earth").transform.position;
-
     }
     void FixedUpdate()
     {
