@@ -229,7 +229,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03eb3c32b65bb3d448e7d50d1ad8dbcb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  G: 1
+  G: 5
   InitialDistance: 200
 --- !u!54 &28631560
 Rigidbody:
@@ -865,7 +865,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03eb3c32b65bb3d448e7d50d1ad8dbcb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  G: 1
+  G: 5
   InitialDistance: 500
 --- !u!54 &427949411
 Rigidbody:
@@ -991,7 +991,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03eb3c32b65bb3d448e7d50d1ad8dbcb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  G: 1
+  G: 5
   InitialDistance: 400
 --- !u!54 &428235781
 Rigidbody:
@@ -1300,13 +1300,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 866799955}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.04444445, z: 0}
+  m_LocalRotation: {x: 0.4330127, y: 0.4330127, z: -0.25, w: 0.75}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 371281488}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 60, y: 60, z: 0}
 --- !u!135 &866799957
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1599,7 +1599,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03eb3c32b65bb3d448e7d50d1ad8dbcb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  G: 1
+  G: 5
   InitialDistance: 300
 --- !u!54 &930159123
 Rigidbody:
@@ -1973,7 +1973,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03eb3c32b65bb3d448e7d50d1ad8dbcb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  G: 1
+  G: 5
   InitialDistance: 100
 --- !u!54 &1079091363
 Rigidbody:
@@ -2375,7 +2375,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03eb3c32b65bb3d448e7d50d1ad8dbcb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  G: 1
+  G: 5
   InitialDistance: 700
 --- !u!54 &1486254601
 Rigidbody:
@@ -2824,7 +2824,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03eb3c32b65bb3d448e7d50d1ad8dbcb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  G: 1
+  G: 5
   InitialDistance: 600
 --- !u!54 &1659373326
 Rigidbody:
@@ -3143,7 +3143,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03eb3c32b65bb3d448e7d50d1ad8dbcb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  G: 1
+  G: 5
   InitialDistance: 800
 --- !u!54 &1923098719
 Rigidbody:
@@ -3750,6 +3750,7 @@ GameObject:
   - component: {fileID: 6810218856465537439}
   - component: {fileID: 6810218856465537438}
   - component: {fileID: 6810218856465537441}
+  - component: {fileID: 6810218856465537442}
   m_Layer: 0
   m_Name: Starship
   m_TagString: Untagged
@@ -3818,6 +3819,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf4bdbba691593945b435e538e0013c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6810218856465537442
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6810218856465537437}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a660803685579f843b4a1c3a87cb52db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  G: 10
+  planets:
+  - {fileID: 157166746}
+  - {fileID: 1079091363}
+  - {fileID: 28631560}
+  - {fileID: 930159123}
+  - {fileID: 428235781}
+  - {fileID: 427949411}
+  - {fileID: 1659373326}
+  - {fileID: 1486254601}
+  - {fileID: 1923098719}
 --- !u!33 &6988884676825398427
 MeshFilter:
   m_ObjectHideFlags: 0
