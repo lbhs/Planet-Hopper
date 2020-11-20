@@ -815,7 +815,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 834.69214
+  orthographic size: 9.314934
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -926,7 +926,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 42da4eb7cbaefe0439e03c89741d6029,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 42da4eb7cbaefe0439e03c89741d6029,
         type: 3}
@@ -976,17 +976,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 42da4eb7cbaefe0439e03c89741d6029,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 10
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 42da4eb7cbaefe0439e03c89741d6029,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 10
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 42da4eb7cbaefe0439e03c89741d6029,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 10
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 42da4eb7cbaefe0439e03c89741d6029,
         type: 3}
@@ -1030,6 +1030,29 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &790998441
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 790998438}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a660803685579f843b4a1c3a87cb52db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  G: 10
+  planets:
+  - {fileID: 157166746}
+  - {fileID: 1079091363}
+  - {fileID: 28631560}
+  - {fileID: 930159123}
+  - {fileID: 428235781}
+  - {fileID: 427949411}
+  - {fileID: 1659373326}
+  - {fileID: 1486254601}
+  - {fileID: 1923098719}
 --- !u!1 &930159117
 GameObject:
   m_ObjectHideFlags: 0
@@ -1272,7 +1295,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1079091357}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 5
   m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 0
