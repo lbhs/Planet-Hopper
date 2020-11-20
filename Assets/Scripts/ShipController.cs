@@ -38,7 +38,7 @@ public class ShipController : MonoBehaviour
 
         if (Input.GetKey(KeyCode.UpArrow))
         {
-            gm.GetComponent<Rigidbody>().AddForce(transform.up/2);
+            gm.GetComponent<Rigidbody>().AddForce(transform.up);
             Fuel = (Fuel - .1f);
             T.text = "Fuel: " + Fuel;
         }
