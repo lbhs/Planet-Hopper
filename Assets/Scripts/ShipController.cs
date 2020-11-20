@@ -11,12 +11,15 @@ public class ShipController : MonoBehaviour
     public float Fuel;
     private Text T;
 
+    public GameObject flameEmitter;
+
     private void Start()
     {
         Fuel = 100;
         gm = GetComponent<Rigidbody>();
         T = GameObject.Find("FuelValue").GetComponent<Text>();
     }
+
     void FixedUpdate()
     {
 
@@ -38,11 +41,16 @@ public class ShipController : MonoBehaviour
 
         if (Input.GetKey(KeyCode.UpArrow))
         {
-            gm.GetComponent<Rigidbody>().AddForce(transform.up/2);
+            gm.GetComponent<Rigidbody>().AddForce(transform.up / 2);
+            flameEmitter.SetActive(true);
             Fuel = (Fuel - .1f);
             T.text = "Fuel: " + Fuel;
         }
 
+        if (Input.GetKeyUp(KeyCode.UpArrow))
+        {
+            flameEmitter.SetActive(false);
+        }
     }
 
 }
