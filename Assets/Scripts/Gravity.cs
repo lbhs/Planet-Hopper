@@ -23,11 +23,7 @@ public class Gravity : MonoBehaviour
 
         float xDistance = Random.Range(1, InitialDistance);
         float yDistance = Mathf.Sqrt(Mathf.Pow(InitialDistance, 2) - Mathf.Pow(xDistance, 2));
-        Debug.Log(xDistance);
-        Debug.Log(yDistance);
-        Debug.Log(Mathf.Pow(xDistance, 2) + Mathf.Pow(yDistance, 2));
         float initialAngle = Mathf.Atan(yDistance / xDistance) * (180 / Mathf.PI);
-        Debug.Log(initialAngle);
         float finalAngle = 0;
 
 
@@ -60,11 +56,8 @@ public class Gravity : MonoBehaviour
         }
 
         this.GetComponent<Rigidbody>().position = new Vector3(xDistance, yDistance, 0);
-
-        Debug.Log(finalAngle);
         this.transform.rotation = Quaternion.AngleAxis(finalAngle, transform.forward);
         this.GetComponent<Rigidbody>().velocity = transform.right * Mathf.Sqrt((G * GameObject.Find("Sun").GetComponent<Rigidbody>().mass) / InitialDistance);
-
 
         yield return new WaitForSeconds(.05f);
 
