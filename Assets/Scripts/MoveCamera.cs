@@ -35,7 +35,6 @@ public class MoveCamera : MonoBehaviour
             Debug.Log("SOI Entered.");
             Target = other.gameObject.transform;
             Cam.transform.position = new Vector3(Target.position.x, Target.position.y, -20);
-            Target.gameObject.GetComponent<GenerateLandingZones>().OpenLZs();
         }
     }
 
