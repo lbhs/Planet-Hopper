@@ -3791,6 +3791,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Fuel: 0
+  flameEmitter: {fileID: 0}
 --- !u!54 &6810218856465537440
 Rigidbody:
   m_ObjectHideFlags: 0
