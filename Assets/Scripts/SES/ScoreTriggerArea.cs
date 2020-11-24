@@ -54,8 +54,8 @@ public class ScoreTriggerArea : MonoBehaviour
     // checks if a landing is valid...
     /*
      * valid landing needs to:
-     * - be under a certain speed ( < 100 for now but this can be adjusted )
-     * - be rotated away from the planet ( angle < 10 )
+     * - be under a certain speed ( < `speedLimit` m/s )
+     * - be rotated away from the planet ( < 'angleLimit' degrees )
      */
     private bool CheckLanding()
     {
