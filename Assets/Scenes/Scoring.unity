@@ -569,6 +569,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 1
+  ship: {fileID: 0}
   speedLimit: 0
   angleLimit: 0
 --- !u!114 &216149737
@@ -1492,6 +1493,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Fuel: 0
+  flameEmitter: {fileID: 0}
 --- !u!54 &790998440
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -7111,6 +7113,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 0
+  ship: {fileID: 0}
   speedLimit: 0
   angleLimit: 0
 --- !u!1 &1659373320
@@ -7411,6 +7414,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 2
+  ship: {fileID: 790998438}
   speedLimit: 3
   angleLimit: 3
 --- !u!114 &1785012930

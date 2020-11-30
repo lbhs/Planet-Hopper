@@ -9,8 +9,7 @@
  * - The Planets that are to be spawned at the beginning of the game.
  * - The Player's score.
  * 
- * TODO: More variables will be kept track of once the Score Event System (SES) 
- * is in place. This script will work closely with the SES.
+ * TODO: More variables will be kept track of once the Score Event System is in place.
  * 
  */
 using System.Collections;
@@ -54,7 +53,7 @@ public class InfoScript : MonoBehaviour
         neptuneEnabled = GameObject.Find("Neptune Toggle").GetComponent<PlanetActiveToggle>().isSelected;
 
         DontDestroyOnLoad(gameObject);
-        SceneManager.LoadScene(2); // change me back to 1 later!!
+        SceneManager.LoadScene(1); // change me back to 1 later!!
     }
 
     public void UpdateScore()
