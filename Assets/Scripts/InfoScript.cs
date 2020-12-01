@@ -40,6 +40,8 @@ public class InfoScript : MonoBehaviour
      */
     private const int missionSuccessConstant = 1000;
 
+    public Text scoreValue;
+
     // This function starts the game and assigns values to the planet bools based on the user's selections.
     public void StartGame()
     {
@@ -60,7 +62,7 @@ public class InfoScript : MonoBehaviour
     {
         score += missionSuccessConstant;
         Debug.Log(score);
-        GameObject.Find("Score Text").GetComponent<Text>().text = "Score: " + score;
+        scoreValue.GetComponent<Text>().text = "Score: " + score;
     }
 
 }

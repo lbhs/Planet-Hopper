@@ -7,8 +7,11 @@
  * 
  * The function `CheckLanding` considers a landing successful if:
  * - The ship is moving less than `speedlimit`
- * - The ship lands within 3 degrees of a line drawn from the center of the ship
- *   to the center of the planet.
+ * - The ship lands within `angleLimit` degrees of a line drawn from the center 
+ *   of the ship to the center of the planet.
+ *   
+ * Note: I'm trying to phase out the score event system right now, so there may 
+ * be a couple of dated, commented out lines.
  */
 
 using System.Collections;
@@ -26,7 +29,7 @@ public class ScoreTriggerArea : MonoBehaviour
 
     private void Awake()
     {
-        info = GameObject.Find("Info");
+        //info = GameObject.Find("Info");
     }
 
     private void OnTriggerEnter(Collider other)
