@@ -42,7 +42,7 @@ public class ShipGravity : MonoBehaviour
 
         GameObject.Find("Starship").GetComponent<Rigidbody>().AddForce(forcesV[forces.IndexOf(forces.Max<float>())]);
 
-        print(planets[forces.IndexOf(forces.Max<float>())]);
+//        print(planets[forces.IndexOf(forces.Max<float>())]);
 
         forces.Clear();
         forcesV.Clear();
