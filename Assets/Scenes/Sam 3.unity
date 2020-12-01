@@ -9349,6 +9349,7 @@ GameObject:
   - component: {fileID: 6810218856465537441}
   - component: {fileID: 6810218856465537442}
   - component: {fileID: 6810218856465537443}
+  - component: {fileID: 6810218856465537444}
   m_Layer: 0
   m_Name: Starship
   m_TagString: Untagged
@@ -9455,6 +9456,22 @@ CapsuleCollider:
   m_Height: 0.583403
   m_Direction: 1
   m_Center: {x: 0.017871857, y: 0.033758342, z: 0}
+--- !u!114 &6810218856465537444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6810218856465537437}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e38759f2ec3afbb448ef56523a698cdd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lineShader: {fileID: 203, guid: 0000000000000000f000000000000000, type: 0}
+  linecolor: {r: 1, g: 1, b: 1, a: 1}
+  Starship: {fileID: 6810218856465537437}
+  Lines: []
 --- !u!33 &6988884676825398427
 MeshFilter:
   m_ObjectHideFlags: 0
