@@ -6,7 +6,12 @@
  * the script will check if it is a valid landing.
  * 
  * The function `CheckLanding` considers a landing successful if:
- * - The ship is moving less than ``
+ * - The ship is moving less than `speedlimit`
+ * - The ship lands within `angleLimit` degrees of a line drawn from the center 
+ *   of the ship to the center of the planet.
+ *   
+ * Note: I'm trying to phase out the score event system right now, so there may 
+ * be a couple of dated, commented out lines.
  */
 
 using System.Collections;
@@ -15,25 +20,27 @@ using UnityEngine;
 
 public class ScoreTriggerArea : MonoBehaviour
 { 
-    public int id;
+    //public int id;
+    public GameObject info;
 
-    private GameObject ship;
+    public GameObject ship;
     [SerializeField] private float speedLimit;
     [SerializeField] private float angleLimit;
 
     private void Awake()
     {
-        ship = GameObject.Find("Starship");
+        //info = GameObject.Find("Info");
     }
 
     private void OnTriggerEnter(Collider other)
     { 
         if (other.name == ship.name)
         {
-            //Debug.Log("Trigger Entered.");
+            Debug.Log("Landing Trigger Entered.");
             if (CheckLanding())
             {
-                ScoreEvents.current.Landing(id);
+                info.GetComponent<InfoScript>().UpdateScore();
+                //ScoreEvents.current.Landing(id);
             }
             else
             {
@@ -44,10 +51,11 @@ public class ScoreTriggerArea : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other == ship)
+        if (other.name == ship.name)
         {
-            Debug.Log("Trigger Exited.");
-            ScoreEvents.current.Leaving(id);
+            Debug.Log("Landing Trigger Exited.");
+            Destroy(gameObject);
+            //ScoreEvents.current.Leaving(id);
         }
     }
 
@@ -89,6 +97,11 @@ public class ScoreTriggerArea : MonoBehaviour
         return deltaTheta < angleLimit;
     }
 
+
+    /* This function makes a small explosion effect when the ship's landing is
+     * invalid according to `CheckLanding` 
+     */
+    
     void Explode(GameObject toDestroy)
     {
         GameObject Explosion = GameObject.Find("Explosion"); //.GetComponent<ParticleSystem>();
