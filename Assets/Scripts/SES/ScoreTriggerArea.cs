@@ -39,7 +39,8 @@ public class ScoreTriggerArea : MonoBehaviour
             Debug.Log("Landing Trigger Entered.");
             if (CheckLanding())
             {
-                info.GetComponent<InfoScript>().UpdateScore();
+                string planet = gameObject.transform.parent.name;
+                info.GetComponent<InfoScript>().UpdateScore(planet);
                 //ScoreEvents.current.Landing(id);
             }
             else
@@ -54,7 +55,7 @@ public class ScoreTriggerArea : MonoBehaviour
         if (other.name == ship.name)
         {
             Debug.Log("Landing Trigger Exited.");
-            Destroy(gameObject);
+            //Destroy(gameObject);
             //ScoreEvents.current.Leaving(id);
         }
     }

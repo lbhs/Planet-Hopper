@@ -21,6 +21,7 @@ using UnityEngine.SceneManagement;
 public class InfoScript : MonoBehaviour
 {
     // These bools control which planets of the solar system will be spawned.
+    // Outdated? 
     private bool mercuryEnabled = true;
     private bool venusEnabled = true;
     private bool earthEnabled = true;
@@ -29,6 +30,16 @@ public class InfoScript : MonoBehaviour
     private bool saturnEnabled = true;
     private bool uranusEnabled = true;
     private bool neptuneEnabled = true;
+
+    // These bools record which planets the player has landed on.
+    private bool mercuryVisited = false;
+    private bool venusVisited = false;
+    private bool earthVisited = false;
+    private bool marsVisited = false;
+    private bool jupiterVisited = false;
+    private bool saturnVisited = false;
+    private bool uranusVisited = false;
+    private bool neptuneVisited = false;
 
     /* This is the player's score. Currently, it doesn't do anything, but it is
      * useful to keep track of it here.
@@ -58,11 +69,48 @@ public class InfoScript : MonoBehaviour
         SceneManager.LoadScene(1); // change me back to 1 later!!
     }
 
-    public void UpdateScore()
+    public void UpdateScore(string planet)
     {
-        score += missionSuccessConstant;
-        Debug.Log(score);
-        scoreValue.GetComponent<Text>().text = "Score: " + score;
+        if (!AlreadyVisited(planet))
+        {
+            score += missionSuccessConstant;
+            Debug.Log(score);
+            scoreValue.GetComponent<Text>().text = "Score: " + score;
+        }
+    }
+
+    private bool AlreadyVisited(string planet)
+    {
+        bool isVisited;
+        switch (planet)
+        {
+            case "Mercury": isVisited = mercuryVisited;
+                mercuryVisited = true;
+                break;
+            case "Venus": isVisited = venusVisited;
+                venusVisited = true;
+                break;
+            case "Earth": isVisited = earthVisited;
+                earthVisited = true;
+                break;
+            case "Mars": isVisited = marsVisited;
+                marsVisited = true;
+                break;
+            case "Jupiter": isVisited = jupiterVisited;
+                jupiterVisited = true;
+                break;
+            case "Saturn": isVisited = saturnVisited;
+                saturnVisited = true;
+                break;
+            case "Uranus": isVisited = uranusVisited;
+                uranusVisited = true;
+                break;
+            case "Neptune": isVisited = neptuneVisited;
+                neptuneVisited = true;
+                break;
+            default: return false;
+        }
+        return isVisited;
     }
 
 }

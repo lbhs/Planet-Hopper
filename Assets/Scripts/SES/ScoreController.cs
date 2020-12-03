@@ -20,7 +20,7 @@ public class ScoreController : MonoBehaviour
     {
         if (id == this.id)
         {
-            info.GetComponent<InfoScript>().UpdateScore();
+            //info.GetComponent<InfoScript>().UpdateScore();
         }
     }
 
