@@ -9,12 +9,20 @@ public class ShipController : MonoBehaviour
     float rotationspeed = 50.0f;
     private Rigidbody gm;
     public float Fuel;
-    private Text T;
+
+    public Text T;
+    public Text pitStopText;
+
+    public bool pitStopped = false;
+    private bool refueled = false;
 
     public GameObject flameEmitter;
 
+    public static ShipController main;
+
     private void Start()
     {
+        main = this;
         Fuel = 100;
         gm = GetComponent<Rigidbody>();
         T = GameObject.Find("FuelValue").GetComponent<Text>();
@@ -28,7 +36,14 @@ public class ShipController : MonoBehaviour
         //    flameEmitter.SetActive(false);
         //    return;
         //}
-        
+
+        // if at a pit stop, can't rotate or use thrusters.
+        if (pitStopped)
+        {
+            flameEmitter.SetActive(false);
+            return;
+        }
+
         float vertical = Input.GetAxis("Vertical");
         // applies rotation
         gm.GetComponent<Rigidbody>().transform.Rotate(0, 0, -Input.GetAxis("Horizontal")/1.5f);
@@ -42,13 +57,13 @@ public class ShipController : MonoBehaviour
         if (Input.GetKey(KeyCode.LeftArrow))
         {
             Fuel = (Fuel - .05f);
-            T.text = "Fuel: " + Fuel;
+            UpdateFuelText();
         }
 
         if (Input.GetKey(KeyCode.RightArrow))
         {
             Fuel = (Fuel - .05f);
-            T.text = "Fuel: " + Fuel;
+            UpdateFuelText();
         }
 
         // applies force... "thrusters"
@@ -57,8 +72,21 @@ public class ShipController : MonoBehaviour
             gm.GetComponent<Rigidbody>().AddForce(transform.up / 2);
             flameEmitter.SetActive(true);
             Fuel = (Fuel - .1f);
-            T.text = "Fuel: " + Fuel;
+            UpdateFuelText();
         }
     }
 
+    public void Refuel()
+    {
+        Debug.Log("Refueling...");
+        Fuel = 100f;
+        refueled = true;
+        UpdateFuelText();
+    }
+
+    private void UpdateFuelText()
+    {
+        T.text = "Fuel: " + Fuel;
+        pitStopText.text = "Your fuel is currently: " + Fuel;
+    }
 }
