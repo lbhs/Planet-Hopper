@@ -1,5 +1,5 @@
 ﻿/*
- * ScoreTriggerArea.cs
+ * LandingHandler.cs
  * Written by Gavin
  * 
  * This script is to be put on landing triggers. When a ship enters the trigger,
@@ -17,19 +17,27 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class ScoreTriggerArea : MonoBehaviour
+public class LandingHandler : MonoBehaviour
 { 
-    //public int id;
+    // "Info" GameObject. Holds the player's score, planets visited, etc.
     public GameObject info;
 
     public GameObject ship;
+    
     [SerializeField] private float speedLimit;
     [SerializeField] private float angleLimit;
 
+    private Rigidbody planetRB;
+
+    public Canvas GUI;
+    public Canvas PitStopUI;
+    public Text FuelText;
+
     private void Awake()
     {
-        //info = GameObject.Find("Info");
+        planetRB = gameObject.transform.parent.GetComponent<Rigidbody>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -39,8 +47,9 @@ public class ScoreTriggerArea : MonoBehaviour
             Debug.Log("Landing Trigger Entered.");
             if (CheckLanding())
             {
-                info.GetComponent<InfoScript>().UpdateScore();
-                //ScoreEvents.current.Landing(id);
+                InitiateLanding();
+                string planet = gameObject.transform.parent.name;
+                info.GetComponent<InfoScript>().UpdateScore(planet);
             }
             else
             {
@@ -54,8 +63,6 @@ public class ScoreTriggerArea : MonoBehaviour
         if (other.name == ship.name)
         {
             Debug.Log("Landing Trigger Exited.");
-            Destroy(gameObject);
-            //ScoreEvents.current.Leaving(id);
         }
     }
 
@@ -101,8 +108,7 @@ public class ScoreTriggerArea : MonoBehaviour
     /* This function makes a small explosion effect when the ship's landing is
      * invalid according to `CheckLanding` 
      */
-    
-    void Explode(GameObject toDestroy)
+    private void Explode(GameObject toDestroy)
     {
         GameObject Explosion = GameObject.Find("Explosion"); //.GetComponent<ParticleSystem>();
         Explosion.transform.position = ship.transform.position;
@@ -110,5 +116,55 @@ public class ScoreTriggerArea : MonoBehaviour
         ParticleSystem Exploder = Explosion.GetComponent<ParticleSystem>();
         Exploder.Play();
         Destroy(toDestroy);
+    }
+
+    /* This function handles the player's interactions while landed on a planet.
+     * 
+     * This function will:
+     * 
+     * 1. stop the rocket and connect it to the planet. The rocket will be imobile
+     *    on the planet's surface.
+     *    
+     * 2. open a UI menu for the player to interact with. In this menu, the player can:
+     *    - refuel their ship
+     *    - press a "Launch" button to continue playing.
+     *    - (hear a fact about the planet they're on ?)
+     *    
+     * 3. When "Launch" is selected, some force will be applied to ship, launching it
+     *    into (orbit ?) space so the player can continue playing.
+     *    
+     */
+    private void InitiateLanding()
+    {
+        /* First, make the ship stop moving. I think the play here is to make the ship's velocity
+         * Vector3.zero and then make the ship a child of the planet until it needs to leave, but
+         * I can also envision it being a pain to do so. I'm not yet sure if this is possible.
+         */
+
+        FreezeShip();
+
+        /* Next, open a temporary UI menu. The main features are a "Refuel" and a "Launch" button. 
+         * other things like a map, planet facts, etc. can come later if time allows.
+         */
+
+        // disables normal game UI and enables Pit Stop UI
+        GUI.enabled = false;
+        FuelText.text = "Your fuel is currently: " + ShipController.main.Fuel;
+
+        PitStopUI.enabled = true;
+
+
+        /* Finally, When the player selects "Launch", the ship needs to be sent back into space/orbit.
+         * This should be handled by another function.
+         */
+    }
+
+    private void FreezeShip()
+    {
+        ship.GetComponent<Rigidbody>().velocity = Vector3.zero;
+        ship.AddComponent<FixedJoint>();
+        ship.GetComponent<FixedJoint>().connectedBody = planetRB;
+
+        ShipController.main.pitStopped = true;
     }
 }
