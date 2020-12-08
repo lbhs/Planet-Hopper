@@ -10,6 +10,10 @@ public class Gravity : MonoBehaviour
 
     [SerializeField] public int InitialDistance;
 
+    public GameObject starshipGameObject;
+    public GameObject earthGameObject;
+    public GameObject sunGameObject;
+
     private void Start()
     {
         StartCoroutine(SetShipPosition());
@@ -57,13 +61,13 @@ public class Gravity : MonoBehaviour
 
         this.GetComponent<Rigidbody>().position = new Vector3(xDistance, yDistance, 0);
         this.transform.rotation = Quaternion.AngleAxis(finalAngle, transform.forward);
-        this.GetComponent<Rigidbody>().velocity = transform.right * Mathf.Sqrt((G * GameObject.Find("Sun").GetComponent<Rigidbody>().mass) / InitialDistance);
+        this.GetComponent<Rigidbody>().velocity = transform.right * Mathf.Sqrt((G * sunGameObject.GetComponent<Rigidbody>().mass) / InitialDistance);
 
         yield return new WaitForSeconds(.05f);
 
-        GameObject.Find("Starship").transform.position = GameObject.Find("Earth").transform.position + new Vector3(0, 10, 0);
+        starshipGameObject.transform.position = earthGameObject.transform.position + new Vector3(0, 10, 0);
 
-        GameObject.Find("Starship").GetComponent<Rigidbody>().velocity = (GameObject.Find("Earth").GetComponent<Rigidbody>().velocity) + new Vector3(1, 0, 0);
+        starshipGameObject.GetComponent<Rigidbody>().velocity = (earthGameObject.GetComponent<Rigidbody>().velocity) + new Vector3(1, 0, 0);
 
     }
 
@@ -76,10 +80,10 @@ public class Gravity : MonoBehaviour
     void Attract(Rigidbody objToAttract)
     {
 
-        Vector3 direction = GameObject.Find("Sun").GetComponent<Rigidbody>().position - this.GetComponent<Rigidbody>().position;
+        Vector3 direction = sunGameObject.GetComponent<Rigidbody>().position - this.GetComponent<Rigidbody>().position;
         float distance = direction.magnitude;
 
-        float forceMagnitude = (G * GameObject.Find("Sun").GetComponent<Rigidbody>().mass * this.GetComponent<Rigidbody>().mass) / Mathf.Pow(distance, 2);
+        float forceMagnitude = (G * sunGameObject.GetComponent<Rigidbody>().mass * this.GetComponent<Rigidbody>().mass) / Mathf.Pow(distance, 2);
         Vector3 force = direction.normalized * forceMagnitude;
 
         this.GetComponent<Rigidbody>().AddForce(force);

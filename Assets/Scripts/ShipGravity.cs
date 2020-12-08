@@ -9,6 +9,7 @@ public class ShipGravity : MonoBehaviour
 
     [SerializeField] public float G;
     public List<Rigidbody> planets = new List<Rigidbody>();
+    public Rigidbody starshipRigidBody;
     // Update is called once per frame
 
     void Start()
@@ -28,10 +29,10 @@ public class ShipGravity : MonoBehaviour
         foreach (Rigidbody planet in planets)
 
         {
-            Vector3 direction = planet.position - GameObject.Find("Starship").GetComponent<Rigidbody>().position;
+            Vector3 direction = planet.position - starshipRigidBody.position;
             float distance = direction.magnitude;
 
-            float forceMagnitude = (G * GameObject.Find("Starship").GetComponent<Rigidbody>().mass * planet.mass) / Mathf.Pow(distance, 2);
+            float forceMagnitude = (G * starshipRigidBody.mass * planet.mass) / Mathf.Pow(distance, 2);
             Vector3 force = direction.normalized * forceMagnitude;
 
             forces.Add(forceMagnitude);
@@ -40,7 +41,7 @@ public class ShipGravity : MonoBehaviour
 
         var maxForce = forces.Max<float>();
 
-        GameObject.Find("Starship").GetComponent<Rigidbody>().AddForce(forcesV[forces.IndexOf(forces.Max<float>())]);
+        starshipRigidBody.AddForce(forcesV[forces.IndexOf(forces.Max<float>())]);
 
 //        print(planets[forces.IndexOf(forces.Max<float>())]);
 
