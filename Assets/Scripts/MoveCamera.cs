@@ -62,7 +62,7 @@ public class MoveCamera : MonoBehaviour
         {
             case "Mercury": return 10;
             case "Venus": return 15;
-            case "Earth": return 10;
+            case "Earth": return 12;
             case "Mars": return 10;
             case "Jupiter": return 27;
             case "Saturn": return 26;
