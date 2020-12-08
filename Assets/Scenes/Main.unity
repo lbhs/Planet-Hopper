@@ -654,6 +654,7 @@ MonoBehaviour:
   GUI: {fileID: 1848744299}
   PitStopUI: {fileID: 2028289372}
   FuelText: {fileID: 1986590965}
+  isLanded: 0
 --- !u!135 &218657601
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -6084,6 +6085,7 @@ MonoBehaviour:
   GUI: {fileID: 1848744299}
   PitStopUI: {fileID: 2028289372}
   FuelText: {fileID: 1986590965}
+  isLanded: 0
 --- !u!135 &418275309
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -6453,6 +6455,7 @@ MonoBehaviour:
   GUI: {fileID: 1848744299}
   PitStopUI: {fileID: 2028289372}
   FuelText: {fileID: 1986590965}
+  isLanded: 0
 --- !u!135 &464368646
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -6620,7 +6623,7 @@ Transform:
   m_GameObject: {fileID: 513037764}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.1, y: 2.1, z: 2}
+  m_LocalScale: {x: 2.1, y: 2.1, z: 2.1}
   m_Children: []
   m_Father: {fileID: 930159121}
   m_RootOrder: 2
@@ -6640,10 +6643,11 @@ MonoBehaviour:
   info: {fileID: 169552190}
   ship: {fileID: 6810218856465537437}
   speedLimit: 300
-  angleLimit: 10
+  angleLimit: 360
   GUI: {fileID: 1848744299}
   PitStopUI: {fileID: 2028289372}
   FuelText: {fileID: 1986590965}
+  isLanded: 0
 --- !u!135 &513037767
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -11964,6 +11968,7 @@ MonoBehaviour:
   GUI: {fileID: 1848744299}
   PitStopUI: {fileID: 2028289372}
   FuelText: {fileID: 1986590965}
+  isLanded: 0
 --- !u!135 &864914705
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -13116,6 +13121,7 @@ MonoBehaviour:
   GUI: {fileID: 1848744299}
   PitStopUI: {fileID: 2028289372}
   FuelText: {fileID: 1986590965}
+  isLanded: 0
 --- !u!135 &1218504662
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -13303,6 +13309,7 @@ MonoBehaviour:
   GUI: {fileID: 1848744299}
   PitStopUI: {fileID: 2028289372}
   FuelText: {fileID: 1986590965}
+  isLanded: 0
 --- !u!135 &1304682003
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -14798,6 +14805,7 @@ MonoBehaviour:
   GUI: {fileID: 1848744299}
   PitStopUI: {fileID: 2028289372}
   FuelText: {fileID: 1986590965}
+  isLanded: 0
 --- !u!135 &1831694903
 SphereCollider:
   m_ObjectHideFlags: 0

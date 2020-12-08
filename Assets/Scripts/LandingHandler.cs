@@ -29,26 +29,32 @@ public class LandingHandler : MonoBehaviour
     [SerializeField] private float speedLimit;
     [SerializeField] private float angleLimit;
 
-    private Rigidbody planetRB;
+    public Rigidbody shipRB;
 
     public Canvas GUI;
     public Canvas PitStopUI;
     public Text FuelText;
 
+    private Vector3 shipRelativePos;
+    public bool isLanded;
+
+    public static LandingHandler current;
+
     private void Awake()
     {
-        planetRB = gameObject.transform.parent.GetComponent<Rigidbody>();
+        shipRB = ship.GetComponent<Rigidbody>();
     }
 
     private void OnTriggerEnter(Collider other)
-    { 
+    {
+        current = this;
         if (other.name == ship.name)
         {
             Debug.Log("Landing Trigger Entered.");
             if (CheckLanding())
             {
                 InitiateLanding();
-                string planet = gameObject.transform.parent.name;
+                string planet = gameObject.transform.parent.name; // name of the planet landed on
                 info.GetComponent<InfoScript>().UpdateScore(planet);
             }
             else
@@ -161,10 +167,23 @@ public class LandingHandler : MonoBehaviour
 
     private void FreezeShip()
     {
-        ship.GetComponent<Rigidbody>().velocity = Vector3.zero;
-        ship.AddComponent<FixedJoint>();
-        ship.GetComponent<FixedJoint>().connectedBody = planetRB;
+        shipRB.velocity = Vector3.zero;
+        shipRB.freezeRotation = true;
+
+        shipRelativePos = ship.transform.position - transform.position;
+        isLanded = true;
 
         ShipController.main.pitStopped = true;
     }
+
+    private void FixedUpdate()
+    {
+        if (!isLanded) return;
+
+        ship.GetComponent<Rigidbody>().velocity = Vector3.zero;
+        ship.transform.position = transform.position + shipRelativePos;
+
+    }
+
+
 }
