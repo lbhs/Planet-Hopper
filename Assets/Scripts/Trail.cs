@@ -32,11 +32,11 @@ public class Trail : MonoBehaviour
             LineRenderer lr = line.GetComponent<LineRenderer>();
             lr.material = new Material(lineShader);
             lr.SetColors(linecolor, linecolor);
-            lr.SetWidth(5, 5);
+            lr.SetWidth(7, 7);
             lr.SetPositions(positionArray);
             UnityEngine.Debug.Log("made line");
-            StartCoroutine("DestroyLine")
-;        }
+            StartCoroutine("DestroyLine");
+        }
     }
 
     IEnumerator DestroyLine()
