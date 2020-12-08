@@ -16,13 +16,15 @@ public class LaunchingHandler : MonoBehaviour
         PitStopUI.enabled = false;
         GUI.enabled = true;
 
+        LandingHandler.current.isLanded = false;
+
         LaunchShip();
     }
 
     private void LaunchShip()
     {
-        Destroy(gameObject.GetComponent<FixedJoint>());
         ShipController.main.pitStopped = false;
+        LandingHandler.current.shipRB.freezeRotation = false;
 
         gameObject.GetComponent<Rigidbody>().AddForce(transform.up * 500);
     }
