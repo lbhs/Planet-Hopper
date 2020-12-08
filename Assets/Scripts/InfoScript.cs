@@ -20,16 +20,6 @@ using UnityEngine.SceneManagement;
 
 public class InfoScript : MonoBehaviour
 {
-    // These bools control which planets of the solar system will be spawned.
-    // Outdated? 
-    private bool mercuryEnabled = true;
-    private bool venusEnabled = true;
-    private bool earthEnabled = true;
-    private bool marsEnabled = true;
-    private bool jupiterEnabled = true;
-    private bool saturnEnabled = true;
-    private bool uranusEnabled = true;
-    private bool neptuneEnabled = true;
 
     // These bools record which planets the player has landed on.
     private bool mercuryVisited = false;
@@ -56,15 +46,6 @@ public class InfoScript : MonoBehaviour
     // This function starts the game and assigns values to the planet bools based on the user's selections.
     public void StartGame()
     {
-        mercuryEnabled = GameObject.Find("Mercury Toggle").GetComponent<PlanetActiveToggle>().isSelected;
-        venusEnabled = GameObject.Find("Venus Toggle").GetComponent<PlanetActiveToggle>().isSelected;
-        earthEnabled = GameObject.Find("Earth Toggle").GetComponent<PlanetActiveToggle>().isSelected;
-        marsEnabled = GameObject.Find("Mars Toggle").GetComponent<PlanetActiveToggle>().isSelected;
-        jupiterEnabled = GameObject.Find("Jupiter Toggle").GetComponent<PlanetActiveToggle>().isSelected;
-        saturnEnabled = GameObject.Find("Saturn Toggle").GetComponent<PlanetActiveToggle>().isSelected;
-        uranusEnabled = GameObject.Find("Uranus Toggle").GetComponent<PlanetActiveToggle>().isSelected;
-        neptuneEnabled = GameObject.Find("Neptune Toggle").GetComponent<PlanetActiveToggle>().isSelected;
-
         DontDestroyOnLoad(gameObject);
         SceneManager.LoadScene(1); // change me back to 1 later!!
     }
