@@ -233,9 +233,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   G: 5
   InitialDistance: 200
-  starshipGameObject: {fileID: 0}
-  earthGameObject: {fileID: 0}
-  sunGameObject: {fileID: 0}
+  starshipGameObject: {fileID: 6810218856465537437}
+  earthGameObject: {fileID: 930159117}
+  sunGameObject: {fileID: 157166741}
 --- !u!54 &28631560
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6263,9 +6263,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   G: 5
   InitialDistance: 500
-  starshipGameObject: {fileID: 0}
-  earthGameObject: {fileID: 0}
-  sunGameObject: {fileID: 0}
+  starshipGameObject: {fileID: 6810218856465537437}
+  earthGameObject: {fileID: 930159117}
+  sunGameObject: {fileID: 157166741}
 --- !u!54 &427949411
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6394,9 +6394,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   G: 5
   InitialDistance: 400
-  starshipGameObject: {fileID: 0}
-  earthGameObject: {fileID: 0}
-  sunGameObject: {fileID: 0}
+  starshipGameObject: {fileID: 6810218856465537437}
+  earthGameObject: {fileID: 930159117}
+  sunGameObject: {fileID: 157166741}
 --- !u!54 &428235781
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -12372,9 +12372,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   G: 5
   InitialDistance: 300
-  starshipGameObject: {fileID: 0}
-  earthGameObject: {fileID: 0}
-  sunGameObject: {fileID: 0}
+  starshipGameObject: {fileID: 6810218856465537437}
+  earthGameObject: {fileID: 930159117}
+  sunGameObject: {fileID: 157166741}
 --- !u!54 &930159123
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -12975,9 +12975,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   G: 5
   InitialDistance: 100
-  starshipGameObject: {fileID: 0}
-  earthGameObject: {fileID: 0}
-  sunGameObject: {fileID: 0}
+  starshipGameObject: {fileID: 6810218856465537437}
+  earthGameObject: {fileID: 930159117}
+  sunGameObject: {fileID: 157166741}
 --- !u!54 &1079091363
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -13977,9 +13977,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   G: 5
   InitialDistance: 700
-  starshipGameObject: {fileID: 0}
-  earthGameObject: {fileID: 0}
-  sunGameObject: {fileID: 0}
+  starshipGameObject: {fileID: 6810218856465537437}
+  earthGameObject: {fileID: 930159117}
+  sunGameObject: {fileID: 157166741}
 --- !u!54 &1486254601
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -14461,84 +14461,6 @@ Transform:
   m_Father: {fileID: 519420032}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1656797843
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1656797846}
-  - component: {fileID: 1656797845}
-  - component: {fileID: 1656797844}
-  m_Layer: 5
-  m_Name: Speed Text
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1656797844
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1656797843}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 20
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 2
-    m_MaxSize: 40
-    m_Alignment: 0
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: 'Speed:'
---- !u!222 &1656797845
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1656797843}
-  m_CullTransparentMesh: 0
---- !u!224 &1656797846
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1656797843}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1848744300}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -314, y: -133}
-  m_SizeDelta: {x: 160, y: 30}
-  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1659373320
 GameObject:
   m_ObjectHideFlags: 0
@@ -14652,9 +14574,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   G: 5
   InitialDistance: 600
-  starshipGameObject: {fileID: 0}
-  earthGameObject: {fileID: 0}
-  sunGameObject: {fileID: 0}
+  starshipGameObject: {fileID: 6810218856465537437}
+  earthGameObject: {fileID: 930159117}
+  sunGameObject: {fileID: 157166741}
 --- !u!54 &1659373326
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -15066,7 +14988,6 @@ RectTransform:
   - {fileID: 1375362042}
   - {fileID: 482740602}
   - {fileID: 341726535}
-  - {fileID: 1656797846}
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -15346,9 +15267,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   G: 5
   InitialDistance: 800
-  starshipGameObject: {fileID: 0}
-  earthGameObject: {fileID: 0}
-  sunGameObject: {fileID: 0}
+  starshipGameObject: {fileID: 6810218856465537437}
+  earthGameObject: {fileID: 930159117}
+  sunGameObject: {fileID: 157166741}
 --- !u!54 &1923098719
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -16353,7 +16274,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Fuel: 0
   T: {fileID: 1375362043}
-  Speed: {fileID: 1656797844}
   pitStopText: {fileID: 1986590965}
   pitStopped: 0
   flameEmitter: {fileID: 371757702}
@@ -16408,7 +16328,7 @@ MonoBehaviour:
   - {fileID: 1659373326}
   - {fileID: 1486254601}
   - {fileID: 1923098719}
-  starshipRigidBody: {fileID: 0}
+  starshipRigidBody: {fileID: 6810218856465537440}
 --- !u!136 &6810218856465537443
 CapsuleCollider:
   m_ObjectHideFlags: 0
