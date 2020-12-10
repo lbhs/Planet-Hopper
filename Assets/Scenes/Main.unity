@@ -233,6 +233,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   G: 5
   InitialDistance: 200
+  starshipGameObject: {fileID: 6810218856465537437}
+  earthGameObject: {fileID: 930159117}
+  sunGameObject: {fileID: 157166741}
 --- !u!54 &28631560
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6260,6 +6263,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   G: 5
   InitialDistance: 500
+  starshipGameObject: {fileID: 6810218856465537437}
+  earthGameObject: {fileID: 930159117}
+  sunGameObject: {fileID: 157166741}
 --- !u!54 &427949411
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6388,6 +6394,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   G: 5
   InitialDistance: 400
+  starshipGameObject: {fileID: 6810218856465537437}
+  earthGameObject: {fileID: 930159117}
+  sunGameObject: {fileID: 157166741}
 --- !u!54 &428235781
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -12363,6 +12372,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   G: 5
   InitialDistance: 300
+  starshipGameObject: {fileID: 6810218856465537437}
+  earthGameObject: {fileID: 930159117}
+  sunGameObject: {fileID: 157166741}
 --- !u!54 &930159123
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -12963,6 +12975,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   G: 5
   InitialDistance: 100
+  starshipGameObject: {fileID: 6810218856465537437}
+  earthGameObject: {fileID: 930159117}
+  sunGameObject: {fileID: 157166741}
 --- !u!54 &1079091363
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -13962,6 +13977,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   G: 5
   InitialDistance: 700
+  starshipGameObject: {fileID: 6810218856465537437}
+  earthGameObject: {fileID: 930159117}
+  sunGameObject: {fileID: 157166741}
 --- !u!54 &1486254601
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -14556,6 +14574,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   G: 5
   InitialDistance: 600
+  starshipGameObject: {fileID: 6810218856465537437}
+  earthGameObject: {fileID: 930159117}
+  sunGameObject: {fileID: 157166741}
 --- !u!54 &1659373326
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -15246,6 +15267,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   G: 5
   InitialDistance: 800
+  starshipGameObject: {fileID: 6810218856465537437}
+  earthGameObject: {fileID: 930159117}
+  sunGameObject: {fileID: 157166741}
 --- !u!54 &1923098719
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -16304,6 +16328,7 @@ MonoBehaviour:
   - {fileID: 1659373326}
   - {fileID: 1486254601}
   - {fileID: 1923098719}
+  starshipRigidBody: {fileID: 6810218856465537440}
 --- !u!136 &6810218856465537443
 CapsuleCollider:
   m_ObjectHideFlags: 0
