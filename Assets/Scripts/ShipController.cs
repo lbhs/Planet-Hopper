@@ -11,7 +11,6 @@ public class ShipController : MonoBehaviour
     public float Fuel;
 
     public Text T;
-    public Text Speed;
     public Text pitStopText;
 
     public bool pitStopped = false;
@@ -31,8 +30,6 @@ public class ShipController : MonoBehaviour
 
     void FixedUpdate()
     {
-        var shipspeed = gm.velocity;
-        Speed.text = "Speed: " + shipspeed.magnitude + "m/s";
         // if out of fuel, can't rotate or use thrusters.
         //if (Fuel <= 0)
         //{
