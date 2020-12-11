@@ -5,8 +5,11 @@ using UnityEngine.UI;
 
 public class ShipController : MonoBehaviour
 {
+    public float rotationspeed = 50.0f;
+    public float fuelDelta = .1f;
+    public float baseFuelValue = 500f;
+    public float thrusterForce = .5f;
 
-    float rotationspeed = 50.0f;
     private Rigidbody gm;
     public float Fuel;
 
@@ -14,7 +17,6 @@ public class ShipController : MonoBehaviour
     public Text pitStopText;
 
     public bool pitStopped = false;
-    private bool refueled = false;
 
     public GameObject flameEmitter;
 
@@ -23,7 +25,7 @@ public class ShipController : MonoBehaviour
     private void Start()
     {
         main = this;
-        Fuel = 100;
+        Fuel = baseFuelValue;
         gm = GetComponent<Rigidbody>();
         T = GameObject.Find("FuelValue").GetComponent<Text>();
     }
@@ -46,7 +48,7 @@ public class ShipController : MonoBehaviour
 
         float vertical = Input.GetAxis("Vertical");
         // applies rotation
-        gm.GetComponent<Rigidbody>().transform.Rotate(0, 0, -Input.GetAxis("Horizontal")/1.5f);
+        gm.transform.Rotate(0, 0, -Input.GetAxis("Horizontal") * rotationspeed); //1.5f);
 
         // adjusts fuel...
         if (!Input.GetKey(KeyCode.UpArrow))
@@ -56,22 +58,22 @@ public class ShipController : MonoBehaviour
 
         if (Input.GetKey(KeyCode.LeftArrow))
         {
-            Fuel = (Fuel - .05f);
+            Fuel = (Fuel - fuelDelta);
             UpdateFuelText();
         }
 
         if (Input.GetKey(KeyCode.RightArrow))
         {
-            Fuel = (Fuel - .05f);
+            Fuel = (Fuel - fuelDelta);
             UpdateFuelText();
         }
 
         // applies force... "thrusters"
         if (Input.GetKey(KeyCode.UpArrow))
         {
-            gm.GetComponent<Rigidbody>().AddForce(transform.up / 2);
+            gm.AddForce(transform.up * thrusterForce);
             flameEmitter.SetActive(true);
-            Fuel = (Fuel - .1f);
+            Fuel = (Fuel - (2 * fuelDelta));
             UpdateFuelText();
         }
     }
@@ -79,8 +81,7 @@ public class ShipController : MonoBehaviour
     public void Refuel()
     {
         Debug.Log("Refueling...");
-        Fuel = 100f;
-        refueled = true;
+        Fuel = baseFuelValue;
         UpdateFuelText();
     }
 
