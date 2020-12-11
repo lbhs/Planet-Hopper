@@ -20,6 +20,10 @@ using UnityEngine.SceneManagement;
 
 public class InfoScript : MonoBehaviour
 {
+    //
+    public static InfoScript main;
+
+    private float currentFuel;
 
     // These bools record which planets the player has landed on.
     private bool mercuryVisited = false;
@@ -50,12 +54,16 @@ public class InfoScript : MonoBehaviour
         SceneManager.LoadScene(1); // change me back to 1 later!!
     }
 
+    private void Awake()
+    {
+        main = this;
+    }
+
     public void UpdateScore(string planet)
     {
         if (!AlreadyVisited(planet))
         {
-            score += missionSuccessConstant;
-            Debug.Log(score);
+            score += missionSuccessConstant + (int)ShipController.main.Fuel;
             scoreValue.GetComponent<Text>().text = "Score: " + score;
         }
     }
