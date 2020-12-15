@@ -178,6 +178,7 @@ public class LandingHandler : MonoBehaviour
 
     private void FreezeShip()
     {
+        Time.timeScale = 0;
         shipRB.velocity = Vector3.zero;
         shipRB.freezeRotation = true;
 
