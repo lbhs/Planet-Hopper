@@ -132,7 +132,6 @@ GameObject:
   - component: {fileID: 28631558}
   - component: {fileID: 28631557}
   - component: {fileID: 28631556}
-  - component: {fileID: 28631555}
   - component: {fileID: 28631560}
   - component: {fileID: 28631559}
   m_Layer: 0
@@ -142,19 +141,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!135 &28631555
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 28631554}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.9980469
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &28631556
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -233,6 +219,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   G: 5
   InitialDistance: 200
+  starshipGameObject: {fileID: 6810218856465537437}
+  earthGameObject: {fileID: 930159117}
+  sunGameObject: {fileID: 157166741}
 --- !u!54 &28631560
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1088,7 +1077,7 @@ Transform:
   m_GameObject: {fileID: 346846306}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 22, y: 22, z: 22}
+  m_LocalScale: {x: 23, y: 23, z: 23}
   m_Children: []
   m_Father: {fileID: 930159121}
   m_RootOrder: 0
@@ -6159,7 +6148,6 @@ GameObject:
   - component: {fileID: 427949409}
   - component: {fileID: 427949408}
   - component: {fileID: 427949407}
-  - component: {fileID: 427949406}
   - component: {fileID: 427949411}
   - component: {fileID: 427949410}
   m_Layer: 0
@@ -6169,19 +6157,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!135 &427949406
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 427949405}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.9941531
-  m_Center: {x: -0.0038909912, y: 0, z: 0}
 --- !u!23 &427949407
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6260,6 +6235,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   G: 5
   InitialDistance: 500
+  starshipGameObject: {fileID: 6810218856465537437}
+  earthGameObject: {fileID: 930159117}
+  sunGameObject: {fileID: 157166741}
 --- !u!54 &427949411
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6268,7 +6246,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 427949405}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 5
   m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 0
@@ -6287,7 +6265,6 @@ GameObject:
   - component: {fileID: 428235779}
   - component: {fileID: 428235778}
   - component: {fileID: 428235777}
-  - component: {fileID: 428235776}
   - component: {fileID: 428235781}
   - component: {fileID: 428235780}
   m_Layer: 0
@@ -6297,19 +6274,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!135 &428235776
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 428235775}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 1.0019531
-  m_Center: {x: -0.00390625, y: 0, z: 0}
 --- !u!23 &428235777
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6388,6 +6352,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   G: 5
   InitialDistance: 400
+  starshipGameObject: {fileID: 6810218856465537437}
+  earthGameObject: {fileID: 930159117}
+  sunGameObject: {fileID: 157166741}
 --- !u!54 &428235781
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6626,7 +6593,7 @@ Transform:
   m_GameObject: {fileID: 513037764}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.1, y: 2.1, z: 2}
+  m_LocalScale: {x: 2.1, y: 2.1, z: 2.1}
   m_Children: []
   m_Father: {fileID: 930159121}
   m_RootOrder: 2
@@ -6646,8 +6613,8 @@ MonoBehaviour:
   info: {fileID: 169552190}
   ship: {fileID: 6810218856465537437}
   speedLimit: 300
-  angleLimit: 10
-  shipRB: {fileID: 0}
+  angleLimit: 20
+  shipRB: {fileID: 6810218856465537440}
   GUI: {fileID: 1848744299}
   PitStopUI: {fileID: 2028289372}
   FuelText: {fileID: 1986590965}
@@ -12262,7 +12229,6 @@ GameObject:
   - component: {fileID: 930159121}
   - component: {fileID: 930159120}
   - component: {fileID: 930159119}
-  - component: {fileID: 930159118}
   - component: {fileID: 930159123}
   - component: {fileID: 930159122}
   m_Layer: 0
@@ -12272,19 +12238,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!135 &930159118
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 930159117}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 1.0019379
-  m_Center: {x: -0.0038909912, y: 0, z: 0}
 --- !u!23 &930159119
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -12363,6 +12316,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   G: 5
   InitialDistance: 300
+  starshipGameObject: {fileID: 6810218856465537437}
+  earthGameObject: {fileID: 930159117}
+  sunGameObject: {fileID: 157166741}
 --- !u!54 &930159123
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -12862,7 +12818,6 @@ GameObject:
   - component: {fileID: 1079091361}
   - component: {fileID: 1079091360}
   - component: {fileID: 1079091359}
-  - component: {fileID: 1079091358}
   - component: {fileID: 1079091363}
   - component: {fileID: 1079091362}
   m_Layer: 0
@@ -12872,19 +12827,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!135 &1079091358
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1079091357}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.99912643
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1079091359
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -12963,6 +12905,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   G: 5
   InitialDistance: 100
+  starshipGameObject: {fileID: 6810218856465537437}
+  earthGameObject: {fileID: 930159117}
+  sunGameObject: {fileID: 157166741}
 --- !u!54 &1079091363
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -13007,7 +12952,7 @@ Transform:
   m_GameObject: {fileID: 1157813361}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 6, y: 6, z: 6}
+  m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children: []
   m_Father: {fileID: 1923098717}
   m_RootOrder: 0
@@ -13570,7 +13515,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Fuel: 100'
+  m_Text: 'Fuel: 500'
 --- !u!222 &1375362044
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -13861,7 +13806,6 @@ GameObject:
   - component: {fileID: 1486254599}
   - component: {fileID: 1486254598}
   - component: {fileID: 1486254597}
-  - component: {fileID: 1486254596}
   - component: {fileID: 1486254601}
   - component: {fileID: 1486254600}
   m_Layer: 0
@@ -13871,19 +13815,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!135 &1486254596
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1486254595}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.9941559
-  m_Center: {x: -0.0038757324, y: 0, z: 0}
 --- !u!23 &1486254597
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -13962,6 +13893,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   G: 5
   InitialDistance: 700
+  starshipGameObject: {fileID: 6810218856465537437}
+  earthGameObject: {fileID: 930159117}
+  sunGameObject: {fileID: 157166741}
 --- !u!54 &1486254601
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -14454,7 +14388,6 @@ GameObject:
   - component: {fileID: 1659373324}
   - component: {fileID: 1659373323}
   - component: {fileID: 1659373322}
-  - component: {fileID: 1659373321}
   - component: {fileID: 1659373326}
   - component: {fileID: 1659373325}
   m_Layer: 0
@@ -14464,19 +14397,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!135 &1659373321
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1659373320}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.9980333
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1659373322
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -14556,6 +14476,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   G: 5
   InitialDistance: 600
+  starshipGameObject: {fileID: 6810218856465537437}
+  earthGameObject: {fileID: 930159117}
+  sunGameObject: {fileID: 157166741}
 --- !u!54 &1659373326
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -15145,7 +15068,6 @@ GameObject:
   - component: {fileID: 1923098717}
   - component: {fileID: 1923098716}
   - component: {fileID: 1923098715}
-  - component: {fileID: 1923098714}
   - component: {fileID: 1923098719}
   - component: {fileID: 1923098718}
   m_Layer: 0
@@ -15155,19 +15077,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!135 &1923098714
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1923098713}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 1.0019182
-  m_Center: {x: 0.0038888115, y: 0, z: 0}
 --- !u!23 &1923098715
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -15246,6 +15155,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   G: 5
   InitialDistance: 800
+  starshipGameObject: {fileID: 6810218856465537437}
+  earthGameObject: {fileID: 930159117}
+  sunGameObject: {fileID: 157166741}
 --- !u!54 &1923098719
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -15548,7 +15460,7 @@ Transform:
   m_GameObject: {fileID: 2088913697}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 6, y: 6, z: 6}
+  m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children: []
   m_Father: {fileID: 1486254599}
   m_RootOrder: 1
@@ -16208,6 +16120,7 @@ GameObject:
   - component: {fileID: 6810218856465537442}
   - component: {fileID: 6810218856465537443}
   - component: {fileID: 6810218856465537444}
+  - component: {fileID: 6810218856465537445}
   m_Layer: 0
   m_Name: Starship
   m_TagString: Untagged
@@ -16247,10 +16160,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b3bb11eb4653bc4794bf78f481b7eeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rotationspeed: 5
+  fuelDelta: 0.1
+  baseFuelValue: 500
+  thrusterForce: 2.5
   Fuel: 0
   T: {fileID: 1375362043}
   pitStopText: {fileID: 1986590965}
   pitStopped: 0
+  overrideArrow: 0
   flameEmitter: {fileID: 371757702}
 --- !u!54 &6810218856465537440
 Rigidbody:
@@ -16262,7 +16180,7 @@ Rigidbody:
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -16303,6 +16221,7 @@ MonoBehaviour:
   - {fileID: 1659373326}
   - {fileID: 1486254601}
   - {fileID: 1923098719}
+  starshipRigidBody: {fileID: 6810218856465537440}
 --- !u!136 &6810218856465537443
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -16331,6 +16250,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PitStopUI: {fileID: 2028289372}
   GUI: {fileID: 1848744299}
+  launchForce: 400
+  flameEmitter: {fileID: 371757702}
+--- !u!114 &6810218856465537445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6810218856465537437}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e38759f2ec3afbb448ef56523a698cdd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lineShader: {fileID: 203, guid: 0000000000000000f000000000000000, type: 0}
+  linecolor: {r: 1, g: 1, b: 1, a: 1}
+  Starship: {fileID: 6810218856465537437}
+  Lines: []
 --- !u!33 &6988884676825398427
 MeshFilter:
   m_ObjectHideFlags: 0

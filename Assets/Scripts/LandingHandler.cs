@@ -40,6 +40,8 @@ public class LandingHandler : MonoBehaviour
 
     public static LandingHandler current;
 
+    
+
     private void Awake()
     {
         shipRB = ship.GetComponent<Rigidbody>();
@@ -116,6 +118,7 @@ public class LandingHandler : MonoBehaviour
      */
     private void Explode(GameObject toDestroy)
     {
+
         GameObject Explosion = GameObject.Find("Explosion"); //.GetComponent<ParticleSystem>();
         Explosion.transform.position = ship.transform.position;
 
@@ -167,6 +170,7 @@ public class LandingHandler : MonoBehaviour
 
     private void FreezeShip()
     {
+        Time.timeScale = 0;
         shipRB.velocity = Vector3.zero;
         shipRB.freezeRotation = true;
 

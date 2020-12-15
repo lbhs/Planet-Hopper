@@ -20,9 +20,9 @@ public class Trail : MonoBehaviour
     {
         while (maketrail == true)
         {
-            yield return new WaitForSeconds(4);
+            yield return new WaitForSeconds(1);
             var startpos = Starship.transform.position;
-            yield return new WaitForSeconds(4);
+            yield return new WaitForSeconds(1);
             var endpos = Starship.transform.position;
             Vector3[] positionArray = new[] { startpos, endpos };
             GameObject line = new GameObject();
