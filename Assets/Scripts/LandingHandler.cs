@@ -121,18 +121,23 @@ public class LandingHandler : MonoBehaviour
         // "explode" the ship by disabling components
         ParticleSystem Exploder = Explosion.GetComponent<ParticleSystem>();
         Exploder.Play();
-        ship.GetComponent<Collider>().enabled = false;
+        StartCoroutine(EndGame());
+
+        Destroy(ship);
+
+        //ship.GetComponent<Collider>().enabled = false;
         // ship.GetComponent<Renderer>().enabled = false;
 
         // Load the next scene.
-        StartCoroutine(WaitFor(3));
-        DontDestroyOnLoad(InfoScript.main.gameObject); // keeps the "Info" gameobject alive
-        SceneManager.LoadScene(2); // Load the end scene.
+        
     }
 
-    IEnumerator WaitFor(int seconds)
+    IEnumerator EndGame()
     {
-        yield return new WaitForSeconds(seconds);
+        yield return new WaitForSeconds(3);
+
+        DontDestroyOnLoad(InfoScript.main.gameObject); // keeps the "Info" gameobject alive
+        SceneManager.LoadScene(2); // Load the end scene.
     }
 
     /* This function handles the player's interactions while landed on a planet.
