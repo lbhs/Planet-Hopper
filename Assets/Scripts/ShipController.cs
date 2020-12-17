@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class ShipController : MonoBehaviour
 {
     public float rotationspeed = 50.0f;
-    public float fuelDelta = .1f;
+    public float fuelDelta = .07f;
     public float baseFuelValue = 500f;
     public float thrusterForce = .5f;
 
@@ -34,11 +34,11 @@ public class ShipController : MonoBehaviour
     void FixedUpdate()
     {
         // if out of fuel, can't rotate or use thrusters.
-        //if (Fuel <= 0)
-        //{
-        //    flameEmitter.SetActive(false);
-        //    return;
-        //}
+        if (Fuel <= 0)
+        {
+            flameEmitter.SetActive(false);
+            return;
+        }
 
         // if at a pit stop, can't rotate or use thrusters.
         if (pitStopped)

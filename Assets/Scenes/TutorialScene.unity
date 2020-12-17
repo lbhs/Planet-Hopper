@@ -1457,7 +1457,7 @@ GameObject:
   - component: {fileID: 1101617337}
   - component: {fileID: 1101617336}
   m_Layer: 5
-  m_Name: Movement
+  m_Name: Controls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1480,7 +1480,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
   m_AnchoredPosition: {x: 175, y: 13}
-  m_SizeDelta: {x: 250, y: 109}
+  m_SizeDelta: {x: 250, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1101617336
 MonoBehaviour:
@@ -1514,11 +1514,14 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Movement
+  m_Text: 'Controls
 
 
     Use the left and right arrow keys to rotate and the up-arrow
-    key to activate your starship''s thrusters.'
+    key to activate your starship''s thrusters.
+
+    Clicking the minimap will switch
+    it with the main camera.'
 --- !u!222 &1101617337
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1884,13 +1887,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1682576152}
   - component: {fileID: 1682576151}
-  - component: {fileID: 1682576150}
-  - component: {fileID: 1682576149}
   - component: {fileID: 1682576148}
-  - component: {fileID: 1682576147}
   - component: {fileID: 1682576146}
-  - component: {fileID: 1682576145}
-  - component: {fileID: 1682576144}
   m_Layer: 0
   m_Name: Starship
   m_TagString: Untagged
@@ -1898,38 +1896,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1682576144
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1682576143}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e38759f2ec3afbb448ef56523a698cdd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lineShader: {fileID: 203, guid: 0000000000000000f000000000000000, type: 0}
-  linecolor: {r: 1, g: 1, b: 1, a: 1}
-  Starship: {fileID: 1682576143}
-  Lines: []
---- !u!114 &1682576145
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1682576143}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5e5466c61ca04375b531039455504ab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  PitStopUI: {fileID: 0}
-  GUI: {fileID: 0}
-  launchForce: 400
-  flameEmitter: {fileID: 0}
 --- !u!136 &1682576146
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1944,30 +1910,6 @@ CapsuleCollider:
   m_Height: 0.583403
   m_Direction: 1
   m_Center: {x: 0.017871857, y: 0.033758342, z: 0}
---- !u!114 &1682576147
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1682576143}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a660803685579f843b4a1c3a87cb52db, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  G: 10
-  planets:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  starshipRigidBody: {fileID: 1682576151}
 --- !u!114 &1682576148
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1980,48 +1922,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf4bdbba691593945b435e538e0013c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1682576149
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1682576143}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc1820c79c46fc643884975ab73a7971, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MinimapRawImage: {fileID: 0}
-  MainCameraRenderTexture: {fileID: 8400000, guid: 6c4a1147672e6ee449a967ca4dc3bf22,
-    type: 2}
-  MinimapRenderTexture: {fileID: 8400000, guid: 82110331679c9fc47b97d438a1642bc3,
-    type: 2}
-  CameraToggle: {fileID: 0}
-  MainCamera: {fileID: 0}
-  MinimapCamera: {fileID: 0}
---- !u!114 &1682576150
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1682576143}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b3bb11eb4653bc4794bf78f481b7eeb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rotationspeed: 2
-  fuelDelta: 0.1
-  baseFuelValue: 500
-  thrusterForce: 1.5
-  Fuel: 0
-  T: {fileID: 0}
-  pitStopText: {fileID: 0}
-  pitStopped: 0
-  overrideArrow: 0
-  flameEmitter: {fileID: 1834897106}
 --- !u!54 &1682576151
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2047,7 +1947,7 @@ Transform:
   m_GameObject: {fileID: 1682576143}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -10, y: -5, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 489675954}
   - {fileID: 76005281}
