@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class PlanetMenu : MonoBehaviour
 {
+    public GameObject PlanetMenuObject;
     private bool UpdateMenu;
     public GameObject Starship;
     private Vector3 starshippos;
@@ -17,8 +18,8 @@ public class PlanetMenu : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
+        PlanetMenuObject.SetActive(false);
         UpdateMenu = true;
-        StartCoroutine("UpdatePlanetMenu");
     }
 
     IEnumerator UpdatePlanetMenu()
@@ -41,18 +42,18 @@ public class PlanetMenu : MonoBehaviour
         }
     }
 
-    void Update()
-    {
-        foreach (Text textelement in PlanetsTextDistance)
-        {
-            var distances = float.Parse(textelement.text);
-            Distances.Add(distances);
-        }
-        var closestdistance = Mathf.Max(Distances.ToArray());
-        var closestdistanceindex = Distances.IndexOf(closestdistance);
-        var closestplanetname = Planets[closestdistanceindex].name;
-        ClosestPlanetText = "Nearest Planet" + closestplanetname;
-    }  
+ //   void Update()
+ //   {
+ //       foreach (Text textelement in PlanetsTextDistance)
+ //       {
+ //           var distances = float.Parse(textelement.text);
+ //           Distances.Add(distances);
+ //       }
+ //       var closestdistance = Mathf.Max(Distances.ToArray());
+ //       var closestdistanceindex = Distances.IndexOf(closestdistance);
+  //      var closestplanetname = Planets[closestdistanceindex].name;
+  //      ClosestPlanetText.text = "Nearest Planet" + closestplanetname;
+ //   }  
 
     public void Restart()
     {

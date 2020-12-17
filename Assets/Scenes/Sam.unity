@@ -823,7 +823,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   score: 0
-  scoreValue: {fileID: 482740603}
 --- !u!4 &169552192
 Transform:
   m_ObjectHideFlags: 0
@@ -1040,7 +1039,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3571f548644fb49f0aa043a25d7595a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  info: {fileID: 169552190}
   ship: {fileID: 6810218856465537437}
   speedLimit: 300
   angleLimit: 10
@@ -1049,6 +1047,7 @@ MonoBehaviour:
   PitStopUI: {fileID: 2028289372}
   FuelText: {fileID: 1986590965}
   isLanded: 0
+  Explosion: {fileID: 0}
 --- !u!135 &218657601
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -6472,7 +6471,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3571f548644fb49f0aa043a25d7595a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  info: {fileID: 169552190}
   ship: {fileID: 6810218856465537437}
   speedLimit: 300
   angleLimit: 10
@@ -6481,6 +6479,7 @@ MonoBehaviour:
   PitStopUI: {fileID: 2028289372}
   FuelText: {fileID: 1986590965}
   isLanded: 0
+  Explosion: {fileID: 0}
 --- !u!135 &418275309
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -6927,7 +6926,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3571f548644fb49f0aa043a25d7595a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  info: {fileID: 169552190}
   ship: {fileID: 6810218856465537437}
   speedLimit: 300
   angleLimit: 10
@@ -6936,6 +6934,7 @@ MonoBehaviour:
   PitStopUI: {fileID: 2028289372}
   FuelText: {fileID: 1986590965}
   isLanded: 0
+  Explosion: {fileID: 0}
 --- !u!135 &464368646
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -7120,7 +7119,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3571f548644fb49f0aa043a25d7595a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  info: {fileID: 169552190}
   ship: {fileID: 6810218856465537437}
   speedLimit: 300
   angleLimit: 360
@@ -7129,6 +7127,7 @@ MonoBehaviour:
   PitStopUI: {fileID: 2028289372}
   FuelText: {fileID: 1986590965}
   isLanded: 0
+  Explosion: {fileID: 0}
 --- !u!135 &513037767
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -7355,6 +7354,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae544d17b03e99b47ae3a7c56f44a2bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PlanetMenuObject: {fileID: 620407202}
   Starship: {fileID: 6810218856465537437}
   Planets:
   - {fileID: 1079091357}
@@ -7384,6 +7384,7 @@ MonoBehaviour:
   - {fileID: 1746823917}
   - {fileID: 1610454268}
   ClosestPlanetText: {fileID: 1521077637}
+  Distances: []
 --- !u!1 &693367702
 GameObject:
   m_ObjectHideFlags: 0
@@ -12640,7 +12641,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3571f548644fb49f0aa043a25d7595a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  info: {fileID: 169552190}
   ship: {fileID: 6810218856465537437}
   speedLimit: 300
   angleLimit: 10
@@ -12649,6 +12649,7 @@ MonoBehaviour:
   PitStopUI: {fileID: 2028289372}
   FuelText: {fileID: 1986590965}
   isLanded: 0
+  Explosion: {fileID: 0}
 --- !u!135 &864914705
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -14535,7 +14536,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3571f548644fb49f0aa043a25d7595a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  info: {fileID: 169552190}
   ship: {fileID: 6810218856465537437}
   speedLimit: 300
   angleLimit: 10
@@ -14544,6 +14544,7 @@ MonoBehaviour:
   PitStopUI: {fileID: 2028289372}
   FuelText: {fileID: 1986590965}
   isLanded: 0
+  Explosion: {fileID: 0}
 --- !u!135 &1218504662
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -14724,7 +14725,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3571f548644fb49f0aa043a25d7595a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  info: {fileID: 169552190}
   ship: {fileID: 6810218856465537437}
   speedLimit: 300
   angleLimit: 10
@@ -14733,6 +14733,7 @@ MonoBehaviour:
   PitStopUI: {fileID: 2028289372}
   FuelText: {fileID: 1986590965}
   isLanded: 0
+  Explosion: {fileID: 0}
 --- !u!135 &1304682003
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -16929,7 +16930,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3571f548644fb49f0aa043a25d7595a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  info: {fileID: 169552190}
   ship: {fileID: 6810218856465537437}
   speedLimit: 300
   angleLimit: 10
@@ -16938,6 +16938,7 @@ MonoBehaviour:
   PitStopUI: {fileID: 2028289372}
   FuelText: {fileID: 1986590965}
   isLanded: 0
+  Explosion: {fileID: 0}
 --- !u!135 &1831694903
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -19010,6 +19011,7 @@ MonoBehaviour:
   T: {fileID: 1375362043}
   pitStopText: {fileID: 1986590965}
   pitStopped: 0
+  overrideArrow: 0
   flameEmitter: {fileID: 371757702}
 --- !u!54 &6810218856465537440
 Rigidbody:
@@ -19092,6 +19094,7 @@ MonoBehaviour:
   PitStopUI: {fileID: 2028289372}
   GUI: {fileID: 1848744299}
   launchForce: 500
+  flameEmitter: {fileID: 0}
 --- !u!114 &6810218856465537445
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19104,7 +19107,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e38759f2ec3afbb448ef56523a698cdd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lineShader: {fileID: 203, guid: 0000000000000000f000000000000000, type: 0}
+  lineShader: {fileID: 203, guid: 0000000000000000f000000000000000, type: 3}
   linecolor: {r: 1, g: 1, b: 1, a: 1}
   Starship: {fileID: 6810218856465537437}
   Lines: []
