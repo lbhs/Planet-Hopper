@@ -13540,7 +13540,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Fuel: 100'
+  m_Text: 'Fuel: 500'
 --- !u!222 &1375362044
 CanvasRenderer:
   m_ObjectHideFlags: 0
