@@ -13202,7 +13202,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 700
+  orthographic size: 810
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -13540,7 +13540,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Fuel: 100'
+  m_Text: 'Fuel: 500'
 --- !u!222 &1375362044
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -15738,7 +15738,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 700
+  orthographic size: 810
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -16228,7 +16228,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationspeed: 2
-  fuelDelta: 0.07
+  fuelDelta: 0.1
   baseFuelValue: 500
   thrusterForce: 1
   Fuel: 0
@@ -16318,7 +16318,7 @@ MonoBehaviour:
   PitStopUI: {fileID: 2028289372}
   GUI: {fileID: 1848744299}
   launchForce: 400
-  flameEmitter: {fileID: 0}
+  flameEmitter: {fileID: 371757702}
 --- !u!114 &6810218856465537445
 MonoBehaviour:
   m_ObjectHideFlags: 0
