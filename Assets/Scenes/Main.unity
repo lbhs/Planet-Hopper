@@ -605,7 +605,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3571f548644fb49f0aa043a25d7595a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  info: {fileID: 0}
   ship: {fileID: 6810218856465537437}
   speedLimit: 300
   angleLimit: 10
@@ -6038,7 +6037,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3571f548644fb49f0aa043a25d7595a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  info: {fileID: 0}
   ship: {fileID: 6810218856465537437}
   speedLimit: 300
   angleLimit: 10
@@ -6416,7 +6414,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3571f548644fb49f0aa043a25d7595a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  info: {fileID: 0}
   ship: {fileID: 6810218856465537437}
   speedLimit: 300
   angleLimit: 10
@@ -6610,7 +6607,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3571f548644fb49f0aa043a25d7595a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  info: {fileID: 0}
   ship: {fileID: 6810218856465537437}
   speedLimit: 300
   angleLimit: 10
@@ -11933,7 +11929,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3571f548644fb49f0aa043a25d7595a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  info: {fileID: 0}
   ship: {fileID: 6810218856465537437}
   speedLimit: 300
   angleLimit: 10
@@ -13094,7 +13089,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3571f548644fb49f0aa043a25d7595a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  info: {fileID: 0}
   ship: {fileID: 6810218856465537437}
   speedLimit: 300
   angleLimit: 10
@@ -13284,7 +13278,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3571f548644fb49f0aa043a25d7595a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  info: {fileID: 0}
   ship: {fileID: 6810218856465537437}
   speedLimit: 300
   angleLimit: 10
@@ -14788,7 +14781,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3571f548644fb49f0aa043a25d7595a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  info: {fileID: 0}
   ship: {fileID: 6810218856465537437}
   speedLimit: 300
   angleLimit: 10
@@ -16243,6 +16235,7 @@ MonoBehaviour:
   T: {fileID: 1375362043}
   pitStopText: {fileID: 1986590965}
   pitStopped: 0
+  overrideArrow: 0
   flameEmitter: {fileID: 371757702}
 --- !u!54 &6810218856465537440
 Rigidbody:
@@ -16325,6 +16318,7 @@ MonoBehaviour:
   PitStopUI: {fileID: 2028289372}
   GUI: {fileID: 1848744299}
   launchForce: 400
+  flameEmitter: {fileID: 371757702}
 --- !u!114 &6810218856465537445
 MonoBehaviour:
   m_ObjectHideFlags: 0
