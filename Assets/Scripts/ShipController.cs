@@ -17,6 +17,7 @@ public class ShipController : MonoBehaviour
     public Text pitStopText;
 
     public bool pitStopped = false;
+    public bool overrideArrow = false;
 
     public GameObject flameEmitter;
 
@@ -51,9 +52,9 @@ public class ShipController : MonoBehaviour
         gm.transform.Rotate(0, 0, -Input.GetAxis("Horizontal") * rotationspeed); //1.5f);
 
         // adjusts fuel...
-        if (!Input.GetKey(KeyCode.UpArrow))
+        if (!Input.GetKey(KeyCode.UpArrow) && overrideArrow == false)
         {
-            flameEmitter.SetActive(false);
+           flameEmitter.SetActive(false);
         }
 
         if (Input.GetKey(KeyCode.LeftArrow))

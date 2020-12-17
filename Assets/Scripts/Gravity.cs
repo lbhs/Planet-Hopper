@@ -25,6 +25,7 @@ public class Gravity : MonoBehaviour
 
         int RandomInt = Random.Range(1, 5);
 
+        
         float xDistance = Random.Range(1, InitialDistance);
         float yDistance = Mathf.Sqrt(Mathf.Pow(InitialDistance, 2) - Mathf.Pow(xDistance, 2));
         float initialAngle = Mathf.Atan(yDistance / xDistance) * (180 / Mathf.PI);
@@ -62,6 +63,7 @@ public class Gravity : MonoBehaviour
         this.GetComponent<Rigidbody>().position = new Vector3(xDistance, yDistance, 0);
         this.transform.rotation = Quaternion.AngleAxis(finalAngle, transform.forward);
         this.GetComponent<Rigidbody>().velocity = transform.right * Mathf.Sqrt((G * sunGameObject.GetComponent<Rigidbody>().mass) / InitialDistance);
+        this.transform.rotation = Quaternion.Euler(0, 0, 0);
 
         yield return new WaitForSeconds(.05f);
 

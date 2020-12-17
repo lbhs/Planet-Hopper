@@ -18,12 +18,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class LandingHandler : MonoBehaviour
 { 
-    // "Info" GameObject. Holds the player's score, planets visited, etc.
-    public GameObject info;
-
     public GameObject ship;
     
     [SerializeField] private float speedLimit;
@@ -40,6 +38,8 @@ public class LandingHandler : MonoBehaviour
 
     public static LandingHandler current;
 
+    public GameObject Explosion;
+
     private void Awake()
     {
         shipRB = ship.GetComponent<Rigidbody>();
@@ -55,7 +55,7 @@ public class LandingHandler : MonoBehaviour
             {
                 InitiateLanding();
                 string planet = gameObject.transform.parent.name; // name of the planet landed on
-                info.GetComponent<InfoScript>().UpdateScore(planet);
+                InfoScript.main.UpdateScore(planet);
             }
             else
             {
@@ -116,12 +116,23 @@ public class LandingHandler : MonoBehaviour
      */
     private void Explode(GameObject toDestroy)
     {
-        GameObject Explosion = GameObject.Find("Explosion"); //.GetComponent<ParticleSystem>();
         Explosion.transform.position = ship.transform.position;
 
+        // "explode" the ship by disabling components
         ParticleSystem Exploder = Explosion.GetComponent<ParticleSystem>();
         Exploder.Play();
-        Destroy(toDestroy);
+        ship.GetComponent<Collider>().enabled = false;
+        // ship.GetComponent<Renderer>().enabled = false;
+
+        // Load the next scene.
+        StartCoroutine(WaitFor(3));
+        DontDestroyOnLoad(InfoScript.main.gameObject); // keeps the "Info" gameobject alive
+        SceneManager.LoadScene(2); // Load the end scene.
+    }
+
+    IEnumerator WaitFor(int seconds)
+    {
+        yield return new WaitForSeconds(seconds);
     }
 
     /* This function handles the player's interactions while landed on a planet.
@@ -167,6 +178,7 @@ public class LandingHandler : MonoBehaviour
 
     private void FreezeShip()
     {
+        Time.timeScale = 0;
         shipRB.velocity = Vector3.zero;
         shipRB.freezeRotation = true;
 

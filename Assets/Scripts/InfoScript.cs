@@ -45,11 +45,12 @@ public class InfoScript : MonoBehaviour
      */
     private const int missionSuccessConstant = 1000;
 
-    public Text scoreValue;
+    private GameObject scoreValue;
 
     // This function starts the game and assigns values to the planet bools based on the user's selections.
     public void StartGame()
     {
+        score = 0;
         DontDestroyOnLoad(gameObject);
         SceneManager.LoadScene(1); // change me back to 1 later!!
     }
@@ -64,6 +65,7 @@ public class InfoScript : MonoBehaviour
         if (!AlreadyVisited(planet))
         {
             score += missionSuccessConstant + (int)ShipController.main.Fuel;
+            scoreValue = GameObject.Find("ScoreValue");
             scoreValue.GetComponent<Text>().text = "Score: " + score;
         }
     }
