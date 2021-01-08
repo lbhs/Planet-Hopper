@@ -27,12 +27,13 @@ public class LaunchingHandler : MonoBehaviour
 
     IEnumerator runFlames()
     {
-
+        ShipController.main.thrusterSound.Play();
         flameEmitter.SetActive(true);
         ShipController.main.overrideArrow = true;
         yield return new WaitForSeconds(1);
         flameEmitter.SetActive(false);
         ShipController.main.overrideArrow = false;
+        ShipController.main.thrusterSound.Stop();
 
     }
 

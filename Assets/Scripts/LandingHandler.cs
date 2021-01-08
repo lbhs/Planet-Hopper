@@ -37,6 +37,7 @@ public class LandingHandler : MonoBehaviour
     public bool isLanded;
 
     public static LandingHandler current;
+    public AudioSource thrusterSound;
 
     public GameObject Explosion;
 
@@ -47,6 +48,7 @@ public class LandingHandler : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        ShipController.main.thrusterSound.Stop();
         current = this;
         if (other.name == ship.name)
         {
