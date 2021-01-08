@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Linq;
 
 public class PlanetMenu : MonoBehaviour
 {
@@ -14,7 +15,12 @@ public class PlanetMenu : MonoBehaviour
     public List<Text> PlanetsTextDistance;
     public List<Text> PlanetsTextSpeed;
     public Text ClosestPlanetText;
+    public Text ClosestPlanetDistanceText;
+    public Text ClosestPlanetSpeedText;
     public List<float> Distances;
+    public List<float> UIDistances;
+    public List<float> UISpeeds;
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -32,28 +38,25 @@ public class PlanetMenu : MonoBehaviour
             foreach (GameObject planet in Planets)
             {
                 var distance = Vector3.Distance(starshippos, planet.transform.position);
+                UIDistances.Add(distance);
                 var speed = Mathf.Abs(planet.GetComponent<Rigidbody>().velocity.magnitude - starshipspeed);
+                UISpeeds.Add(speed);
                 var listpos = Planets.IndexOf(planet);
                 var distancetext = PlanetsTextDistance[listpos];
                 distancetext.text = distance.ToString();
                 var speedtext = PlanetsTextSpeed[listpos];
                 speedtext.text = speed.ToString();
             }
+            var newlist = UIDistances.ToArray();
+            var closestplanetdistance = Mathf.Min(newlist);
+            var closestplanetspeed = UISpeeds[newlist.IndexOf(closestplanetdistance)];
+            ClosestPlanetText.text = Planets[newlist.IndexOf(closestplanetdistance)].name;
+            ClosestPlanetDistanceText.text = closestplanetdistance;
+            ClosestPlanetSpeedText = closestplanetspeed.ToString();
         }
     }
 
- //   void Update()
- //   {
- //       foreach (Text textelement in PlanetsTextDistance)
- //       {
- //           var distances = float.Parse(textelement.text);
- //           Distances.Add(distances);
- //       }
- //       var closestdistance = Mathf.Max(Distances.ToArray());
- //       var closestdistanceindex = Distances.IndexOf(closestdistance);
-  //      var closestplanetname = Planets[closestdistanceindex].name;
-  //      ClosestPlanetText.text = "Nearest Planet" + closestplanetname;
- //   }  
+
 
     public void Restart()
     {
