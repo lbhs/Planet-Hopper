@@ -19,6 +19,7 @@ public class ShipController : MonoBehaviour
     public bool pitStopped = false;
     public bool overrideArrow = false;
 
+    public AudioSource thrusterSound;
     public GameObject flameEmitter;
 
     public static ShipController main;
@@ -33,6 +34,17 @@ public class ShipController : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow))
+        {
+            if (!thrusterSound.isPlaying)
+                thrusterSound.Play();
+        }
+
+        if (!Input.GetKey(KeyCode.UpArrow) && !Input.GetKey(KeyCode.LeftArrow) && !Input.GetKey(KeyCode.RightArrow))
+        {
+            if (thrusterSound.isPlaying)
+                thrusterSound.Stop();
+        }
         // if out of fuel, can't rotate or use thrusters.
         if (Fuel <= 0)
         {
@@ -54,19 +66,22 @@ public class ShipController : MonoBehaviour
         // adjusts fuel...
         if (!Input.GetKey(KeyCode.UpArrow) && overrideArrow == false)
         {
-           flameEmitter.SetActive(false);
+            flameEmitter.SetActive(false);
+
         }
 
         if (Input.GetKey(KeyCode.LeftArrow))
         {
             Fuel = (Fuel - fuelDelta);
             UpdateFuelText();
+            
         }
 
         if (Input.GetKey(KeyCode.RightArrow))
         {
             Fuel = (Fuel - fuelDelta);
             UpdateFuelText();
+            
         }
 
         // applies force... "thrusters"
@@ -76,7 +91,9 @@ public class ShipController : MonoBehaviour
             flameEmitter.SetActive(true);
             Fuel = (Fuel - (2 * fuelDelta));
             UpdateFuelText();
+            
         }
+        
     }
 
     public void Refuel()
