@@ -52,7 +52,7 @@ public class InfoScript : MonoBehaviour
     {
         score = 0;
         DontDestroyOnLoad(gameObject);
-        SceneManager.LoadScene(1); // change me back to 1 later!!
+        SceneManager.LoadScene(4); // change me back to 1 later!!
     }
 
     private void Awake()
