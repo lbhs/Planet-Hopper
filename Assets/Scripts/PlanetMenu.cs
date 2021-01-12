@@ -17,7 +17,6 @@ public class PlanetMenu : MonoBehaviour
     public Text ClosestPlanetText;
     public Text ClosestPlanetDistanceText;
     public Text ClosestPlanetSpeedText;
-    public List<float> Distances;
     public List<float> UIDistances;
     public List<float> UISpeeds;
 
@@ -26,13 +25,14 @@ public class PlanetMenu : MonoBehaviour
     {
         PlanetMenuObject.SetActive(false);
         UpdateMenu = true;
+        StartCoroutine("UpdatePlanetMenu");
     }
 
     IEnumerator UpdatePlanetMenu()
     {
         while (UpdateMenu == true)
         {
-            yield return new WaitForSeconds(.5f);
+            yield return new WaitForSeconds(1);
             starshippos = Starship.transform.position;
             starshipspeed = Starship.GetComponent<Rigidbody>().velocity.magnitude;
             foreach (GameObject planet in Planets)
@@ -47,19 +47,15 @@ public class PlanetMenu : MonoBehaviour
                 var speedtext = PlanetsTextSpeed[listpos];
                 speedtext.text = speed.ToString();
             }
-            var newlist = UIDistances.ToArray();
-            var closestplanetdistance = Mathf.Min(newlist);
-            var closestplanetspeed = UISpeeds[newlist.IndexOf(closestplanetdistance)];
-            ClosestPlanetText.text = Planets[newlist.IndexOf(closestplanetdistance)].name;
-            ClosestPlanetDistanceText.text = closestplanetdistance;
-            ClosestPlanetSpeedText = closestplanetspeed.ToString();
+            float[] UIDistancesArray = UIDistances.ToArray();
+            var closestplanetdistance = Mathf.Min(UIDistancesArray);
+            var uidisindex = UIDistances.IndexOf(closestplanetdistance);
+            var closestplanetspeed = UISpeeds[uidisindex];
+            ClosestPlanetText.text = "Closest Planet: \n" + Planets[uidisindex].name;
+            ClosestPlanetDistanceText.text = "Distance: \n" + closestplanetdistance.ToString();
+            ClosestPlanetSpeedText.text = "Relative Velocity: \n" + closestplanetspeed.ToString();
+            UIDistances.Clear();
+            UISpeeds.Clear();
         }
-    }
-
-
-
-    public void Restart()
-    {
-        StartCoroutine("UpdatePlanetMenu");
     }
 }
