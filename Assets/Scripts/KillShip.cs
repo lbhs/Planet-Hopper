@@ -22,8 +22,7 @@ public class KillShip : MonoBehaviour
             case "Sun": InfoScript.main.gameOverMessage = "You Flew Too Close to the Sun!";
                 break;
         }
-        DontDestroyOnLoad(InfoScript.main.gameObject); // keeps the "Info" gameobject alive
-        SceneManager.LoadScene(2); // Load the end scene. TODO: Add something that differentiates this end scene with the others?
+        InfoScript.main.EndGame();
     }
 
     private void OnTriggerEnter(Collider other)
