@@ -40,6 +40,10 @@ public class InfoScript : MonoBehaviour
      */
     public int score = 0;
 
+    /* This is the message displayed to the player at the game over screen.
+     */
+    public string gameOverMessage = "You Crashed!";
+
     /* This is a constant score value that is given on a successful landing.
      * (This is really just being used for testing the SES).
      */
