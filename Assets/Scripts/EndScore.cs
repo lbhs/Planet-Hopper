@@ -6,10 +6,22 @@ using UnityEngine.UI;
 public class EndScore : MonoBehaviour
 {
     public Text scoreText;
-    // Start is called before the first frame update
-    void Awake()
+    public Text gameOverText;
+
+    void Start()
     {
-        scoreText.text = "" + InfoScript.main.score; // I know this looks gross :( I'll (probably) fix this later.
+        UpdateScoreText();
+        UpdateGameOverText();
+    }
+
+    void UpdateGameOverText()
+    {
+        gameOverText.text = "" + InfoScript.main.gameOverMessage;
+    }
+
+    void UpdateScoreText()
+    {
+        scoreText.text = "" + InfoScript.main.score; // sorry I know this looks gross
     }
 
     public void RestartGame()
