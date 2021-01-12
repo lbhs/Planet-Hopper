@@ -1356,6 +1356,84 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 273861514}
   m_CullTransparentMesh: 0
+--- !u!1 &285131142
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 285131143}
+  - component: {fileID: 285131145}
+  - component: {fileID: 285131144}
+  m_Layer: 5
+  m_Name: ClosestPlanetDistance
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &285131143
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 285131142}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1848744300}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -293.5, y: -67.99}
+  m_SizeDelta: {x: 200.99707, y: 46.57583}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &285131144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 285131142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 14
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 'Distance:'
+--- !u!222 &285131145
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 285131142}
+  m_CullTransparentMesh: 0
 --- !u!1 &301757897
 GameObject:
   m_ObjectHideFlags: 0
@@ -7268,6 +7346,84 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 482740601}
   m_CullTransparentMesh: 0
+--- !u!1 &502862244
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 502862245}
+  - component: {fileID: 502862247}
+  - component: {fileID: 502862246}
+  m_Layer: 5
+  m_Name: ClosestPlanet
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &502862245
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 502862244}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1848744300}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -293.5, y: -18.89}
+  m_SizeDelta: {x: 200.99414, y: 51.62358}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &502862246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 502862244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 14
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 'Closest Planet:'
+--- !u!222 &502862247
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 502862244}
+  m_CullTransparentMesh: 0
 --- !u!1 &513037764
 GameObject:
   m_ObjectHideFlags: 0
@@ -7615,6 +7771,84 @@ RectTransform:
   m_AnchoredPosition: {x: 37, y: -239.3}
   m_SizeDelta: {x: 61.87755, y: 27.797138}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &600286480
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 600286481}
+  - component: {fileID: 600286483}
+  - component: {fileID: 600286482}
+  m_Layer: 5
+  m_Name: ClosestPlanetSpeed
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &600286481
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 600286480}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1848744300}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -293.5, y: -121.48}
+  m_SizeDelta: {x: 200.99707, y: 50.968445}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &600286482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 600286480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 14
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 'Relative Velocity:'
+--- !u!222 &600286483
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 600286480}
+  m_CullTransparentMesh: 0
 --- !u!1 &636854672
 GameObject:
   m_ObjectHideFlags: 0
@@ -13704,7 +13938,6 @@ GameObject:
   - component: {fileID: 915051155}
   - component: {fileID: 915051154}
   - component: {fileID: 915051153}
-  - component: {fileID: 915051152}
   m_Layer: 5
   m_Name: Planet Menu
   m_TagString: Untagged
@@ -13712,49 +13945,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &915051152
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 915051151}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae544d17b03e99b47ae3a7c56f44a2bb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  PlanetMenuObject: {fileID: 915051151}
-  Starship: {fileID: 6810218856465537437}
-  Planets:
-  - {fileID: 1079091357}
-  - {fileID: 28631554}
-  - {fileID: 930159117}
-  - {fileID: 428235775}
-  - {fileID: 427949405}
-  - {fileID: 1659373320}
-  - {fileID: 1486254595}
-  - {fileID: 1923098713}
-  PlanetsTextDistance:
-  - {fileID: 1114943103}
-  - {fileID: 636854675}
-  - {fileID: 1228713474}
-  - {fileID: 825921271}
-  - {fileID: 1881639380}
-  - {fileID: 897143967}
-  - {fileID: 1326583092}
-  - {fileID: 593853085}
-  PlanetsTextSpeed:
-  - {fileID: 1158307946}
-  - {fileID: 672816416}
-  - {fileID: 4335921}
-  - {fileID: 2023358601}
-  - {fileID: 1407885939}
-  - {fileID: 61679847}
-  - {fileID: 32535794}
-  - {fileID: 149630461}
-  ClosestPlanetText: {fileID: 0}
-  Distances: []
 --- !u!114 &915051153
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16826,6 +17016,7 @@ GameObject:
   - component: {fileID: 1578925265}
   - component: {fileID: 1578925264}
   - component: {fileID: 1578925263}
+  - component: {fileID: 1578925266}
   m_Layer: 5
   m_Name: PlanetMenuButton
   m_TagString: Untagged
@@ -16910,17 +17101,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 915051152}
-        m_MethodName: Restart
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
   m_IsOn: 0
 --- !u!114 &1578925264
 MonoBehaviour:
@@ -16959,6 +17139,52 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1578925261}
   m_CullTransparentMesh: 0
+--- !u!114 &1578925266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1578925261}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae544d17b03e99b47ae3a7c56f44a2bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlanetMenuObject: {fileID: 915051151}
+  Starship: {fileID: 6810218856465537437}
+  Planets:
+  - {fileID: 1079091357}
+  - {fileID: 28631554}
+  - {fileID: 930159117}
+  - {fileID: 428235775}
+  - {fileID: 427949405}
+  - {fileID: 1659373320}
+  - {fileID: 1486254595}
+  - {fileID: 1923098713}
+  PlanetsTextDistance:
+  - {fileID: 1114943103}
+  - {fileID: 636854675}
+  - {fileID: 1228713474}
+  - {fileID: 825921271}
+  - {fileID: 1881639380}
+  - {fileID: 897143967}
+  - {fileID: 1326583092}
+  - {fileID: 593853085}
+  PlanetsTextSpeed:
+  - {fileID: 1158307946}
+  - {fileID: 672816416}
+  - {fileID: 4335921}
+  - {fileID: 2023358601}
+  - {fileID: 1407885939}
+  - {fileID: 61679847}
+  - {fileID: 32535794}
+  - {fileID: 149630461}
+  ClosestPlanetText: {fileID: 502862246}
+  ClosestPlanetDistanceText: {fileID: 285131144}
+  ClosestPlanetSpeedText: {fileID: 600286482}
+  UIDistances: []
+  UISpeeds: []
 --- !u!1 &1618533337
 GameObject:
   m_ObjectHideFlags: 0
@@ -17890,6 +18116,9 @@ RectTransform:
   - {fileID: 341726535}
   - {fileID: 915051155}
   - {fileID: 1578925262}
+  - {fileID: 502862245}
+  - {fileID: 285131143}
+  - {fileID: 600286481}
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
