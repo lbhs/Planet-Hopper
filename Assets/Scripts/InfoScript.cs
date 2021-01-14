@@ -20,9 +20,9 @@ using UnityEngine.SceneManagement;
 
 public class InfoScript : MonoBehaviour
 {
-    //
     public static InfoScript main;
-
+    public AudioSource music;
+    
     private float currentFuel;
 
     // These bools record which planets the player has landed on.
@@ -56,7 +56,15 @@ public class InfoScript : MonoBehaviour
     {
         score = 0;
         DontDestroyOnLoad(gameObject);
+        DontDestroyOnLoad(music);
         SceneManager.LoadScene(1); // change me back to 1 later!!
+    }
+
+    public void EndGame()
+    {
+        DontDestroyOnLoad(gameObject);
+        DontDestroyOnLoad(music);
+        SceneManager.LoadScene(2); // Load the end scene.
     }
 
     private void Awake()

@@ -139,8 +139,7 @@ public class LandingHandler : MonoBehaviour
         yield return new WaitForSeconds(3);
 
         InfoScript.main.gameOverMessage = "You Crashed!";
-        DontDestroyOnLoad(InfoScript.main.gameObject); // keeps the "Info" gameobject alive
-        SceneManager.LoadScene(2); // Load the end scene.
+        InfoScript.main.EndGame(); // Load the end scene.
     }
 
     /* This function handles the player's interactions while landed on a planet.
