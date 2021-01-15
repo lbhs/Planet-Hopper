@@ -19,6 +19,7 @@ public class PlanetMenu : MonoBehaviour
     public Text ClosestPlanetSpeedText;
     public List<float> UIDistances;
     public List<float> UISpeeds;
+    public Image Arrow;
 
     // Start is called before the first frame update
     void Awake()
@@ -47,6 +48,7 @@ public class PlanetMenu : MonoBehaviour
                 var speedtext = PlanetsTextSpeed[listpos];
                 speedtext.text = speed.ToString();
             }
+
             float[] UIDistancesArray = UIDistances.ToArray();
             var closestplanetdistance = Mathf.Min(UIDistancesArray);
             var uidisindex = UIDistances.IndexOf(closestplanetdistance);
@@ -56,6 +58,11 @@ public class PlanetMenu : MonoBehaviour
             ClosestPlanetSpeedText.text = "Relative Velocity: \n" + closestplanetspeed.ToString();
             UIDistances.Clear();
             UISpeeds.Clear();
+            GameObject closestplanet = Planets[uidisindex];
+
+            Vector3 direction = starshippos - closestplanet.transform.position;
+            var angle = Mathf.Atan(direction.y/direction.x) * (180/Mathf.PI);
+            Arrow.transform.rotation = Quaternion.Euler(0, 0, (angle - 270));
         }
     }
 }
