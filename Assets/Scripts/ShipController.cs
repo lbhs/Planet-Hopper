@@ -20,7 +20,7 @@ public class ShipController : MonoBehaviour
     public bool overrideArrow = false;
 
     public AudioSource thrusterSound;
-    public GameObject flameEmitter;
+    public ParticleSystem flameEmitter;
 
     public static ShipController main;
 
@@ -48,14 +48,14 @@ public class ShipController : MonoBehaviour
         // if out of fuel, can't rotate or use thrusters.
         if (Fuel <= 0)
         {
-            flameEmitter.SetActive(false);
+            flameEmitter.Stop();
             return;
         }
 
         // if at a pit stop, can't rotate or use thrusters.
         if (pitStopped)
         {
-            flameEmitter.SetActive(false);
+            //flameEmitter.Stop();
             return;
         }
 
@@ -66,7 +66,7 @@ public class ShipController : MonoBehaviour
         // adjusts fuel...
         if (!Input.GetKey(KeyCode.UpArrow) && overrideArrow == false)
         {
-            flameEmitter.SetActive(false);
+            flameEmitter.Stop();
 
         }
 
@@ -88,7 +88,8 @@ public class ShipController : MonoBehaviour
         if (Input.GetKey(KeyCode.UpArrow))
         {
             gm.AddForce(transform.up * thrusterForce);
-            flameEmitter.SetActive(true);
+            flameEmitter.Play();
+            Debug.Log(flameEmitter.isPlaying);
             Fuel = (Fuel - (2 * fuelDelta));
             UpdateFuelText();
             
