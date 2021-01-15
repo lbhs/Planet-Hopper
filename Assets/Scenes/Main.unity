@@ -1929,7 +1929,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 371757702}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0.014, y: -0.208, z: -0.433}
+  m_LocalPosition: {x: 0, y: -0.208, z: 0}
   m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
   m_Children: []
   m_Father: {fileID: 6181491047642415911}
@@ -2627,7 +2627,7 @@ ParticleSystem:
     serializedVersion: 6
     enabled: 1
     type: 4
-    angle: 25
+    angle: 23.225084
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
     radiusThickness: 1

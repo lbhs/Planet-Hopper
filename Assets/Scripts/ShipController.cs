@@ -66,8 +66,10 @@ public class ShipController : MonoBehaviour
         // adjusts fuel...
         if (!Input.GetKey(KeyCode.UpArrow) && overrideArrow == false)
         {
-            flameEmitter.Stop();
-
+            if (flameEmitter.isPlaying)
+            {
+                flameEmitter.Stop();
+            }
         }
 
         if (Input.GetKey(KeyCode.LeftArrow))
@@ -88,8 +90,11 @@ public class ShipController : MonoBehaviour
         if (Input.GetKey(KeyCode.UpArrow))
         {
             gm.AddForce(transform.up * thrusterForce);
-            flameEmitter.Play();
-            Debug.Log(flameEmitter.isPlaying);
+
+            if (!flameEmitter.isPlaying) {
+                flameEmitter.Play();
+            }
+
             Fuel = (Fuel - (2 * fuelDelta));
             UpdateFuelText();
             
