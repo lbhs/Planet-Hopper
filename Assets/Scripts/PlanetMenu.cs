@@ -60,9 +60,38 @@ public class PlanetMenu : MonoBehaviour
             UISpeeds.Clear();
             GameObject closestplanet = Planets[uidisindex];
 
-            Vector3 direction = starshippos - closestplanet.transform.position;
-            var angle = Mathf.Atan(direction.y/direction.x) * (180/Mathf.PI);
-            Arrow.transform.rotation = Quaternion.Euler(0, 0, (angle - 270));
+            Vector3 direction = closestplanet.transform.position - starshippos;
+            UnityEngine.Debug.Log(direction);
+            if (direction.x < 0)
+            {
+                if (direction.y > 0)
+                {
+                    var angle = 180 - Mathf.Atan(Mathf.Abs(direction.y) / Mathf.Abs(direction.x)) * Mathf.Rad2Deg;
+                    Arrow.transform.rotation = Quaternion.Euler(0, 0, (angle - 90));
+                    UnityEngine.Debug.Log(angle);
+                }
+                if (direction.y < 0)
+                {
+                    var angle = Mathf.Atan(Mathf.Abs(direction.y) / Mathf.Abs(direction.x)) * Mathf.Rad2Deg + 180;
+                    Arrow.transform.rotation = Quaternion.Euler(0, 0, (angle - 90));
+                    UnityEngine.Debug.Log(angle);
+                }
+            }
+            else
+            {
+                if (direction.y > 0)
+                {
+                    var angle = Mathf.Atan(Mathf.Abs(direction.y) / Mathf.Abs(direction.x)) * Mathf.Rad2Deg;
+                    Arrow.transform.rotation = Quaternion.Euler(0, 0, (angle - 90));
+                    UnityEngine.Debug.Log(angle);
+                }
+                if (direction.y < 0)
+                {
+                    var angle = 0 - Mathf.Atan(Mathf.Abs(direction.y) / Mathf.Abs(direction.x)) * Mathf.Rad2Deg;
+                    Arrow.transform.rotation = Quaternion.Euler(0, 0, (angle - 90));
+                    UnityEngine.Debug.Log(angle);
+                }
+            }
         }
     }
 }
