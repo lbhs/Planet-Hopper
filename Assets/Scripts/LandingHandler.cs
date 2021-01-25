@@ -185,6 +185,7 @@ public class LandingHandler : MonoBehaviour
 
     private void FreezeShip()
     {
+        ShipController.main.flameEmitter.Stop();
         Time.timeScale = 0;
         shipRB.velocity = Vector3.zero;
         shipRB.freezeRotation = true;
