@@ -19,6 +19,8 @@ public class ShipController : MonoBehaviour
     public bool pitStopped = false;
     public bool overrideArrow = false;
 
+    private bool movementLocked = false;
+
     public AudioSource thrusterSound;
     public ParticleSystem flameEmitter;
 
@@ -34,6 +36,8 @@ public class ShipController : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (movementLocked) return;
+
         if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow))
         {
             if (!thrusterSound.isPlaying)
@@ -99,7 +103,6 @@ public class ShipController : MonoBehaviour
             UpdateFuelText();
             
         }
-        
     }
 
     public void Refuel()
@@ -113,5 +116,10 @@ public class ShipController : MonoBehaviour
     {
         T.text = "Fuel: " + Fuel;
         pitStopText.text = "Your fuel is currently: " + Fuel;
+    }
+
+    public void ImmobilizeShip()
+    {
+        movementLocked = true;
     }
 }

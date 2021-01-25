@@ -31,7 +31,7 @@ public class PlanetMenu : MonoBehaviour
 
     IEnumerator UpdatePlanetMenu()
     {
-        while (UpdateMenu == true)
+        while (UpdateMenu == true && Starship != null)
         {
             yield return new WaitForSeconds(1);
             starshippos = Starship.transform.position;

@@ -28,6 +28,7 @@ public class LandingHandler : MonoBehaviour
     [SerializeField] private float angleLimit;
 
     public Rigidbody shipRB;
+    public GameObject shipModel;
 
     public Canvas GUI;
     public Canvas PitStopUI;
@@ -125,10 +126,13 @@ public class LandingHandler : MonoBehaviour
         Exploder.Play();
         StartCoroutine(EndGame());
 
-        Destroy(ship);
+        //Destroy(ship);
 
-        //ship.GetComponent<Collider>().enabled = false;
-        // ship.GetComponent<Renderer>().enabled = false;
+        // TODO: Implement the following in a nicer manner:
+
+        shipModel.active = false;
+        //shipRB.isKinematic = true;
+        ShipController.main.ImmobilizeShip();
 
         // Load the next scene.
         

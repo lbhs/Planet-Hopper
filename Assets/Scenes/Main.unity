@@ -1118,6 +1118,7 @@ MonoBehaviour:
   speedLimit: 300
   angleLimit: 10
   shipRB: {fileID: 0}
+  shipModel: {fileID: 1253085126}
   GUI: {fileID: 1848744299}
   PitStopUI: {fileID: 2028289372}
   FuelText: {fileID: 1986590965}
@@ -1928,12 +1929,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 371757702}
-  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: -0.208, z: 0}
-  m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
+  m_LocalScale: {x: 0.05, y: 0.050000004, z: 0.050000004}
   m_Children: []
-  m_Father: {fileID: 6181491047642415911}
-  m_RootOrder: 8
+  m_Father: {fileID: 1253085127}
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!199 &371757704
 ParticleSystemRenderer:
@@ -6707,6 +6708,7 @@ MonoBehaviour:
   speedLimit: 300
   angleLimit: 10
   shipRB: {fileID: 0}
+  shipModel: {fileID: 1253085126}
   GUI: {fileID: 1848744299}
   PitStopUI: {fileID: 2028289372}
   FuelText: {fileID: 1986590965}
@@ -7124,6 +7126,7 @@ MonoBehaviour:
   speedLimit: 300
   angleLimit: 10
   shipRB: {fileID: 0}
+  shipModel: {fileID: 1253085126}
   GUI: {fileID: 1848744299}
   PitStopUI: {fileID: 2028289372}
   FuelText: {fileID: 1986590965}
@@ -7474,6 +7477,7 @@ MonoBehaviour:
   speedLimit: 300
   angleLimit: 10
   shipRB: {fileID: 0}
+  shipModel: {fileID: 1253085126}
   GUI: {fileID: 1848744299}
   PitStopUI: {fileID: 2028289372}
   FuelText: {fileID: 1986590965}
@@ -13502,6 +13506,7 @@ MonoBehaviour:
   speedLimit: 300
   angleLimit: 10
   shipRB: {fileID: 0}
+  shipModel: {fileID: 1253085126}
   GUI: {fileID: 1848744299}
   PitStopUI: {fileID: 2028289372}
   FuelText: {fileID: 1986590965}
@@ -15053,6 +15058,7 @@ MonoBehaviour:
   speedLimit: 300
   angleLimit: 10
   shipRB: {fileID: 0}
+  shipModel: {fileID: 1253085126}
   GUI: {fileID: 1848744299}
   PitStopUI: {fileID: 2028289372}
   FuelText: {fileID: 1986590965}
@@ -15275,6 +15281,44 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1246294232}
   m_CullTransparentMesh: 0
+--- !u!1 &1253085126
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1253085127}
+  m_Layer: 0
+  m_Name: Model
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1253085127
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1253085126}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4887508628402803460}
+  - {fileID: 8674049372855851249}
+  - {fileID: 5770615947840037478}
+  - {fileID: 6697079935651446033}
+  - {fileID: 2600488777020213310}
+  - {fileID: 4874530309771937032}
+  - {fileID: 7206373853238186489}
+  - {fileID: 371757703}
+  m_Father: {fileID: 6181491047642415911}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1257050121
 GameObject:
   m_ObjectHideFlags: 0
@@ -15399,6 +15443,7 @@ MonoBehaviour:
   speedLimit: 300
   angleLimit: 10
   shipRB: {fileID: 0}
+  shipModel: {fileID: 1253085126}
   GUI: {fileID: 1848744299}
   PitStopUI: {fileID: 2028289372}
   FuelText: {fileID: 1986590965}
@@ -17970,6 +18015,7 @@ MonoBehaviour:
   speedLimit: 300
   angleLimit: 10
   shipRB: {fileID: 0}
+  shipModel: {fileID: 1253085126}
   GUI: {fileID: 1848744299}
   PitStopUI: {fileID: 2028289372}
   FuelText: {fileID: 1986590965}
@@ -18402,7 +18448,7 @@ Transform:
   m_LocalScale: {x: 15, y: 20, z: 1}
   m_Children: []
   m_Father: {fileID: 6181491047642415911}
-  m_RootOrder: 7
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1909145446
 SpriteRenderer:
@@ -19472,10 +19518,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2790877773518950407}
   m_LocalRotation: {x: 4.978629e-15, y: 1, z: -0.000000081460335, w: 0.0000000754979}
-  m_LocalPosition: {x: -0, y: -0.25, z: 0}
+  m_LocalPosition: {x: 0, y: -0.25, z: 0}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children: []
-  m_Father: {fileID: 6181491047642415911}
+  m_Father: {fileID: 1253085127}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2790877773518950407
@@ -19546,10 +19592,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5677156989944223163}
   m_LocalRotation: {x: 4.978629e-15, y: 1, z: -0.000000081460335, w: 0.0000000754979}
-  m_LocalPosition: {x: -0, y: -0.25, z: 0}
+  m_LocalPosition: {x: 0, y: -0.25, z: 0}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children: []
-  m_Father: {fileID: 6181491047642415911}
+  m_Father: {fileID: 1253085127}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4887508628402803460
@@ -19560,10 +19606,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5139899994485414610}
   m_LocalRotation: {x: 4.978629e-15, y: 1, z: -0.000000081460335, w: 0.0000000754979}
-  m_LocalPosition: {x: -0, y: -0.25, z: 0}
+  m_LocalPosition: {x: 0, y: -0.25, z: 0}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children: []
-  m_Father: {fileID: 6181491047642415911}
+  m_Father: {fileID: 1253085127}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5139899994485414610
@@ -19667,10 +19713,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8523075521727713341}
   m_LocalRotation: {x: 4.978629e-15, y: 1, z: -0.000000081460335, w: 0.0000000754979}
-  m_LocalPosition: {x: -0, y: -0.25, z: 0}
+  m_LocalPosition: {x: 0, y: -0.25, z: 0}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children: []
-  m_Father: {fileID: 6181491047642415911}
+  m_Father: {fileID: 1253085127}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &6181491047642415911
@@ -19684,15 +19730,8 @@ Transform:
   m_LocalPosition: {x: 50, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 4887508628402803460}
-  - {fileID: 8674049372855851249}
-  - {fileID: 5770615947840037478}
-  - {fileID: 6697079935651446033}
-  - {fileID: 2600488777020213310}
-  - {fileID: 4874530309771937032}
-  - {fileID: 7206373853238186489}
   - {fileID: 1909145445}
-  - {fileID: 371757703}
+  - {fileID: 1253085127}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -19743,10 +19782,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5356415428345714746}
   m_LocalRotation: {x: 4.978629e-15, y: 1, z: -0.000000081460335, w: 0.0000000754979}
-  m_LocalPosition: {x: -0, y: -0.25, z: 0}
+  m_LocalPosition: {x: 0, y: -0.25, z: 0}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children: []
-  m_Father: {fileID: 6181491047642415911}
+  m_Father: {fileID: 1253085127}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6810218856465537437
@@ -20027,10 +20066,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4025072775972095586}
   m_LocalRotation: {x: 4.978629e-15, y: 1, z: -0.000000081460335, w: 0.0000000754979}
-  m_LocalPosition: {x: -0, y: -0.25, z: 0}
+  m_LocalPosition: {x: 0, y: -0.25, z: 0}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children: []
-  m_Father: {fileID: 6181491047642415911}
+  m_Father: {fileID: 1253085127}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &7242114654676015135
@@ -20140,10 +20179,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8386846435572574694}
   m_LocalRotation: {x: 4.978629e-15, y: 1, z: -0.000000081460335, w: 0.0000000754979}
-  m_LocalPosition: {x: -0, y: -0.25, z: 0}
+  m_LocalPosition: {x: 0, y: -0.25, z: 0}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children: []
-  m_Father: {fileID: 6181491047642415911}
+  m_Father: {fileID: 1253085127}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &8784394267106704960
