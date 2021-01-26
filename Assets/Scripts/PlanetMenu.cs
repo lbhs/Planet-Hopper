@@ -10,7 +10,7 @@ public class PlanetMenu : MonoBehaviour
     private bool UpdateMenu;
     public GameObject Starship;
     private Vector3 starshippos;
-    private float starshipspeed;
+    private Vector3 starshipspeed;
     public List<GameObject> Planets;
     public List<Text> PlanetsTextDistance;
     public List<Text> PlanetsTextSpeed;
@@ -18,8 +18,9 @@ public class PlanetMenu : MonoBehaviour
     public Text ClosestPlanetDistanceText;
     public Text ClosestPlanetSpeedText;
     public List<float> UIDistances;
-    public List<float> UISpeeds;
+    public List<Vector3> UISpeeds;
     public Image Arrow;
+    public Image Arrow2;
 
     // Start is called before the first frame update
     void Awake()
@@ -35,33 +36,36 @@ public class PlanetMenu : MonoBehaviour
         {
             yield return new WaitForSeconds(1);
             starshippos = Starship.transform.position;
-            starshipspeed = Starship.GetComponent<Rigidbody>().velocity.magnitude;
+            starshipspeed = Starship.GetComponent<Rigidbody>().velocity;
             foreach (GameObject planet in Planets)
             {
                 var distance = Vector3.Distance(starshippos, planet.transform.position);
                 UIDistances.Add(distance);
-                var speed = Mathf.Abs(planet.GetComponent<Rigidbody>().velocity.magnitude - starshipspeed);
-                UISpeeds.Add(speed);
+                var speed1 = starshipspeed - planet.GetComponent<Rigidbody>().velocity;
+                var speed2 = speed1.magnitude;
+                UISpeeds.Add(speed1);
                 var listpos = Planets.IndexOf(planet);
                 var distancetext = PlanetsTextDistance[listpos];
                 distancetext.text = distance.ToString();
                 var speedtext = PlanetsTextSpeed[listpos];
-                speedtext.text = speed.ToString();
+                speedtext.text = speed2.ToString();
             }
 
             float[] UIDistancesArray = UIDistances.ToArray();
             var closestplanetdistance = Mathf.Min(UIDistancesArray);
             var uidisindex = UIDistances.IndexOf(closestplanetdistance);
             var closestplanetspeed = UISpeeds[uidisindex];
+            var closestplanetspeedmag = closestplanetspeed.magnitude;
             ClosestPlanetText.text = "Closest Planet: \n" + Planets[uidisindex].name;
             ClosestPlanetDistanceText.text = "Distance: \n" + closestplanetdistance.ToString();
-            ClosestPlanetSpeedText.text = "Relative Velocity: \n" + closestplanetspeed.ToString();
+            ClosestPlanetSpeedText.text = "Relative Velocity: \n" + closestplanetspeedmag.ToString();
             UIDistances.Clear();
             UISpeeds.Clear();
             GameObject closestplanet = Planets[uidisindex];
 
+
+            // Rotate Direction Arrow
             Vector3 direction = closestplanet.transform.position - starshippos;
-            UnityEngine.Debug.Log(direction);
             if (direction.x < 0)
             {
                 if (direction.y > 0)
@@ -92,6 +96,9 @@ public class PlanetMenu : MonoBehaviour
                     UnityEngine.Debug.Log(angle);
                 }
             }
+
+            //Rotate Velocity Arrow
+            Arrow2.transform.rotation = Quaternion.LookRotation(closestplanetspeed);
         }
     }
 }
