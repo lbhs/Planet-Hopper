@@ -6,14 +6,11 @@ using System.Linq;
 
 public class PlanetMenu : MonoBehaviour
 {
-    public GameObject PlanetMenuObject;
     private bool UpdateMenu;
     public GameObject Starship;
     private Vector3 starshippos;
     private Vector3 starshipspeed;
     public List<GameObject> Planets;
-    public List<Text> PlanetsTextDistance;
-    public List<Text> PlanetsTextSpeed;
     public Text ClosestPlanetText;
     public Text ClosestPlanetDistanceText;
     public Text ClosestPlanetSpeedText;
@@ -25,7 +22,6 @@ public class PlanetMenu : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        PlanetMenuObject.SetActive(false);
         UpdateMenu = true;
         StartCoroutine("UpdatePlanetMenu");
     }
@@ -42,13 +38,7 @@ public class PlanetMenu : MonoBehaviour
                 var distance = Vector3.Distance(starshippos, planet.transform.position);
                 UIDistances.Add(distance);
                 var speed1 = starshipspeed - planet.GetComponent<Rigidbody>().velocity;
-                var speed2 = speed1.magnitude;
                 UISpeeds.Add(speed1);
-                var listpos = Planets.IndexOf(planet);
-                var distancetext = PlanetsTextDistance[listpos];
-                distancetext.text = distance.ToString();
-                var speedtext = PlanetsTextSpeed[listpos];
-                speedtext.text = speed2.ToString();
             }
 
             float[] UIDistancesArray = UIDistances.ToArray();
@@ -72,13 +62,11 @@ public class PlanetMenu : MonoBehaviour
                 {
                     var angle = 180 - Mathf.Atan(Mathf.Abs(direction.y) / Mathf.Abs(direction.x)) * Mathf.Rad2Deg;
                     Arrow.transform.rotation = Quaternion.Euler(0, 0, (angle - 90));
-                    UnityEngine.Debug.Log(angle);
                 }
                 if (direction.y < 0)
                 {
                     var angle = Mathf.Atan(Mathf.Abs(direction.y) / Mathf.Abs(direction.x)) * Mathf.Rad2Deg + 180;
                     Arrow.transform.rotation = Quaternion.Euler(0, 0, (angle - 90));
-                    UnityEngine.Debug.Log(angle);
                 }
             }
             else
@@ -87,18 +75,45 @@ public class PlanetMenu : MonoBehaviour
                 {
                     var angle = Mathf.Atan(Mathf.Abs(direction.y) / Mathf.Abs(direction.x)) * Mathf.Rad2Deg;
                     Arrow.transform.rotation = Quaternion.Euler(0, 0, (angle - 90));
-                    UnityEngine.Debug.Log(angle);
                 }
                 if (direction.y < 0)
                 {
                     var angle = 0 - Mathf.Atan(Mathf.Abs(direction.y) / Mathf.Abs(direction.x)) * Mathf.Rad2Deg;
                     Arrow.transform.rotation = Quaternion.Euler(0, 0, (angle - 90));
-                    UnityEngine.Debug.Log(angle);
                 }
             }
 
             //Rotate Velocity Arrow
-            Arrow2.transform.rotation = Quaternion.LookRotation(closestplanetspeed);
+            if (closestplanetspeed.x < 0)
+            {
+                if (closestplanetspeed.y > 0)
+                {
+                    var anglee = 180 - Mathf.Atan(Mathf.Abs(closestplanetspeed.y) / Mathf.Abs(closestplanetspeed.x)) * Mathf.Rad2Deg;
+                    Arrow2.transform.rotation = Quaternion.Euler(0, 0, (anglee - 90));
+                    UnityEngine.Debug.Log(anglee);
+                }
+                if (closestplanetspeed.y < 0)
+                {
+                    var anglee = Mathf.Atan(Mathf.Abs(closestplanetspeed.y) / Mathf.Abs(closestplanetspeed.x)) * Mathf.Rad2Deg + 180;
+                    Arrow2.transform.rotation = Quaternion.Euler(0, 0, (anglee - 90));
+                    UnityEngine.Debug.Log(anglee);
+                }
+            }
+            else
+            {
+                if (closestplanetspeed.y > 0)
+                {
+                    var anglee = Mathf.Atan(Mathf.Abs(closestplanetspeed.y) / Mathf.Abs(closestplanetspeed.x)) * Mathf.Rad2Deg;
+                    Arrow2.transform.rotation = Quaternion.Euler(0, 0, (anglee - 90));
+                    UnityEngine.Debug.Log(anglee);
+                }
+                if (closestplanetspeed.y < 0)
+                {
+                    var anglee = 0 - Mathf.Atan(Mathf.Abs(closestplanetspeed.y) / Mathf.Abs(closestplanetspeed.x)) * Mathf.Rad2Deg;
+                    Arrow2.transform.rotation = Quaternion.Euler(0, 0, (anglee - 90));
+                    UnityEngine.Debug.Log(anglee);
+                }
+            }
         }
     }
 }
