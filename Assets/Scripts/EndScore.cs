@@ -10,17 +10,6 @@ public class EndScore : MonoBehaviour
 
     void Start()
     {
-        UpdateScoreText();
-        UpdateGameOverText();
-    }
-
-    void UpdateGameOverText()
-    {
-        gameOverText.text = "" + InfoScript.main.gameOverMessage;
-    }
-
-    void UpdateScoreText()
-    {
         scoreText.text = "" + InfoScript.main.score; // sorry I know this looks gross
     }
 

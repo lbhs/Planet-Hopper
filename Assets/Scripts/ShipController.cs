@@ -19,8 +19,10 @@ public class ShipController : MonoBehaviour
     public bool pitStopped = false;
     public bool overrideArrow = false;
 
+    private bool movementLocked = false;
+
     public AudioSource thrusterSound;
-    public GameObject flameEmitter;
+    public ParticleSystem flameEmitter;
 
     public static ShipController main;
 
@@ -34,6 +36,8 @@ public class ShipController : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (movementLocked) return;
+
         if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow))
         {
             if (!thrusterSound.isPlaying)
@@ -48,14 +52,14 @@ public class ShipController : MonoBehaviour
         // if out of fuel, can't rotate or use thrusters.
         if (Fuel <= 0)
         {
-            flameEmitter.SetActive(false);
+            flameEmitter.Stop();
             return;
         }
 
         // if at a pit stop, can't rotate or use thrusters.
         if (pitStopped)
         {
-            flameEmitter.SetActive(false);
+            //flameEmitter.Stop();
             return;
         }
 
@@ -66,8 +70,10 @@ public class ShipController : MonoBehaviour
         // adjusts fuel...
         if (!Input.GetKey(KeyCode.UpArrow) && overrideArrow == false)
         {
-            flameEmitter.SetActive(false);
-
+            if (flameEmitter.isPlaying)
+            {
+                flameEmitter.Stop();
+            }
         }
 
         if (Input.GetKey(KeyCode.LeftArrow))
@@ -87,13 +93,16 @@ public class ShipController : MonoBehaviour
         // applies force... "thrusters"
         if (Input.GetKey(KeyCode.UpArrow))
         {
-            gm.AddForce(transform.up * thrusterForce * 10);
-            flameEmitter.SetActive(true);
+            gm.AddForce(transform.up * thrusterForce);
+
+            if (!flameEmitter.isPlaying) {
+                flameEmitter.Play();
+            }
+
             Fuel = (Fuel - (2 * fuelDelta));
             UpdateFuelText();
             
         }
-        
     }
 
     public void Refuel()
@@ -107,5 +116,10 @@ public class ShipController : MonoBehaviour
     {
         T.text = "Fuel: " + Fuel;
         pitStopText.text = "Your fuel is currently: " + Fuel;
+    }
+
+    public void ImmobilizeShip()
+    {
+        movementLocked = true;
     }
 }
