@@ -40,9 +40,6 @@ public class LandingHandler : MonoBehaviour
     public AudioSource thrusterSound;
 
     public GameObject Explosion;
-    [SerializeField] public Camera MainCamera;
-    [SerializeField] public Camera LanderCamera;
-    public GameObject Lander;
 
     private void Awake()
     {
@@ -167,24 +164,18 @@ public class LandingHandler : MonoBehaviour
          * Vector3.zero and then make the ship a child of the planet until it needs to leave, but
          * I can also envision it being a pain to do so. I'm not yet sure if this is possible.
          */
-        shipRB.position = new Vector3(1000, 1000, 0);
+
         FreezeShip();
-        LanderCamera.gameObject.SetActive(true);
-        MainCamera.gameObject.SetActive(false);
-        // EarthLander.gameObject.GetComponent<Rigidbody>().useGravity = true;
-        Lander.gameObject.GetComponent<Rigidbody>().isKinematic = false;
 
         /* Next, open a temporary UI menu. The main features are a "Refuel" and a "Launch" button. 
          * other things like a map, planet facts, etc. can come later if time allows.
          */
 
         // disables normal game UI and enables Pit Stop UI
+        GUI.enabled = false;
+        FuelText.text = "Your fuel is currently: " + ShipController.main.Fuel;
 
-
-        //GUI.enabled = false;
-        //FuelText.text = "Your fuel is currently: " + ShipController.main.Fuel;
-
-        //PitStopUI.enabled = true;
+        PitStopUI.enabled = true;
 
 
         /* Finally, When the player selects "Launch", the ship needs to be sent back into space/orbit.
@@ -194,11 +185,11 @@ public class LandingHandler : MonoBehaviour
 
     private void FreezeShip()
     {
-        //Time.timeScale = 0;
+        Time.timeScale = 0;
         shipRB.velocity = Vector3.zero;
         shipRB.freezeRotation = true;
 
-        //shipRelativePos = ship.transform.position - transform.position;
+        shipRelativePos = ship.transform.position - transform.position;
         isLanded = true;
 
         ShipController.main.pitStopped = true;
@@ -209,7 +200,7 @@ public class LandingHandler : MonoBehaviour
         if (!isLanded) return;
 
         ship.GetComponent<Rigidbody>().velocity = Vector3.zero;
-        //ship.transform.position = transform.position + shipRelativePos;
+        ship.transform.position = transform.position + shipRelativePos;
 
     }
 

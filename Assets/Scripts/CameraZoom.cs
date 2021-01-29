@@ -4,30 +4,11 @@ using UnityEngine;
 
 public class CameraZoom : MonoBehaviour
 {
-    public Camera MercuryLanderCamera;
-    public Camera VenusLanderCamera;
-    public Camera EarthLanderCamera;
-    public Camera MarsLanderCamera;
-    public Camera JupiterLanderCamera;
-    public Camera SaturnLanderCamera;
-    public Camera UranusLanderCamera;
-    public Camera NeptuneLanderCamera;
-    public Camera MainCamera;
+
+    [SerializeField] private Camera cam;
 
 
     // Update is called once per frame
-    private void Start()
-    {
-        MercuryLanderCamera.gameObject.SetActive(false);
-        VenusLanderCamera.gameObject.SetActive(false);
-        EarthLanderCamera.gameObject.SetActive(false);
-        MarsLanderCamera.gameObject.SetActive(false);
-        JupiterLanderCamera.gameObject.SetActive(false);
-        SaturnLanderCamera.gameObject.SetActive(false);
-        UranusLanderCamera.gameObject.SetActive(false);
-        NeptuneLanderCamera.gameObject.SetActive(false);
-        MainCamera.gameObject.SetActive(true);
-    }
     void Update()
     {
         HandleZoom();
@@ -35,9 +16,9 @@ public class CameraZoom : MonoBehaviour
 
     private void HandleZoom()
     {
-        float fov = MainCamera.orthographicSize;
+        float fov = cam.orthographicSize;
         fov -= Input.GetAxis("Mouse ScrollWheel") * 15;
         fov = Mathf.Clamp(fov, 1, 100);
-        MainCamera.orthographicSize = fov;
+        cam.orthographicSize = fov;
     }
 }
