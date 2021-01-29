@@ -94,6 +94,9 @@ public class ShipController : MonoBehaviour
         if (Input.GetKey(KeyCode.UpArrow))
         {
             gm.AddForce(transform.up * thrusterForce);
+            flameEmitter.SetActive(true);
+
+            gm.AddForce(transform.up * thrusterForce);
 
             if (!flameEmitter.isPlaying) {
                 flameEmitter.Play();
