@@ -87,7 +87,7 @@ public class ShipController : MonoBehaviour
         // applies force... "thrusters"
         if (Input.GetKey(KeyCode.UpArrow))
         {
-            gm.AddForce(transform.up * thrusterForce);
+            gm.AddForce(transform.up * thrusterForce * 10);
             flameEmitter.SetActive(true);
             Fuel = (Fuel - (2 * fuelDelta));
             UpdateFuelText();
