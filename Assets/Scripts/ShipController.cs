@@ -19,10 +19,8 @@ public class ShipController : MonoBehaviour
     public bool pitStopped = false;
     public bool overrideArrow = false;
 
-    private bool movementLocked = false;
-
     public AudioSource thrusterSound;
-    public ParticleSystem flameEmitter;
+    public GameObject flameEmitter;
 
     public static ShipController main;
 
@@ -36,8 +34,6 @@ public class ShipController : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (movementLocked) return;
-
         if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow))
         {
             if (!thrusterSound.isPlaying)
@@ -52,14 +48,14 @@ public class ShipController : MonoBehaviour
         // if out of fuel, can't rotate or use thrusters.
         if (Fuel <= 0)
         {
-            flameEmitter.Stop();
+            flameEmitter.SetActive(false);
             return;
         }
 
         // if at a pit stop, can't rotate or use thrusters.
         if (pitStopped)
         {
-            //flameEmitter.Stop();
+            flameEmitter.SetActive(false);
             return;
         }
 
@@ -70,10 +66,8 @@ public class ShipController : MonoBehaviour
         // adjusts fuel...
         if (!Input.GetKey(KeyCode.UpArrow) && overrideArrow == false)
         {
-            if (flameEmitter.isPlaying)
-            {
-                flameEmitter.Stop();
-            }
+            flameEmitter.SetActive(false);
+
         }
 
         if (Input.GetKey(KeyCode.LeftArrow))
@@ -93,6 +87,7 @@ public class ShipController : MonoBehaviour
         // applies force... "thrusters"
         if (Input.GetKey(KeyCode.UpArrow))
         {
+<<<<<<< HEAD
             gm.AddForce(transform.up * thrusterForce);
             flameEmitter.SetActive(true);
 
@@ -102,10 +97,15 @@ public class ShipController : MonoBehaviour
                 flameEmitter.Play();
             }
 
+=======
+            gm.AddForce(transform.up * thrusterForce * 10);
+            flameEmitter.SetActive(true);
+>>>>>>> parent of 52037b5... Merge branch 'sam' into markysparky
             Fuel = (Fuel - (2 * fuelDelta));
             UpdateFuelText();
             
         }
+        
     }
 
     public void Refuel()
@@ -119,10 +119,5 @@ public class ShipController : MonoBehaviour
     {
         T.text = "Fuel: " + Fuel;
         pitStopText.text = "Your fuel is currently: " + Fuel;
-    }
-
-    public void ImmobilizeShip()
-    {
-        movementLocked = true;
     }
 }
