@@ -88,7 +88,6 @@ public class ShipController : MonoBehaviour
         if (Input.GetKey(KeyCode.UpArrow))
         {
 <<<<<<< HEAD
-<<<<<<< HEAD
             gm.AddForce(transform.up * thrusterForce);
             flameEmitter.SetActive(true);
 
@@ -100,9 +99,6 @@ public class ShipController : MonoBehaviour
 
 =======
             gm.AddForce(transform.up * thrusterForce * 10);
-=======
-            gm.AddForce(transform.up * thrusterForce);
->>>>>>> parent of 1ffc30e... Added Rudimetry Landers and Terrain
             flameEmitter.SetActive(true);
 >>>>>>> parent of 52037b5... Merge branch 'sam' into markysparky
             Fuel = (Fuel - (2 * fuelDelta));
