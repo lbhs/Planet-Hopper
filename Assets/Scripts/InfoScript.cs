@@ -67,6 +67,8 @@ public class InfoScript : MonoBehaviour
         SceneManager.LoadScene(2); // Load the end scene.
     }
 
+    
+    
     private void Awake()
     {
         main = this;

@@ -23,7 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TutorialScene.unity
     guid: 9e110296f30b64337b1046519cd856d0
-  - enabled: 1
-    path: Assets/Scenes/Gavin.unity
-    guid: 3b8b9f529f4d748f3b841a4b3ef46c6d
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   m_configObjects: {}
