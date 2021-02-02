@@ -37,7 +37,6 @@ public class ShipGravity : MonoBehaviour
 
             forces.Add(forceMagnitude);
             forcesV.Add(force);
-            Debug.Log(planet);
         }
 
         var maxForce = forces.Max<float>();

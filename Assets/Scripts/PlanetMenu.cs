@@ -90,13 +90,11 @@ public class PlanetMenu : MonoBehaviour
                 {
                     var anglee = 180 - Mathf.Atan(Mathf.Abs(closestplanetspeed.y) / Mathf.Abs(closestplanetspeed.x)) * Mathf.Rad2Deg;
                     Arrow2.transform.rotation = Quaternion.Euler(0, 0, (anglee - 90));
-                    UnityEngine.Debug.Log(anglee);
                 }
                 if (closestplanetspeed.y < 0)
                 {
                     var anglee = Mathf.Atan(Mathf.Abs(closestplanetspeed.y) / Mathf.Abs(closestplanetspeed.x)) * Mathf.Rad2Deg + 180;
                     Arrow2.transform.rotation = Quaternion.Euler(0, 0, (anglee - 90));
-                    UnityEngine.Debug.Log(anglee);
                 }
             }
             else
@@ -105,13 +103,11 @@ public class PlanetMenu : MonoBehaviour
                 {
                     var anglee = Mathf.Atan(Mathf.Abs(closestplanetspeed.y) / Mathf.Abs(closestplanetspeed.x)) * Mathf.Rad2Deg;
                     Arrow2.transform.rotation = Quaternion.Euler(0, 0, (anglee - 90));
-                    UnityEngine.Debug.Log(anglee);
                 }
                 if (closestplanetspeed.y < 0)
                 {
                     var anglee = 0 - Mathf.Atan(Mathf.Abs(closestplanetspeed.y) / Mathf.Abs(closestplanetspeed.x)) * Mathf.Rad2Deg;
                     Arrow2.transform.rotation = Quaternion.Euler(0, 0, (anglee - 90));
-                    UnityEngine.Debug.Log(anglee);
                 }
             }
         }

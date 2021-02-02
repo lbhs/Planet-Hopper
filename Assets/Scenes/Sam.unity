@@ -12742,7 +12742,7 @@ Transform:
   m_GameObject: {fileID: 888701961}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3.5, y: 3.5, z: 3.5}
+  m_LocalScale: {x: 3, y: 3, z: 3.5}
   m_Children: []
   m_Father: {fileID: 1923098717}
   m_RootOrder: 1
@@ -12981,7 +12981,7 @@ GameObject:
   - component: {fileID: 975894203}
   - component: {fileID: 975894202}
   - component: {fileID: 975894201}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Venus for Minimap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12997,7 +12997,7 @@ Transform:
   m_GameObject: {fileID: 975894199}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 10, y: 10, z: 10}
+  m_LocalScale: {x: 15, y: 15, z: 10}
   m_Children: []
   m_Father: {fileID: 28631558}
   m_RootOrder: 0
@@ -14040,7 +14040,7 @@ Transform:
   m_GameObject: {fileID: 1315150738}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 15, y: 15, z: 15}
+  m_LocalScale: {x: 20, y: 20, z: 15}
   m_Children: []
   m_Father: {fileID: 428235779}
   m_RootOrder: 1
@@ -14877,7 +14877,7 @@ Transform:
   m_GameObject: {fileID: 1545828085}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 20, y: 20, z: 20}
+  m_LocalScale: {x: 30, y: 30, z: 20}
   m_Children: []
   m_Father: {fileID: 1079091361}
   m_RootOrder: 1
@@ -15001,7 +15001,7 @@ Transform:
   m_GameObject: {fileID: 1553981846}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 10, y: 10, z: 10}
+  m_LocalScale: {x: 15, y: 15, z: 10}
   m_Children: []
   m_Father: {fileID: 930159121}
   m_RootOrder: 1
@@ -16138,7 +16138,7 @@ Transform:
   m_GameObject: {fileID: 1909145444}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -90}
-  m_LocalScale: {x: 15, y: 20, z: 1}
+  m_LocalScale: {x: 20, y: 30, z: 1}
   m_Children: []
   m_Father: {fileID: 6181491047642415911}
   m_RootOrder: 0
@@ -16779,6 +16779,7 @@ GameObject:
   - component: {fileID: 2103629215}
   - component: {fileID: 2103629214}
   - component: {fileID: 2103629213}
+  - component: {fileID: 2103629216}
   m_Layer: 0
   m_Name: Minimap Camera
   m_TagString: MainCamera
@@ -16852,6 +16853,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2103629216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2103629212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be15fc3bce8b8ea4fbdeba70c3fc0cba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 2103629214}
+  CameraToggle: {fileID: 166048340}
 --- !u!23 &537351580871168568
 MeshRenderer:
   m_ObjectHideFlags: 0
