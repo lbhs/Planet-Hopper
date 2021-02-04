@@ -18,6 +18,7 @@ public class LaunchingHandler : MonoBehaviour
         PitStopUI.enabled = false;
         GUI.enabled = true;
 
+
         LandingHandler.current.isLanded = false;
 
         LaunchShip();
