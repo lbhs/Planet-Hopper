@@ -18,10 +18,6 @@ public class PlanetMenu : MonoBehaviour
     public List<Vector3> UISpeeds;
     public Image Arrow;
     public Image Arrow2;
-    public Vector3 closestplanetspeed;
-    public float closestplanetdistance;
-    public int uidisindex;
-    public float closestplanetspeedmag;
 
     // Start is called before the first frame update
     void Awake()
@@ -30,33 +26,29 @@ public class PlanetMenu : MonoBehaviour
         StartCoroutine("UpdatePlanetMenu");
     }
 
-    void Update()
-    {
-        starshippos = Starship.transform.position;
-        starshipspeed = Starship.GetComponent<Rigidbody>().velocity;
-        foreach (GameObject planet in Planets)
-        {
-            var distance = Vector3.Distance(starshippos, planet.transform.position);
-            UIDistances.Add(distance);
-            var speed1 = starshipspeed - planet.GetComponent<Rigidbody>().velocity;
-            UISpeeds.Add(speed1);
-        }
-        float[] UIDistancesArray = UIDistances.ToArray();
-        closestplanetdistance = Mathf.Min(UIDistancesArray);
-        uidisindex = UIDistances.IndexOf(closestplanetdistance);
-        closestplanetspeed = UISpeeds[uidisindex];
-        closestplanetspeedmag = closestplanetspeed.magnitude;
-    }
-
     IEnumerator UpdatePlanetMenu()
     {
         while (UpdateMenu == true && Starship != null)
         {
             yield return new WaitForSeconds(1);
+            starshippos = Starship.transform.position;
+            starshipspeed = Starship.GetComponent<Rigidbody>().velocity;
+            foreach (GameObject planet in Planets)
+            {
+                var distance = Vector3.Distance(starshippos, planet.transform.position);
+                UIDistances.Add(distance);
+                var speed1 = starshipspeed - planet.GetComponent<Rigidbody>().velocity;
+                UISpeeds.Add(speed1);
+            }
+            float[] UIDistancesArray = UIDistances.ToArray();
+            var closestplanetdistance = Mathf.Min(UIDistancesArray);
+            var uidisindex = UIDistances.IndexOf(closestplanetdistance);
+            var closestplanetspeed = UISpeeds[uidisindex];
+            var closestplanetspeedmag = closestplanetspeed.magnitude;
 
-            ClosestPlanetText.text = "Closest Planet: \n" + Planets[uidisindex].name;
-            ClosestPlanetDistanceText.text = "Distance: \n" + closestplanetdistance.ToString();
-            ClosestPlanetSpeedText.text = "Relative Velocity: \n" + closestplanetspeedmag.ToString();
+            ClosestPlanetText.text = "Closest Planet: \n" + Planets[uidisindex].name + "  ";
+            ClosestPlanetDistanceText.text = "Distance: \n" + closestplanetdistance.ToString() + "  ";
+            ClosestPlanetSpeedText.text = "Relative Velocity: \n" + closestplanetspeedmag.ToString() + "  ";
             UIDistances.Clear();
             UISpeeds.Clear();
             GameObject closestplanet = Planets[uidisindex];
