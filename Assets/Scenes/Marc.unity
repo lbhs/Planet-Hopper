@@ -976,14 +976,14 @@ MonoBehaviour:
   initialShipPosition: {x: 0, y: 0, z: 0}
   launchForce: 500
   flameEmitter: {fileID: 0}
-  mercury: {fileID: 0}
-  venus: {fileID: 0}
-  earth: {fileID: 0}
-  mars: {fileID: 0}
-  jupiter: {fileID: 0}
-  saturn: {fileID: 0}
-  uranus: {fileID: 0}
-  neptune: {fileID: 0}
+  mercury: {fileID: 1079091357}
+  venus: {fileID: 28631554}
+  earth: {fileID: 930159117}
+  mars: {fileID: 428235775}
+  jupiter: {fileID: 427949405}
+  saturn: {fileID: 1659373320}
+  uranus: {fileID: 1486254595}
+  neptune: {fileID: 1923098713}
   closestPlanet: {fileID: 0}
 --- !u!135 &218657601
 SphereCollider:
@@ -6504,14 +6504,14 @@ MonoBehaviour:
   initialShipPosition: {x: 0, y: 0, z: 0}
   launchForce: 500
   flameEmitter: {fileID: 0}
-  mercury: {fileID: 0}
-  venus: {fileID: 0}
-  earth: {fileID: 0}
-  mars: {fileID: 0}
-  jupiter: {fileID: 0}
-  saturn: {fileID: 0}
-  uranus: {fileID: 0}
-  neptune: {fileID: 0}
+  mercury: {fileID: 1079091357}
+  venus: {fileID: 28631554}
+  earth: {fileID: 930159117}
+  mars: {fileID: 428235775}
+  jupiter: {fileID: 427949405}
+  saturn: {fileID: 1659373320}
+  uranus: {fileID: 1486254595}
+  neptune: {fileID: 1923098713}
   closestPlanet: {fileID: 0}
 --- !u!135 &418275309
 SphereCollider:
@@ -7037,14 +7037,14 @@ MonoBehaviour:
   initialShipPosition: {x: 0, y: 0, z: 0}
   launchForce: 500
   flameEmitter: {fileID: 0}
-  mercury: {fileID: 0}
-  venus: {fileID: 0}
-  earth: {fileID: 0}
-  mars: {fileID: 0}
-  jupiter: {fileID: 0}
-  saturn: {fileID: 0}
-  uranus: {fileID: 0}
-  neptune: {fileID: 0}
+  mercury: {fileID: 1079091357}
+  venus: {fileID: 28631554}
+  earth: {fileID: 930159117}
+  mars: {fileID: 428235775}
+  jupiter: {fileID: 427949405}
+  saturn: {fileID: 1659373320}
+  uranus: {fileID: 1486254595}
+  neptune: {fileID: 1923098713}
   closestPlanet: {fileID: 0}
 --- !u!135 &464368646
 SphereCollider:
@@ -7389,14 +7389,14 @@ MonoBehaviour:
   initialShipPosition: {x: 0, y: 0, z: 0}
   launchForce: 500
   flameEmitter: {fileID: 0}
-  mercury: {fileID: 0}
-  venus: {fileID: 0}
-  earth: {fileID: 0}
-  mars: {fileID: 0}
-  jupiter: {fileID: 0}
-  saturn: {fileID: 0}
-  uranus: {fileID: 0}
-  neptune: {fileID: 0}
+  mercury: {fileID: 1079091357}
+  venus: {fileID: 28631554}
+  earth: {fileID: 930159117}
+  mars: {fileID: 428235775}
+  jupiter: {fileID: 427949405}
+  saturn: {fileID: 1659373320}
+  uranus: {fileID: 1486254595}
+  neptune: {fileID: 1923098713}
   closestPlanet: {fileID: 0}
 --- !u!135 &513037767
 SphereCollider:
@@ -13387,14 +13387,14 @@ MonoBehaviour:
   initialShipPosition: {x: 0, y: 0, z: 0}
   launchForce: 500
   flameEmitter: {fileID: 0}
-  mercury: {fileID: 0}
-  venus: {fileID: 0}
-  earth: {fileID: 0}
-  mars: {fileID: 0}
-  jupiter: {fileID: 0}
-  saturn: {fileID: 0}
-  uranus: {fileID: 0}
-  neptune: {fileID: 0}
+  mercury: {fileID: 1079091357}
+  venus: {fileID: 28631554}
+  earth: {fileID: 930159117}
+  mars: {fileID: 428235775}
+  jupiter: {fileID: 427949405}
+  saturn: {fileID: 1659373320}
+  uranus: {fileID: 1486254595}
+  neptune: {fileID: 1923098713}
   closestPlanet: {fileID: 0}
 --- !u!135 &864914705
 SphereCollider:
@@ -15112,14 +15112,14 @@ MonoBehaviour:
   initialShipPosition: {x: 0, y: 0, z: 0}
   launchForce: 500
   flameEmitter: {fileID: 0}
-  mercury: {fileID: 0}
-  venus: {fileID: 0}
-  earth: {fileID: 0}
-  mars: {fileID: 0}
-  jupiter: {fileID: 0}
-  saturn: {fileID: 0}
-  uranus: {fileID: 0}
-  neptune: {fileID: 0}
+  mercury: {fileID: 1079091357}
+  venus: {fileID: 28631554}
+  earth: {fileID: 930159117}
+  mars: {fileID: 428235775}
+  jupiter: {fileID: 427949405}
+  saturn: {fileID: 1659373320}
+  uranus: {fileID: 1486254595}
+  neptune: {fileID: 1923098713}
   closestPlanet: {fileID: 0}
 --- !u!135 &1218504662
 SphereCollider:
@@ -15440,14 +15440,14 @@ MonoBehaviour:
   initialShipPosition: {x: 0, y: 0, z: 0}
   launchForce: 500
   flameEmitter: {fileID: 0}
-  mercury: {fileID: 0}
-  venus: {fileID: 0}
-  earth: {fileID: 0}
-  mars: {fileID: 0}
-  jupiter: {fileID: 0}
-  saturn: {fileID: 0}
-  uranus: {fileID: 0}
-  neptune: {fileID: 0}
+  mercury: {fileID: 1079091357}
+  venus: {fileID: 28631554}
+  earth: {fileID: 930159117}
+  mars: {fileID: 428235775}
+  jupiter: {fileID: 427949405}
+  saturn: {fileID: 1659373320}
+  uranus: {fileID: 1486254595}
+  neptune: {fileID: 1923098713}
   closestPlanet: {fileID: 0}
 --- !u!135 &1304682003
 SphereCollider:
@@ -17991,14 +17991,14 @@ MonoBehaviour:
   initialShipPosition: {x: 0, y: 0, z: 0}
   launchForce: 500
   flameEmitter: {fileID: 0}
-  mercury: {fileID: 0}
-  venus: {fileID: 0}
-  earth: {fileID: 0}
-  mars: {fileID: 0}
-  jupiter: {fileID: 0}
-  saturn: {fileID: 0}
-  uranus: {fileID: 0}
-  neptune: {fileID: 0}
+  mercury: {fileID: 1079091357}
+  venus: {fileID: 28631554}
+  earth: {fileID: 930159117}
+  mars: {fileID: 428235775}
+  jupiter: {fileID: 427949405}
+  saturn: {fileID: 1659373320}
+  uranus: {fileID: 1486254595}
+  neptune: {fileID: 1923098713}
   closestPlanet: {fileID: 0}
 --- !u!135 &1831694903
 SphereCollider:
