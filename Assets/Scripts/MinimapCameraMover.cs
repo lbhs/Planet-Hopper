@@ -8,6 +8,7 @@ public class MinimapCameraMover : MonoBehaviour
     public Camera cam;
     public Toggle CameraToggle;
     private float camsize;
+    public Text SelectedPlanet;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,7 +26,6 @@ public class MinimapCameraMover : MonoBehaviour
             cam.orthographicSize = camsize;
             if (Input.GetMouseButton(0))
             {
-                UnityEngine.Debug.Log("clicked");
                 var my = Input.GetAxis("Mouse Y");
                 var mx = Input.GetAxis("Mouse X");
                 var cy = cam.transform.position.y;
@@ -48,6 +48,38 @@ public class MinimapCameraMover : MonoBehaviour
     }
     void DisplayInfo(RaycastHit hit)
     {
+        var name = hit.collider.name;
+        if (name.Contains("Mercury"))
+        {
 
+        }
+        if (name.Contains("Venus"))
+        {
+
+        }
+        if (name.Contains("Earth"))
+        {
+
+        }
+        if (name.Contains("Mars"))
+        {
+
+        }
+        if (name.Contains("Jupiter"))
+        {
+
+        }
+        if (name.Contains("Saturn for Minimap"))
+        {
+
+        }
+        if (name.Contains("Uranus"))
+        {
+
+        }
+        if (name.Contains("Neptune"))
+        {
+
+        }
     }
 }
