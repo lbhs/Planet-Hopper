@@ -999,6 +999,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39e807b8d80604de4ad468064cb4e953, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  numGreen: 0
 --- !u!4 &596122713
 Transform:
   m_ObjectHideFlags: 0
@@ -1175,8 +1176,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 639686979}
-        m_MethodName: StartGame
+      - m_Target: {fileID: 596122712}
+        m_MethodName: GoToTGameplay1
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

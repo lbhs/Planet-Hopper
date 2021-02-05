@@ -7,7 +7,8 @@ public class Tutorial : MonoBehaviour
 {
     public void GoToTutorial()
     {
-        DontDestroyOnLoad(InfoScript.main.gameObject);
+        DontDestroyOnLoad(InfoScript.main);
+        //DontDestroyOnLoad(InfoScript.main.music);
         SceneManager.LoadScene(3); // could be wrong?
     }
 }
