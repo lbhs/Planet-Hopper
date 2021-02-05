@@ -84,8 +84,6 @@ public class MinimapHandler : MonoBehaviour
             if (Physics.Raycast(ray, out hit, 10000, layermask))
             {
                 
-            }
-            {
                 var planet = hit.collider.transform.root.gameObject;
                 var index = Planets.IndexOf(planet);
                 var text = PlanetNames[index];
