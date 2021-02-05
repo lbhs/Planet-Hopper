@@ -56,7 +56,11 @@ public class InfoScript : MonoBehaviour
     {
         score = 0;
         DontDestroyOnLoad(gameObject);
-        DontDestroyOnLoad(music);
+        if (music != null)
+        {
+            DontDestroyOnLoad(music);
+        }
+
         SceneManager.LoadScene(1); // change me back to 1 later!!
     }
 
