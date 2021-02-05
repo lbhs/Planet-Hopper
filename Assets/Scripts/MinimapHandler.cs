@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class MinimapCameraMover : MonoBehaviour
+public class MinimapHandler : MonoBehaviour
 {
     private bool UpdateMenu;
     public Camera cam;
@@ -24,6 +24,9 @@ public class MinimapCameraMover : MonoBehaviour
     public Image Saturn;
     public Image Uranus;
     public Image Neptune;
+    public List<GameObject> Planets;
+    public List<Text> PlanetNames;
+    public Camera MinimapCam;
 
 
     void Start()
@@ -38,7 +41,7 @@ public class MinimapCameraMover : MonoBehaviour
         Neptune.enabled = false;
         panel.SetActive(false);
         UpdateMenu = true;
-        camsize = 810;
+        camsize = 650;
     }
 
 
@@ -63,12 +66,30 @@ public class MinimapCameraMover : MonoBehaviour
                 cam.transform.position = new Vector3(cxclamp, cyclamp, cz);
             }
 
+            foreach (Text text in PlanetNames)
+            {
+                text.enabled = true;
+                var index = PlanetNames.IndexOf(text);
+                var planet = Planets[index];
+                var uipos = MinimapCam.WorldToScreenPoint(planet.transform.position);
+                var newx = uipos.x + 120;
+                var newxy = new Vector2(newx, uipos.y);
+                text.transform.position = newxy;
+                text.color = Color.white;
+            }
+
             Ray ray = cam.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
             int layermask = 1 << 8;
             if (Physics.Raycast(ray, out hit, 10000, layermask))
             {
                 
+            }
+            {
+                var planet = hit.collider.transform.root.gameObject;
+                var index = Planets.IndexOf(planet);
+                var text = PlanetNames[index];
+                text.color = Color.green;
             }
 
             if (Input.GetMouseButtonDown(0))
@@ -77,6 +98,13 @@ public class MinimapCameraMover : MonoBehaviour
                 {
                     DisplayInfo(hit);
                 }
+            }
+        }
+        else
+        {
+            foreach (Text text in PlanetNames)
+            {
+                text.enabled = false;
             }
         }
     }
