@@ -345,7 +345,7 @@ public class LandingHandler : MonoBehaviour
         ShipController.main.pitStopped = false;
         LandingHandler.current.shipRB.freezeRotation = false;
 
-        gameObject.GetComponent<Rigidbody>().AddForce(transform.up * launchForce);
+        ship.GetComponent<Rigidbody>().AddForce(transform.up * launchForce);
         StartCoroutine(runFlames());
 
     }
