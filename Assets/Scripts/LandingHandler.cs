@@ -65,6 +65,7 @@ public class LandingHandler : MonoBehaviour
     {
 
         Lander.isKinematic = true;
+        MainCamera.gameObject.SetActive(true);
 
     }
     
@@ -316,6 +317,7 @@ public class LandingHandler : MonoBehaviour
         }
         
         shipRB.transform.rotation = Quaternion.Euler(0, 0, 270);
+        shipRB.velocity = new Vector3(0, 0, 0);
         shipRB.velocity = new Vector3(3, 0, 0);
 
         
