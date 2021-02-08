@@ -66,6 +66,7 @@ public class LandingHandler : MonoBehaviour
 
         Lander.isKinematic = true;
         MainCamera.gameObject.SetActive(true);
+        LanderCamera.gameObject.SetActive(false);
 
     }
     

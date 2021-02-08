@@ -949,7 +949,7 @@ MonoBehaviour:
   ship: {fileID: 6810218856465537437}
   speedLimit: 300
   angleLimit: 10
-  shipRB: {fileID: 6810218856465537440}
+  shipRB: {fileID: 0}
   GUI: {fileID: 1848744299}
   PitStopUI: {fileID: 2028289372}
   FuelText: {fileID: 1986590965}
