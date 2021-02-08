@@ -49,7 +49,15 @@ public class LandingHandler : MonoBehaviour
     public Vector3 initialShipPosition;
     public float launchForce = 500f;
     public GameObject flameEmitter;
-
+    public GameObject mercury;
+    public GameObject venus;
+    public GameObject earth;
+    public GameObject mars;
+    public GameObject jupiter;
+    public GameObject saturn;
+    public GameObject uranus;
+    public GameObject neptune;
+    public GameObject closestPlanet;
 
 
 
@@ -73,16 +81,11 @@ public class LandingHandler : MonoBehaviour
         if (other.name == ship.name)
         {
             Debug.Log("Landing Trigger Entered.");
-            if (CheckLanding())
-            {
-                InitiateLanding();
-                string planet = gameObject.transform.parent.name; // name of the planet landed on
-                InfoScript.main.UpdateScore(planet);
-            }
-            else
-            {
-                Explode(ship);
-            }
+
+            InitiateLanding();
+            string planet = gameObject.transform.parent.name; // name of the planet landed on
+            InfoScript.main.UpdateScore(planet);
+
         }
     }
 
@@ -94,12 +97,6 @@ public class LandingHandler : MonoBehaviour
         }
     }
 
-    // checks if a landing is valid...
-    /*
-     * valid landing needs to:
-     * - be under a certain speed ( < `speedLimit` m/s )
-     * - be rotated away from the planet ( < 'angleLimit' degrees )
-     */
     private bool CheckLanding()
     {
         // checks the speed of the ship
@@ -185,9 +182,11 @@ public class LandingHandler : MonoBehaviour
          * I can also envision it being a pain to do so. I'm not yet sure if this is possible.
          */
 
-        initialShipPosition = shipRB.position;
-        shipRB.position = new Vector3(1000, 1000, 0);
-        FreezeShip();
+        CheckClosestPlanet();
+        shipRB.velocity = Vector3.zero;
+        
+        shipRB.isKinematic = true;
+        //FreezeShip();
         LanderCamera.gameObject.SetActive(true);
         MainCamera.gameObject.SetActive(false);
         // EarthLander.gameObject.GetComponent<Rigidbody>().useGravity = true;
@@ -213,7 +212,6 @@ public class LandingHandler : MonoBehaviour
 
     private void FreezeShip()
     {
-        //Time.timeScale = 0;
         shipRB.velocity = Vector3.zero;
         shipRB.freezeRotation = true;
 
@@ -221,6 +219,20 @@ public class LandingHandler : MonoBehaviour
         isLanded = true;
 
         ShipController.main.pitStopped = true;
+    }
+
+    private void CheckClosestPlanet()
+    {
+        GameObject[] planets = { mercury, venus, earth, mars, jupiter, saturn, uranus, neptune };
+        foreach (GameObject planet in planets)
+        {
+            if ((shipRB.transform.position - planet.GetComponent<Rigidbody>().transform.position).magnitude < 30)
+            {
+                closestPlanet = planet;
+            }
+        }
+
+
     }
 
     private void FixedUpdate()
@@ -271,15 +283,9 @@ public class LandingHandler : MonoBehaviour
             {
 
                 ExitPlanet();
-                //isLanded = true;
-                //landingComplete = true;
+
             }
 
-            //if (Lander.position.y > 1)
-            //{
-                //isLanded = false;
-                //landingComplete = false;
-            //}
 
         }
 
@@ -294,9 +300,25 @@ public class LandingHandler : MonoBehaviour
         GUI.enabled = true;
         MainCamera.gameObject.SetActive(true);
         LanderCamera.gameObject.SetActive(false);
-        shipRB.position = initialShipPosition;
-        Lander.position = new Vector3(0, 3000, 0);
+        Lander.transform.position = Lander.transform.position + new Vector3(0, 10, 0);
+        Lander.transform.rotation = Quaternion.Euler(0, 0, 0);
         Lander.isKinematic = true;
+        shipRB.isKinematic = false;
+        if (closestPlanet == jupiter ^ closestPlanet == saturn)
+            {
+
+            shipRB.transform.position = closestPlanet.transform.position + new Vector3(0, 15, 0);
+
+        }
+        else
+        {
+            shipRB.transform.position = closestPlanet.transform.position + new Vector3(0, 10, 0);
+        }
+        
+        shipRB.transform.rotation = Quaternion.Euler(0, 0, 270);
+        shipRB.velocity = new Vector3(3, 0, 0);
+
+        
 
 
         LandingHandler.current.isLanded = false;
@@ -323,7 +345,7 @@ public class LandingHandler : MonoBehaviour
         ShipController.main.pitStopped = false;
         LandingHandler.current.shipRB.freezeRotation = false;
 
-        gameObject.GetComponent<Rigidbody>().AddForce(transform.up * launchForce);
+        ship.GetComponent<Rigidbody>().AddForce(transform.up * launchForce);
         StartCoroutine(runFlames());
 
     }
