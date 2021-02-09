@@ -9,7 +9,7 @@ public class ShipController : MonoBehaviour
 {
     public float rotationspeed = 50.0f;
     public float fuelDelta = .07f;
-    public float baseFuelValue = 500f;
+    public float baseFuelValue = 5000f;
     public float thrusterForce = .5f;
 
     private Rigidbody gm;

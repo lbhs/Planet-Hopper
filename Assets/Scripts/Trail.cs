@@ -34,7 +34,6 @@ public class Trail : MonoBehaviour
             lr.SetColors(linecolor, linecolor);
             lr.SetWidth(7, 7);
             lr.SetPositions(positionArray);
-            UnityEngine.Debug.Log("made line");
             StartCoroutine("DestroyLine");
         }
     }
