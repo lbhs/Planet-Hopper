@@ -976,6 +976,15 @@ MonoBehaviour:
   initialShipPosition: {x: 0, y: 0, z: 0}
   launchForce: 500
   flameEmitter: {fileID: 0}
+  mercury: {fileID: 0}
+  venus: {fileID: 0}
+  earth: {fileID: 0}
+  mars: {fileID: 0}
+  jupiter: {fileID: 0}
+  saturn: {fileID: 0}
+  uranus: {fileID: 0}
+  neptune: {fileID: 0}
+  closestPlanet: {fileID: 0}
 --- !u!135 &218657601
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -6495,6 +6504,15 @@ MonoBehaviour:
   initialShipPosition: {x: 0, y: 0, z: 0}
   launchForce: 500
   flameEmitter: {fileID: 0}
+  mercury: {fileID: 0}
+  venus: {fileID: 0}
+  earth: {fileID: 0}
+  mars: {fileID: 0}
+  jupiter: {fileID: 0}
+  saturn: {fileID: 0}
+  uranus: {fileID: 0}
+  neptune: {fileID: 0}
+  closestPlanet: {fileID: 0}
 --- !u!135 &418275309
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -7019,6 +7037,15 @@ MonoBehaviour:
   initialShipPosition: {x: 0, y: 0, z: 0}
   launchForce: 500
   flameEmitter: {fileID: 0}
+  mercury: {fileID: 0}
+  venus: {fileID: 0}
+  earth: {fileID: 0}
+  mars: {fileID: 0}
+  jupiter: {fileID: 0}
+  saturn: {fileID: 0}
+  uranus: {fileID: 0}
+  neptune: {fileID: 0}
+  closestPlanet: {fileID: 0}
 --- !u!135 &464368646
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -7113,7 +7140,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -314, y: -171}
+  m_AnchoredPosition: {x: -104.8, y: -188.4}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &482740603
@@ -7362,6 +7389,15 @@ MonoBehaviour:
   initialShipPosition: {x: 0, y: 0, z: 0}
   launchForce: 500
   flameEmitter: {fileID: 0}
+  mercury: {fileID: 0}
+  venus: {fileID: 0}
+  earth: {fileID: 0}
+  mars: {fileID: 0}
+  jupiter: {fileID: 0}
+  saturn: {fileID: 0}
+  uranus: {fileID: 0}
+  neptune: {fileID: 0}
+  closestPlanet: {fileID: 0}
 --- !u!135 &513037767
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -13351,6 +13387,15 @@ MonoBehaviour:
   initialShipPosition: {x: 0, y: 0, z: 0}
   launchForce: 500
   flameEmitter: {fileID: 0}
+  mercury: {fileID: 0}
+  venus: {fileID: 0}
+  earth: {fileID: 0}
+  mars: {fileID: 0}
+  jupiter: {fileID: 0}
+  saturn: {fileID: 0}
+  uranus: {fileID: 0}
+  neptune: {fileID: 0}
+  closestPlanet: {fileID: 0}
 --- !u!135 &864914705
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -14539,6 +14584,80 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1034352167}
   m_CullTransparentMesh: 0
+--- !u!1 &1048638326
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1048638327}
+  - component: {fileID: 1048638329}
+  - component: {fileID: 1048638328}
+  m_Layer: 5
+  m_Name: Image
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1048638327
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1048638326}
+  m_LocalRotation: {x: -0, y: -0, z: 0.7906428, w: 0.6122777}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1848744300}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 104.491005}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -296.60004, y: -200.20001}
+  m_SizeDelta: {x: 122.99057, y: 122.99057}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1048638328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1048638326}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: a505cc6f3c7f5c043a52f7805890dee2, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1048638329
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1048638326}
+  m_CullTransparentMesh: 0
 --- !u!1 &1076099414
 GameObject:
   m_ObjectHideFlags: 0
@@ -15067,6 +15186,15 @@ MonoBehaviour:
   initialShipPosition: {x: 0, y: 0, z: 0}
   launchForce: 500
   flameEmitter: {fileID: 0}
+  mercury: {fileID: 0}
+  venus: {fileID: 0}
+  earth: {fileID: 0}
+  mars: {fileID: 0}
+  jupiter: {fileID: 0}
+  saturn: {fileID: 0}
+  uranus: {fileID: 0}
+  neptune: {fileID: 0}
+  closestPlanet: {fileID: 0}
 --- !u!135 &1218504662
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -15386,6 +15514,15 @@ MonoBehaviour:
   initialShipPosition: {x: 0, y: 0, z: 0}
   launchForce: 500
   flameEmitter: {fileID: 0}
+  mercury: {fileID: 0}
+  venus: {fileID: 0}
+  earth: {fileID: 0}
+  mars: {fileID: 0}
+  jupiter: {fileID: 0}
+  saturn: {fileID: 0}
+  uranus: {fileID: 0}
+  neptune: {fileID: 0}
+  closestPlanet: {fileID: 0}
 --- !u!135 &1304682003
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -15604,7 +15741,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -314, y: -203}
+  m_AnchoredPosition: {x: -104.8, y: -153.7}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1375362043
@@ -17928,6 +18065,15 @@ MonoBehaviour:
   initialShipPosition: {x: 0, y: 0, z: 0}
   launchForce: 500
   flameEmitter: {fileID: 0}
+  mercury: {fileID: 0}
+  venus: {fileID: 0}
+  earth: {fileID: 0}
+  mars: {fileID: 0}
+  jupiter: {fileID: 0}
+  saturn: {fileID: 0}
+  uranus: {fileID: 0}
+  neptune: {fileID: 0}
+  closestPlanet: {fileID: 0}
 --- !u!135 &1831694903
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -17988,6 +18134,80 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1831694900}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1834000075
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1834000076}
+  - component: {fileID: 1834000078}
+  - component: {fileID: 1834000077}
+  m_Layer: 5
+  m_Name: Fuel Gauge
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1834000076
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1834000075}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1848744300}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -298.09003, y: -167.43}
+  m_SizeDelta: {x: 203.83813, y: 115.02571}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1834000077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1834000075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 9c189ee0ed29e0e469ca6cf5b8d7688f, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1834000078
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1834000075}
+  m_CullTransparentMesh: 0
 --- !u!1 &1848744296
 GameObject:
   m_ObjectHideFlags: 0
@@ -18086,6 +18306,8 @@ RectTransform:
   - {fileID: 600286481}
   - {fileID: 1850805761}
   - {fileID: 607247233}
+  - {fileID: 1834000076}
+  - {fileID: 1048638327}
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -20067,6 +20289,8 @@ MonoBehaviour:
   overrideArrow: 0
   thrusterSound: {fileID: 6810218856465537446}
   flameEmitter: {fileID: 371757705}
+  FuelGuage: {fileID: 1048638328}
+  rotation: 0
 --- !u!54 &6810218856465537440
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -121,7 +121,8 @@ public class ShipController : MonoBehaviour
     {
         T.text = "Fuel: " + Fuel;
         pitStopText.text = "Your fuel is currently: " + Fuel;
-        rotation = 104.491f - (119.767f * (Fuel / 500f));
+    //    rotation = 104.491f - (119.767f * (Fuel / 500f));
+        rotation = -15.276f + (119.767f * (1f - Fuel / 500f));
         FuelGuage.transform.rotation = Quaternion.Euler(0, 0, rotation);
     }
 
