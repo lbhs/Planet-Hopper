@@ -28,6 +28,9 @@ public class ShipController : MonoBehaviour
 
     public static ShipController main;
 
+    public Image FuelGuage;
+    public float rotation;
+
     private void Start()
     {
         main = this;
@@ -118,6 +121,8 @@ public class ShipController : MonoBehaviour
     {
         T.text = "Fuel: " + Fuel;
         pitStopText.text = "Your fuel is currently: " + Fuel;
+        rotation = 104.491f - (119.767f * (Fuel / 500f));
+        FuelGuage.transform.rotation = Quaternion.Euler(0, 0, rotation);
     }
 
     public void ImmobilizeShip()
