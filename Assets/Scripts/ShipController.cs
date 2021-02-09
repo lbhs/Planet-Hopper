@@ -55,6 +55,7 @@ public class ShipController : MonoBehaviour
         if (Fuel <= 0)
         {
             flameEmitter.Stop();
+            thrusterSound.Stop();
             return;
         }
 

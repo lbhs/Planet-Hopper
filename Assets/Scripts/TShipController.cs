@@ -19,6 +19,9 @@ public class TShipController : MonoBehaviour
     // ship's RB
     public Rigidbody rb;
 
+    // determines whether player can control the ship;
+    private bool inCutScene = false;
+
     // static vars
     private static float rotationSpeed = 50.0f;
     private static float thrusterForce = .5f;
@@ -36,6 +39,10 @@ public class TShipController : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        if (inCutScene) {
+            return;
+        } 
+
         // sound / vfx
         if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow))
         {
@@ -51,13 +58,39 @@ public class TShipController : MonoBehaviour
             flameEmitter.Stop();
         }
 
+        if (inCutScene)
+        {
+            return;
+        }
+
         // rotation
         rb.transform.Rotate(0, 0, -Input.GetAxis("Horizontal") * rotationSpeed);
+
+        if (inCutScene)
+        {
+            return;
+        }
 
         // thrusters
         if (Input.GetKey(KeyCode.UpArrow))
         {
             rb.AddForce(transform.up * thrusterForce);
         }
+    }
+
+    public IEnumerator Launch()
+    {
+        inCutScene = true;
+        Debug.Log("Launching ...");
+
+        rb.velocity = 3f * Vector3.down;
+
+        thrusterSound.Play();
+        flameEmitter.Play();
+
+        yield return new WaitForSeconds(2);
+
+        thrusterSound.Stop();
+        flameEmitter.Stop();
     }
 }

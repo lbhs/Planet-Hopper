@@ -28,6 +28,11 @@ public class TutorialNavi : MonoBehaviour
         SceneManager.LoadScene(0); // add ID of gameplay scene
     }
 
+    public void GoToTitle()
+    {
+        SceneManager.LoadScene(0);
+    }
+
     public void GoToRules()
     {
         DontDestroyOnLoad(InfoScript.main);

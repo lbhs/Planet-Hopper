@@ -18,6 +18,14 @@ public class TutorialCP : MonoBehaviour
         {
             Scene1();
         }
+        else if (CPID == 4)
+        {
+            Scene2(1);
+        }
+        else if (CPID == 5)
+        {
+            Scene2(2);
+        }
     }
 
     void Scene1()
@@ -51,4 +59,17 @@ public class TutorialCP : MonoBehaviour
             green = true;
         }
     }
+
+    void Scene2(int action)
+    {
+        if (action == 1)
+        {
+            TLandingHandler.main.StartLanding();
+        }
+        else
+        {
+            TLandingHandler.main.EndLandingTutorial();
+        }
+    }
+
 }

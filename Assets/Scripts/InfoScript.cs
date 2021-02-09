@@ -21,7 +21,7 @@ using UnityEngine.SceneManagement;
 public class InfoScript : MonoBehaviour
 {
     public static InfoScript main;
-    public AudioSource music;
+    //public AudioSource music;
     
     private float currentFuel;
 
@@ -56,10 +56,10 @@ public class InfoScript : MonoBehaviour
     {
         score = 0;
         DontDestroyOnLoad(gameObject);
-        if (music != null)
-        {
-            DontDestroyOnLoad(music);
-        }
+        //if (music != null)
+        //{
+        //    DontDestroyOnLoad(music);
+        //}
 
         SceneManager.LoadScene(1); // change me back to 1 later!!
     }
@@ -67,7 +67,7 @@ public class InfoScript : MonoBehaviour
     public void EndGame()
     {
         DontDestroyOnLoad(gameObject);
-        DontDestroyOnLoad(music);
+        //DontDestroyOnLoad(music);
         SceneManager.LoadScene(2); // Load the end scene.
     }
 

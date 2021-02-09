@@ -445,6 +445,50 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 158718186}
   m_Mesh: {fileID: -7686489122451975117, guid: 1045ddc1321e0a94c91fa3717eace9b0, type: 3}
+--- !u!1 &173910453
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 173910455}
+  - component: {fileID: 173910454}
+  m_Layer: 0
+  m_Name: TController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &173910454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 173910453}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69990b2b7bea14e9c80d40643303bd0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ship: {fileID: 867977415}
+--- !u!4 &173910455
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 173910453}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 16.617569, y: -9.457821, z: -250.59573}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &278108713
 GameObject:
   m_ObjectHideFlags: 0
@@ -1166,27 +1210,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 748732839}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3571f548644fb49f0aa043a25d7595a5, type: 3}
+  m_Script: {fileID: 11500000, guid: 6ee1c85eb99924e47ba0dd21062da1ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ship: {fileID: 0}
-  speedLimit: 300
-  angleLimit: 10
-  shipRB: {fileID: 0}
-  GUI: {fileID: 0}
-  PitStopUI: {fileID: 0}
-  FuelText: {fileID: 0}
-  isLanded: 0
-  thrusterSound: {fileID: 0}
-  Explosion: {fileID: 0}
-  MainCamera: {fileID: 0}
-  LanderCamera: {fileID: 0}
-  Lander: {fileID: 0}
-  landerLanded: 0
-  landingComplete: 0
-  initialShipPosition: {x: 0, y: 0, z: 0}
-  launchForce: 500
-  flameEmitter: {fileID: 0}
+  CPID: 4
+  mr: {fileID: 748732843}
+  VTMRed: {fileID: 2100000, guid: 00eb382c75941409fa455e5221760762, type: 2}
+  VTMGreen: {fileID: 2100000, guid: cb5af4284cb37488d905cca312c3d143, type: 2}
 --- !u!135 &748732842
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -6489,7 +6519,6 @@ GameObject:
   - component: {fileID: 1233405153}
   - component: {fileID: 1233405152}
   - component: {fileID: 1233405151}
-  - component: {fileID: 1233405150}
   m_Layer: 0
   m_Name: Earth
   m_TagString: Untagged
@@ -6497,23 +6526,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1233405150
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1233405149}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 03eb3c32b65bb3d448e7d50d1ad8dbcb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  G: 5
-  InitialDistance: 300
-  starshipGameObject: {fileID: 0}
-  earthGameObject: {fileID: 1233405149}
-  sunGameObject: {fileID: 0}
 --- !u!54 &1233405151
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6526,7 +6538,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 0
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 120
   m_CollisionDetection: 0
@@ -6995,7 +7007,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1795942357}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 173910454}
+        m_MethodName: Launch1
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1795942357
 MonoBehaviour:
   m_ObjectHideFlags: 0
