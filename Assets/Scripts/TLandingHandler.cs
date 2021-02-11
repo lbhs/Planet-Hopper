@@ -91,7 +91,7 @@ public class TLandingHandler : MonoBehaviour
 
     void SwitchScene()
     {
-        TutorialNavi.main.GoToTitle();
+        TutorialNavi.main.GoToTGameplay3();
     }
 
 }

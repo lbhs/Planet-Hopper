@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TGameplay2.unity
     guid: 2916deb1376334749a1153ad5b6f7609
+  - enabled: 1
+    path: Assets/Scenes/TGameplay3.unity
+    guid: d8567b6436b54407cbf52d523683d871
   m_configObjects: {}
