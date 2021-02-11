@@ -20,21 +20,36 @@ public class Trail : MonoBehaviour
     {
         while (maketrail == true)
         {
-            yield return new WaitForSeconds(1);
-            var startpos = Starship.transform.position;
-            yield return new WaitForSeconds(1);
-            var endpos = Starship.transform.position;
-            Vector3[] positionArray = new[] { startpos, endpos };
-            GameObject line = new GameObject();
-            Lines.Add(line);
-            line.layer = 8;
-            line.AddComponent<LineRenderer>();
-            LineRenderer lr = line.GetComponent<LineRenderer>();
-            lr.material = new Material(lineShader);
-            lr.SetColors(linecolor, linecolor);
-            lr.SetWidth(7, 7);
-            lr.SetPositions(positionArray);
-            StartCoroutine("DestroyLine");
+            
+            if (Starship.transform.position.y > 2500)
+            {
+                continue;
+            }
+            else
+            {
+                var startpos = Starship.transform.position;
+                yield return new WaitForSeconds(2);
+                if (Starship.transform.position.y > 2500)
+                {
+                    continue;
+                }
+                else {
+                    
+                    var endpos = Starship.transform.position;
+                    Vector3[] positionArray = new[] { startpos, endpos };
+                    GameObject line = new GameObject();
+                    Lines.Add(line);
+                    line.layer = 8;
+                    line.AddComponent<LineRenderer>();
+                    LineRenderer lr = line.GetComponent<LineRenderer>();
+                    lr.material = new Material(lineShader);
+                    lr.SetColors(linecolor, linecolor);
+                    lr.SetWidth(7, 7);
+                    lr.SetPositions(positionArray);
+                    StartCoroutine("DestroyLine");
+                }
+                
+            }
         }
     }
 

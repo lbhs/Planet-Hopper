@@ -45,19 +45,20 @@ public class LandingHandler : MonoBehaviour
     [SerializeField] public Camera LanderCamera;
     public Rigidbody Lander;
     public bool landerLanded = false;
-    public bool landingComplete = false;
     public Vector3 initialShipPosition;
     public float launchForce = 500f;
     public GameObject flameEmitter;
-    public GameObject mercury;
-    public GameObject venus;
-    public GameObject earth;
-    public GameObject mars;
-    public GameObject jupiter;
-    public GameObject saturn;
-    public GameObject uranus;
-    public GameObject neptune;
+    public GameObject Mercury;
+    public GameObject Venus;
+    public GameObject Earth;
+    public GameObject Mars;
+    public GameObject Jupiter;
+    public GameObject Saturn;
+    public GameObject Uranus;
+    public GameObject Neptune;
     public GameObject closestPlanet;
+    public GameObject velocityPanel;
+    public GameObject minimap;
 
 
 
@@ -67,6 +68,8 @@ public class LandingHandler : MonoBehaviour
         Lander.isKinematic = true;
         MainCamera.gameObject.SetActive(true);
         LanderCamera.gameObject.SetActive(false);
+        velocityPanel = GameObject.Find("Closest");
+        minimap = GameObject.Find("Minimap");
 
     }
     
@@ -132,100 +135,20 @@ public class LandingHandler : MonoBehaviour
     }
 
 
-    /* This function makes a small explosion effect when the ship's landing is
-     * invalid according to `CheckLanding` 
-     */
-    private void Explode(GameObject toDestroy)
-    {
-        Explosion.transform.position = ship.transform.position;
 
-        // "explode" the ship by disabling components
-        ParticleSystem Exploder = Explosion.GetComponent<ParticleSystem>();
-        Exploder.Play();
-        StartCoroutine(EndGame());
+    
 
-        Destroy(ship);
 
-        //ship.GetComponent<Collider>().enabled = false;
-        // ship.GetComponent<Renderer>().enabled = false;
-
-        // Load the next scene.
-
-    }
-
-    IEnumerator EndGame()
-    {
-        yield return new WaitForSeconds(3);
-
-        InfoScript.main.gameOverMessage = "You Crashed!";
-        InfoScript.main.EndGame(); // Load the end scene.
-    }
-
-    /* This function handles the player's interactions while landed on a planet.
-     * 
-     * This function will:
-     * 
-     * 1. stop the rocket and connect it to the planet. The rocket will be imobile
-     *    on the planet's surface.
-     *    
-     * 2. open a UI menu for the player to interact with. In this menu, the player can:
-     *    - refuel their ship
-     *    - press a "Launch" button to continue playing.
-     *    - (hear a fact about the planet they're on ?)
-     *    
-     * 3. When "Launch" is selected, some force will be applied to ship, launching it
-     *    into (orbit ?) space so the player can continue playing.
-     *    
-     */
     private void InitiateLanding()
     {
-        /* First, make the ship stop moving. I think the play here is to make the ship's velocity
-         * Vector3.zero and then make the ship a child of the planet until it needs to leave, but
-         * I can also envision it being a pain to do so. I'm not yet sure if this is possible.
-         */
-
         CheckClosestPlanet();
-        shipRB.velocity = Vector3.zero;
-        
-        shipRB.isKinematic = true;
-        //FreezeShip();
-        LanderCamera.gameObject.SetActive(true);
-        MainCamera.gameObject.SetActive(false);
-        // EarthLander.gameObject.GetComponent<Rigidbody>().useGravity = true;
-        Lander.isKinematic = false;
-
-        /* Next, open a temporary UI menu. The main features are a "Refuel" and a "Launch" button. 
-         * other things like a map, planet facts, etc. can come later if time allows.
-         */
-
-        // disables normal game UI and enables Pit Stop UI
-
-
-        //GUI.enabled = false;
-        //FuelText.text = "Your fuel is currently: " + ShipController.main.Fuel;
-
-        //PitStopUI.enabled = true;
-
-
-        /* Finally, When the player selects "Launch", the ship needs to be sent back into space/orbit.
-         * This should be handled by another function.
-         */
-    }
-
-    private void FreezeShip()
-    {
-        shipRB.velocity = Vector3.zero;
-        shipRB.freezeRotation = true;
-
-        //shipRelativePos = ship.transform.position - transform.position;
-        isLanded = true;
-
-        ShipController.main.pitStopped = true;
+        FreezeShip();
+        LanderSetUp();
     }
 
     private void CheckClosestPlanet()
     {
-        GameObject[] planets = { mercury, venus, earth, mars, jupiter, saturn, uranus, neptune };
+        GameObject[] planets = { Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, Neptune };
         foreach (GameObject planet in planets)
         {
             if ((shipRB.transform.position - planet.GetComponent<Rigidbody>().transform.position).magnitude < 30)
@@ -234,79 +157,110 @@ public class LandingHandler : MonoBehaviour
             }
         }
 
+    }
 
+    private void FreezeShip()
+    {
+        shipRB.velocity = Vector3.zero;
+        shipRB.transform.position = new Vector3(0, 3000, 0);
+        shipRB.freezeRotation = true;
+        shipRB.isKinematic = true;
+    }
+
+    private void LanderSetUp()
+    {
+        minimap.SetActive(false);
+        velocityPanel.SetActive(false);
+        LanderCamera.gameObject.SetActive(true);
+        MainCamera.gameObject.SetActive(false);
+        Lander.isKinematic = false;
+        
     }
 
     private void FixedUpdate()
     {
-        if (!isLanded) return;
-
-        ship.GetComponent<Rigidbody>().velocity = Vector3.zero;
-        //ship.transform.position = transform.position + shipRelativePos;
-
-    }
-
-    void Update()
-    {
-
-        if (Lander.isKinematic == false)
+        if (landerLanded == false)
         {
-
-            Lander.AddForce(0, -0.1f, 0);
-
-
-            if (Input.GetKey(KeyCode.LeftArrow))
+            if (Lander.isKinematic == false)
             {
 
-                Lander.transform.Rotate(0, 0, 0.3f);
+                Lander.AddForce(0, -0.1f, 0);
 
+
+                if (Input.GetKey(KeyCode.LeftArrow))
+                {
+
+                    Lander.transform.Rotate(0, 0, 0.3f);
+
+                }
+
+                if (Input.GetKey(KeyCode.RightArrow))
+                {
+
+                    Lander.transform.Rotate(0, 0, -0.3f);
+
+                }
+
+                if (Input.GetKey(KeyCode.UpArrow))
+                {
+
+                    Lander.AddForce(Lander.transform.up * 0.2f);
+
+                }
+                if (Lander.position.y < .9)
+                {
+                    if (Lander.velocity.y < -1 || Lander.velocity.x < -1 || (Lander.transform.rotation.eulerAngles.z > 20 && Lander.transform.rotation.eulerAngles.z < 340))
+                    {
+                        landerLanded = true;
+                        
+                        Debug.Log(Lander.transform.rotation.eulerAngles.z);
+                        StartCoroutine(EndGameFunc());
+                    }
+
+                    else
+                    {
+                        landerLanded = true;
+                        PitStopUI.GetComponent<Canvas>().enabled = true;
+                        // StartCoroutine(ExitPlanet());
+                    }
+                }
             }
-
-            if (Input.GetKey(KeyCode.RightArrow))
-            {
-
-                Lander.transform.Rotate(0, 0, -0.3f);
-
-            }
-
-            if (Input.GetKey(KeyCode.UpArrow))
-            {
-
-                Lander.AddForce(Lander.transform.up * 0.2f);
-
-            }
-
-            //if (landerLanded == false)
-            //{
-            //    Lander.angularVelocity = new Vector3(0, 0, 0);
-            //}
-
-            if (Lander.position.y < 1)
-            {
-
-                ExitPlanet();
-
-            }
-
-
         }
+        
+    }
+    IEnumerator EndGameFunc()
+    {
+        Explode(Lander);
+        InfoScript.main.gameOverMessage = "You Crashed!";
+        yield return new WaitForSeconds(2);
+        landerLanded = false;
+        SceneManager.LoadScene(2);
+    }
+    private void Explode(Rigidbody toDestroy)
+    {
+        Explosion.transform.position = toDestroy.transform.position;
 
 
+        ParticleSystem Exploder = Explosion.GetComponent<ParticleSystem>();
+        Exploder.Play();
+        toDestroy.gameObject.SetActive(false);
 
     }
-
-
     public void ExitPlanet()
     {
-        PitStopUI.enabled = false;
-        GUI.enabled = true;
+
+        landerLanded = false;
+        minimap.SetActive(true);
+        PitStopUI.GetComponent<Canvas>().enabled = false;
+        velocityPanel.SetActive(true);
         MainCamera.gameObject.SetActive(true);
         LanderCamera.gameObject.SetActive(false);
         Lander.transform.position = Lander.transform.position + new Vector3(0, 10, 0);
         Lander.transform.rotation = Quaternion.Euler(0, 0, 0);
         Lander.isKinematic = true;
         shipRB.isKinematic = false;
-        if (closestPlanet == jupiter ^ closestPlanet == saturn)
+
+        if (closestPlanet == Jupiter ^ closestPlanet == Saturn)
             {
 
             shipRB.transform.position = closestPlanet.transform.position + new Vector3(0, 15, 0);
@@ -318,17 +272,9 @@ public class LandingHandler : MonoBehaviour
         }
         
         shipRB.transform.rotation = Quaternion.Euler(0, 0, 270);
-        shipRB.velocity = new Vector3(0, 0, 0);
-        shipRB.velocity = new Vector3(3, 0, 0);
-
         
-
-
-        LandingHandler.current.isLanded = false;
-
-        LaunchShip();
-
-
+        shipRB.velocity = new Vector3(3, 0, 0);
+        StartCoroutine(runFlames());
     }
 
     IEnumerator runFlames()
@@ -342,17 +288,5 @@ public class LandingHandler : MonoBehaviour
         ShipController.main.thrusterSound.Stop();
 
     }
-
-    private void LaunchShip()
-    {
-        ShipController.main.pitStopped = false;
-        LandingHandler.current.shipRB.freezeRotation = false;
-
-        ship.GetComponent<Rigidbody>().AddForce(transform.up * launchForce);
-        StartCoroutine(runFlames());
-
-    }
-
-
 
 }
