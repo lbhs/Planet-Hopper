@@ -23,7 +23,7 @@ public class TShipController : MonoBehaviour
     private bool inCutScene = false;
 
     // static vars
-    private static float rotationSpeed = 50.0f;
+    private static float rotationSpeed = 2f;
     private static float thrusterForce = .5f;
 
     // used for sound / vfx
@@ -65,6 +65,14 @@ public class TShipController : MonoBehaviour
 
         // rotation
         rb.transform.Rotate(0, 0, -Input.GetAxis("Horizontal") * rotationSpeed);
+        //rb.inertiaTensor = Vector3.zero;
+        // EXPERIMENTAL
+        //if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow))
+        //{
+        //    //rb.AddTorque(0, 0, -Input.GetAxis("Horizontal") * rotationSpeed);
+        //    rb.angularVelocity = new Vector3(0, 0, -Input.GetAxis("Horizontal") * rotationSpeed);
+        //}
+        
 
         if (inCutScene)
         {

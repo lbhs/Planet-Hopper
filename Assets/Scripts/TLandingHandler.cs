@@ -1,11 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TLandingHandler : MonoBehaviour
 {
     public static TLandingHandler main;
     public GameObject ship;
+    public GameObject earth;
+    public GameObject lunarLanderGame;
+
+    public Text tutorialText;
+    private int buttonPresses;
 
     // Start is called before the first frame update
     void Start()
@@ -15,10 +21,28 @@ public class TLandingHandler : MonoBehaviour
         // freeze the scene
         Time.timeScale = 0;
 
-        // button gets pressed ... (`Launch1`)
+        // button gets pressed ... (`LaunchShip`)
     }
 
-    public void Launch1()
+    public void ButtonAction()
+    {
+        if (buttonPresses == 0)
+        {
+            buttonPresses++;
+            LaunchShip();
+        }
+        else if (buttonPresses == 1)
+        {
+            buttonPresses++;
+            StartLunarLander();
+        }
+        else
+        {
+            SwitchScene();
+        }
+    }
+
+    private void LaunchShip()
     {
         // unfreeze the scene
         Time.timeScale = 1;
@@ -30,34 +54,39 @@ public class TLandingHandler : MonoBehaviour
         return;
     }
 
-    public void StartLanding()
+    public void SetupLanding()
     {
         Debug.Log("I WORK!!!");
-        // teleport to the LL area
+        
+        // destroys ship / earth
+        Destroy(ship);
+        Destroy(earth);
+
+        // teleport the LL area over
+        lunarLanderGame.transform.position += 25 * Vector3.left;
+
 
         // freeze the scene
+        Time.timeScale = 0;
 
-        // button gets pressed ... (`Launch2`)
+        tutorialText.text = "Feel free to use the space below to get used to the lunar lander's movement. When you are ready, click continue below.";
+
+        // button gets pressed ... (`StartLunarLander`)
+
+
         return;
     }
 
-    void Launch2()
+    private void StartLunarLander()
     {
         // unfreezes the scene
+        Time.timeScale = 1;
 
         // user plays out the LL game
+        TLanderController.main.StartLanderMotion();
 
         // on landing ... ?? Pit stop ?
         return;
-    }
-
-    public void EndLandingTutorial()
-    {
-        // freeze the scene
-
-        // tutorial text changes
-
-        // button gets pressed ... (`SwitchScene`)
     }
 
     void SwitchScene()

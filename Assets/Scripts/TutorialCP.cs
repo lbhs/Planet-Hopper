@@ -64,11 +64,11 @@ public class TutorialCP : MonoBehaviour
     {
         if (action == 1)
         {
-            TLandingHandler.main.StartLanding();
+            TLandingHandler.main.SetupLanding();
         }
         else
         {
-            TLandingHandler.main.EndLandingTutorial();
+            //TLandingHandler.main.EndLandingTutorial();
         }
     }
 

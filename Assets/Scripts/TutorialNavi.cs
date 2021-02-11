@@ -25,7 +25,7 @@ public class TutorialNavi : MonoBehaviour
     {
         DontDestroyOnLoad(InfoScript.main);
         //DontDestroyOnLoad(InfoScript.main.music);
-        SceneManager.LoadScene(0); // add ID of gameplay scene
+        SceneManager.LoadScene(5); // add ID of gameplay scene
     }
 
     public void GoToTitle()
