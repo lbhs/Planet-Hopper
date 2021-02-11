@@ -221,7 +221,6 @@ public class LandingHandler : MonoBehaviour
                     {
                         landerLanded = true;
                         PitStopUI.GetComponent<Canvas>().enabled = true;
-                        // StartCoroutine(ExitPlanet());
                     }
                 }
             }
