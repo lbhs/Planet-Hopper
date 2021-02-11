@@ -20,10 +20,15 @@ public class Trail : MonoBehaviour
     {
         while (maketrail == true)
         {
+            
             yield return new WaitForSeconds(1);
             var startpos = Starship.transform.position;
             yield return new WaitForSeconds(1);
             var endpos = Starship.transform.position;
+            if (Starship.transform.position.y > 2500)
+            {
+                continue;
+            }
             Vector3[] positionArray = new[] { startpos, endpos };
             GameObject line = new GameObject();
             Lines.Add(line);
@@ -35,6 +40,8 @@ public class Trail : MonoBehaviour
             lr.SetWidth(7, 7);
             lr.SetPositions(positionArray);
             StartCoroutine("DestroyLine");
+
+
         }
     }
 

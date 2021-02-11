@@ -960,19 +960,20 @@ MonoBehaviour:
   LanderCamera: {fileID: 2029746227}
   Lander: {fileID: 1847285784}
   landerLanded: 0
-  landingComplete: 0
   initialShipPosition: {x: 0, y: 0, z: 0}
   launchForce: 500
   flameEmitter: {fileID: 0}
-  mercury: {fileID: 1079091357}
-  venus: {fileID: 28631554}
-  earth: {fileID: 930159117}
-  mars: {fileID: 428235775}
-  jupiter: {fileID: 427949405}
-  saturn: {fileID: 1659373320}
-  uranus: {fileID: 1486254595}
-  neptune: {fileID: 1923098713}
+  Mercury: {fileID: 1079091357}
+  Venus: {fileID: 28631554}
+  Earth: {fileID: 930159117}
+  Mars: {fileID: 428235775}
+  Jupiter: {fileID: 427949405}
+  Saturn: {fileID: 1659373320}
+  Uranus: {fileID: 1486254595}
+  Neptune: {fileID: 1923098713}
   closestPlanet: {fileID: 0}
+  velocityPanel: {fileID: 0}
+  minimap: {fileID: 0}
 --- !u!135 &218657601
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1445,12 +1446,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 301757897}
-  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 1, y: 0, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children: []
-  m_Father: {fileID: 693367705}
-  m_RootOrder: 0
+  m_Father: {fileID: 0}
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &305321290
 GameObject:
@@ -6800,19 +6801,20 @@ MonoBehaviour:
   LanderCamera: {fileID: 748659890}
   Lander: {fileID: 640654223}
   landerLanded: 0
-  landingComplete: 0
   initialShipPosition: {x: 0, y: 0, z: 0}
   launchForce: 500
   flameEmitter: {fileID: 0}
-  mercury: {fileID: 1079091357}
-  venus: {fileID: 28631554}
-  earth: {fileID: 930159117}
-  mars: {fileID: 428235775}
-  jupiter: {fileID: 427949405}
-  saturn: {fileID: 1659373320}
-  uranus: {fileID: 1486254595}
-  neptune: {fileID: 1923098713}
+  Mercury: {fileID: 1079091357}
+  Venus: {fileID: 28631554}
+  Earth: {fileID: 930159117}
+  Mars: {fileID: 428235775}
+  Jupiter: {fileID: 427949405}
+  Saturn: {fileID: 1659373320}
+  Uranus: {fileID: 1486254595}
+  Neptune: {fileID: 1923098713}
   closestPlanet: {fileID: 0}
+  velocityPanel: {fileID: 0}
+  minimap: {fileID: 0}
 --- !u!135 &418275309
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -7290,7 +7292,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 14478293ea1a74c41a83b44e1b1d1e41, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7379,19 +7381,20 @@ MonoBehaviour:
   LanderCamera: {fileID: 248218513}
   Lander: {fileID: 1703156984}
   landerLanded: 0
-  landingComplete: 0
   initialShipPosition: {x: 0, y: 0, z: 0}
   launchForce: 500
   flameEmitter: {fileID: 0}
-  mercury: {fileID: 1079091357}
-  venus: {fileID: 28631554}
-  earth: {fileID: 930159117}
-  mars: {fileID: 428235775}
-  jupiter: {fileID: 427949405}
-  saturn: {fileID: 1659373320}
-  uranus: {fileID: 1486254595}
-  neptune: {fileID: 1923098713}
+  Mercury: {fileID: 1079091357}
+  Venus: {fileID: 28631554}
+  Earth: {fileID: 930159117}
+  Mars: {fileID: 428235775}
+  Jupiter: {fileID: 427949405}
+  Saturn: {fileID: 1659373320}
+  Uranus: {fileID: 1486254595}
+  Neptune: {fileID: 1923098713}
   closestPlanet: {fileID: 0}
+  velocityPanel: {fileID: 0}
+  minimap: {fileID: 0}
 --- !u!135 &464368646
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -7698,19 +7701,20 @@ MonoBehaviour:
   LanderCamera: {fileID: 908838889}
   Lander: {fileID: 1512335892}
   landerLanded: 0
-  landingComplete: 0
   initialShipPosition: {x: 0, y: 0, z: 0}
   launchForce: 500
   flameEmitter: {fileID: 0}
-  mercury: {fileID: 1079091357}
-  venus: {fileID: 28631554}
-  earth: {fileID: 930159117}
-  mars: {fileID: 428235775}
-  jupiter: {fileID: 427949405}
-  saturn: {fileID: 1659373320}
-  uranus: {fileID: 1486254595}
-  neptune: {fileID: 1923098713}
+  Mercury: {fileID: 1079091357}
+  Venus: {fileID: 28631554}
+  Earth: {fileID: 930159117}
+  Mars: {fileID: 428235775}
+  Jupiter: {fileID: 427949405}
+  Saturn: {fileID: 1659373320}
+  Uranus: {fileID: 1486254595}
+  Neptune: {fileID: 1923098713}
   closestPlanet: {fileID: 0}
+  velocityPanel: {fileID: 0}
+  minimap: {fileID: 0}
 --- !u!135 &513037767
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -7722,7 +7726,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.9
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &513037768
 MeshRenderer:
@@ -8134,7 +8138,7 @@ Transform:
   - {fileID: 721431619}
   - {fileID: 205438948}
   m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &551121737
 GameObject:
@@ -13428,10 +13432,9 @@ Transform:
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 301757899}
+  m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!1 &703145869
 GameObject:
@@ -13515,7 +13518,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6810218856465537444}
+      - m_Target: {fileID: 513037766}
         m_MethodName: ExitPlanet
         m_Mode: 1
         m_Arguments:
@@ -13943,7 +13946,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 28
+  m_RootOrder: 29
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &801356910
 GameObject:
@@ -14236,19 +14239,20 @@ MonoBehaviour:
   LanderCamera: {fileID: 1668959476}
   Lander: {fileID: 1439698393}
   landerLanded: 0
-  landingComplete: 0
   initialShipPosition: {x: 0, y: 0, z: 0}
   launchForce: 500
   flameEmitter: {fileID: 0}
-  mercury: {fileID: 1079091357}
-  venus: {fileID: 28631554}
-  earth: {fileID: 930159117}
-  mars: {fileID: 428235775}
-  jupiter: {fileID: 427949405}
-  saturn: {fileID: 1659373320}
-  uranus: {fileID: 1486254595}
-  neptune: {fileID: 1923098713}
+  Mercury: {fileID: 1079091357}
+  Venus: {fileID: 28631554}
+  Earth: {fileID: 930159117}
+  Mars: {fileID: 428235775}
+  Jupiter: {fileID: 1659373320}
+  Saturn: {fileID: 1659373320}
+  Uranus: {fileID: 1486254595}
+  Neptune: {fileID: 1923098713}
   closestPlanet: {fileID: 0}
+  velocityPanel: {fileID: 0}
+  minimap: {fileID: 0}
 --- !u!135 &864914705
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -14973,7 +14977,7 @@ Transform:
   - {fileID: 1835568289}
   - {fileID: 452985734}
   m_Father: {fileID: 0}
-  m_RootOrder: 21
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1025693765
 GameObject:
@@ -15673,7 +15677,7 @@ Transform:
   - {fileID: 231340132}
   - {fileID: 1357915499}
   m_Father: {fileID: 0}
-  m_RootOrder: 26
+  m_RootOrder: 27
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1157813361
 GameObject:
@@ -16169,19 +16173,20 @@ MonoBehaviour:
   LanderCamera: {fileID: 1990134289}
   Lander: {fileID: 364632546}
   landerLanded: 0
-  landingComplete: 0
   initialShipPosition: {x: 0, y: 0, z: 0}
   launchForce: 500
   flameEmitter: {fileID: 0}
-  mercury: {fileID: 1079091357}
-  venus: {fileID: 28631554}
-  earth: {fileID: 930159117}
-  mars: {fileID: 428235775}
-  jupiter: {fileID: 427949405}
-  saturn: {fileID: 1659373320}
-  uranus: {fileID: 1486254595}
-  neptune: {fileID: 1923098713}
+  Mercury: {fileID: 1079091357}
+  Venus: {fileID: 28631554}
+  Earth: {fileID: 930159117}
+  Mars: {fileID: 428235775}
+  Jupiter: {fileID: 427949405}
+  Saturn: {fileID: 1659373320}
+  Uranus: {fileID: 1486254595}
+  Neptune: {fileID: 1923098713}
   closestPlanet: {fileID: 0}
+  velocityPanel: {fileID: 0}
+  minimap: {fileID: 0}
 --- !u!135 &1218504662
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -16492,19 +16497,20 @@ MonoBehaviour:
   LanderCamera: {fileID: 1835568291}
   Lander: {fileID: 1663646540}
   landerLanded: 0
-  landingComplete: 0
   initialShipPosition: {x: 0, y: 0, z: 0}
   launchForce: 500
   flameEmitter: {fileID: 0}
-  mercury: {fileID: 1079091357}
-  venus: {fileID: 28631554}
-  earth: {fileID: 930159117}
-  mars: {fileID: 428235775}
-  jupiter: {fileID: 427949405}
-  saturn: {fileID: 1659373320}
-  uranus: {fileID: 1486254595}
-  neptune: {fileID: 1923098713}
+  Mercury: {fileID: 28631554}
+  Venus: {fileID: 28631554}
+  Earth: {fileID: 930159117}
+  Mars: {fileID: 428235775}
+  Jupiter: {fileID: 427949405}
+  Saturn: {fileID: 1659373320}
+  Uranus: {fileID: 1486254595}
+  Neptune: {fileID: 1923098713}
   closestPlanet: {fileID: 0}
+  velocityPanel: {fileID: 0}
+  minimap: {fileID: 0}
 --- !u!135 &1304682003
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -17154,7 +17160,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1439698389
 PrefabInstance:
@@ -17547,7 +17553,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 7a5e552846abdae41a7d4360f1c925c1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -17668,7 +17674,7 @@ RectTransform:
   m_Children:
   - {fileID: 1618533338}
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -18678,7 +18684,7 @@ Transform:
   - {fileID: 748659888}
   - {fileID: 1054939580}
   m_Father: {fileID: 0}
-  m_RootOrder: 23
+  m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1650291731
 GameObject:
@@ -18785,7 +18791,7 @@ Transform:
   - {fileID: 2029746225}
   - {fileID: 1520048899}
   m_Father: {fileID: 0}
-  m_RootOrder: 20
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1659373320
 GameObject:
@@ -19947,19 +19953,20 @@ MonoBehaviour:
   LanderCamera: {fileID: 231340134}
   Lander: {fileID: 1698275168}
   landerLanded: 0
-  landingComplete: 0
   initialShipPosition: {x: 0, y: 0, z: 0}
   launchForce: 500
   flameEmitter: {fileID: 0}
-  mercury: {fileID: 1079091357}
-  venus: {fileID: 28631554}
-  earth: {fileID: 930159117}
-  mars: {fileID: 428235775}
-  jupiter: {fileID: 427949405}
-  saturn: {fileID: 1659373320}
-  uranus: {fileID: 1486254595}
-  neptune: {fileID: 1923098713}
+  Mercury: {fileID: 1079091357}
+  Venus: {fileID: 28631554}
+  Earth: {fileID: 930159117}
+  Mars: {fileID: 428235775}
+  Jupiter: {fileID: 427949405}
+  Saturn: {fileID: 1659373320}
+  Uranus: {fileID: 1486254595}
+  Neptune: {fileID: 1923098713}
   closestPlanet: {fileID: 0}
+  velocityPanel: {fileID: 0}
+  minimap: {fileID: 0}
 --- !u!135 &1831694903
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -20947,7 +20954,7 @@ Transform:
   - {fileID: 1668959474}
   - {fileID: 1161457559}
   m_Father: {fileID: 0}
-  m_RootOrder: 24
+  m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1986590963
 GameObject:
@@ -21058,7 +21065,7 @@ Transform:
   - {fileID: 1990134287}
   - {fileID: 1917224349}
   m_Father: {fileID: 0}
-  m_RootOrder: 25
+  m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1990134286
 GameObject:
@@ -21316,7 +21323,7 @@ RectTransform:
   - {fileID: 1034352168}
   - {fileID: 1986590964}
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -21511,7 +21518,7 @@ Transform:
   - {fileID: 908838887}
   - {fileID: 1467410064}
   m_Father: {fileID: 0}
-  m_RootOrder: 22
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2088913697
 GameObject:
@@ -21863,7 +21870,7 @@ Transform:
   - {fileID: 248218511}
   - {fileID: 1751293767}
   m_Father: {fileID: 0}
-  m_RootOrder: 27
+  m_RootOrder: 28
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &537351580871168568
 MeshRenderer:
