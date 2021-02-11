@@ -12,12 +12,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Main 2.unity
     guid: f8d5e43ef6605e246a684a3151bc9453
   - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
-  - enabled: 0
     path: Assets/Scenes/Marc.unity
     guid: 660a279a94b0ffe428a54ea95478246a
   - enabled: 1
@@ -29,7 +23,13 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Main.unity
     guid: 448746bdb21884c34a2b649a6b1ad2db
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/TGameplay1.unity
+    guid: f81bd78e0b7ed4c68a4ebef7ef9d28a5
+  - enabled: 1
+    path: Assets/Scenes/TGameplay2.unity
+    guid: 2916deb1376334749a1153ad5b6f7609
+  - enabled: 1
+    path: Assets/Scenes/TGameplay3.unity
+    guid: d8567b6436b54407cbf52d523683d871
   m_configObjects: {}
