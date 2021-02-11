@@ -31,11 +31,6 @@ public class TLandingHandler : MonoBehaviour
             buttonPresses++;
             LaunchShip();
         }
-        else if (buttonPresses == 1)
-        {
-            buttonPresses++;
-            StartLunarLander();
-        }
         else
         {
             SwitchScene();
@@ -55,9 +50,7 @@ public class TLandingHandler : MonoBehaviour
     }
 
     public void SetupLanding()
-    {
-        Debug.Log("I WORK!!!");
-        
+    {   
         // destroys ship / earth
         Destroy(ship);
         Destroy(earth);
@@ -67,27 +60,29 @@ public class TLandingHandler : MonoBehaviour
 
 
         // freeze the scene
-        Time.timeScale = 0;
+        //Time.timeScale = 0;
 
-        tutorialText.text = "Feel free to use the space below to get used to the lunar lander's movement. When you are ready, click continue below.";
+        tutorialText.text = "Feel free to use the space below to get used to the lunar lander's movement. When you are ready to move on to the next tutorial, click continue below.";
 
         // button gets pressed ... (`StartLunarLander`)
 
 
-        return;
-    }
-
-    private void StartLunarLander()
-    {
-        // unfreezes the scene
-        Time.timeScale = 1;
-
-        // user plays out the LL game
         TLanderController.main.StartLanderMotion();
 
-        // on landing ... ?? Pit stop ?
         return;
     }
+
+    //private void StartLunarLander()
+    //{
+    //    // unfreezes the scene
+    //    //Time.timeScale = 1;
+
+    //    // user plays out the LL game
+    //    TLanderController.main.StartLanderMotion();
+
+    //    // on landing ... ?? Pit stop ?
+    //    return;
+    //}
 
     void SwitchScene()
     {
