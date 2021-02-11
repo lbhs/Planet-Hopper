@@ -9,6 +9,8 @@ public class TLanderController : MonoBehaviour
     private bool active;
 
     public Rigidbody lander;
+    public AudioSource thrusterSound;
+    public ParticleSystem flameEmitter;
 
     // Start is called before the first frame update
     void Start()
@@ -27,6 +29,20 @@ public class TLanderController : MonoBehaviour
 
         lander.AddForce(0, -0.1f, 0);
 
+        // sound / vfx
+        if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow))
+        {
+            if (!thrusterSound.isPlaying)
+            {
+                thrusterSound.Play();
+                flameEmitter.Play();
+            }
+        }
+        else
+        {
+            thrusterSound.Stop();
+            flameEmitter.Stop();
+        }
 
         if (Input.GetKey(KeyCode.LeftArrow))
         {
