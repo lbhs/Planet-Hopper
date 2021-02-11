@@ -31,6 +31,11 @@ public class TLandingHandler : MonoBehaviour
             buttonPresses++;
             LaunchShip();
         }
+        else if (buttonPresses == 1)
+        {
+            buttonPresses++;
+            StartLunarLander();
+        }
         else
         {
             SwitchScene();
@@ -60,29 +65,28 @@ public class TLandingHandler : MonoBehaviour
 
 
         // freeze the scene
-        //Time.timeScale = 0;
+        Time.timeScale = 0;
 
-        tutorialText.text = "Feel free to use the space below to get used to the lunar lander's movement. When you are ready to move on to the next tutorial, click continue below.";
+        tutorialText.text = "The Lunar Lander uses the same controls as the Starship– the arrow keys. \n\nWhen you are ready to test out the lander, click continue below.";
 
         // button gets pressed ... (`StartLunarLander`)
-
-
-        TLanderController.main.StartLanderMotion();
 
         return;
     }
 
-    //private void StartLunarLander()
-    //{
-    //    // unfreezes the scene
-    //    //Time.timeScale = 1;
+    private void StartLunarLander()
+    {
+        // unfreezes the scene
+        Time.timeScale = 1;
 
-    //    // user plays out the LL game
-    //    TLanderController.main.StartLanderMotion();
+        tutorialText.text = "Feel free to use this space to get used to the Lunar Lander's movement. \n\nWhen you are ready to move on to the next tutorial, click continue below.";
 
-    //    // on landing ... ?? Pit stop ?
-    //    return;
-    //}
+        // user plays out the LL game
+        TLanderController.main.StartLanderMotion();
+
+        // on landing ... ?? Pit stop ?
+        return;
+    }
 
     void SwitchScene()
     {
