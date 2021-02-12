@@ -79,7 +79,7 @@ public class TLandingHandler : MonoBehaviour
         // unfreezes the scene
         Time.timeScale = 1;
 
-        tutorialText.text = "Feel free to use this space to get used to the Lunar Lander's movement. \n\nWhen you are ready to move on to the next tutorial, click continue below.";
+        tutorialText.text = "Feel free to use this space to get used to the Lunar Lander's movement. Note: in an actual game of Planet Hopper, you must land under a certain speed or you will crash! \n\nWhen you are ready to move on to the next tutorial, click continue below.";
 
         // user plays out the LL game
         TLanderController.main.StartLanderMotion();
