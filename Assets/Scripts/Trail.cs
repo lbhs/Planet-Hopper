@@ -8,7 +8,7 @@ public class Trail : MonoBehaviour
     public Shader lineShader;
     public Color linecolor;
     public GameObject Starship;
-    public bool maketrail;
+    private bool maketrail;
     public List<GameObject> Lines;
 
     void Start()
@@ -18,8 +18,7 @@ public class Trail : MonoBehaviour
         StartCoroutine("MakeLine");
     }
 
-
-    public void startTrailCor()
+    public void StartTrailCor()
     {
         StartCoroutine("MakeLine");
     }
@@ -28,16 +27,15 @@ public class Trail : MonoBehaviour
     {
         while (maketrail == true)
         {
-
-            yield return new WaitForSeconds(1);
-            var startpos = Starship.transform.position;
             
             yield return new WaitForSeconds(1);
+            var startpos = Starship.transform.position;
+            yield return new WaitForSeconds(1);
+            var endpos = Starship.transform.position;
             if (Starship.transform.position.y > 2500)
             {
                 break;
             }
-            var endpos = Starship.transform.position;
             Vector3[] positionArray = new[] { startpos, endpos };
             GameObject line = new GameObject();
             Lines.Add(line);
@@ -49,7 +47,8 @@ public class Trail : MonoBehaviour
             lr.SetWidth(7, 7);
             lr.SetPositions(positionArray);
             StartCoroutine("DestroyLine");
-            
+
+
         }
     }
 
