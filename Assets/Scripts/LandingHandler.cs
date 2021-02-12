@@ -81,6 +81,7 @@ public class LandingHandler : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        
         ShipController.main.thrusterSound.Stop();
         current = this;
         if (other.name == ship.name)
@@ -141,9 +142,11 @@ public class LandingHandler : MonoBehaviour
 
     private void InitiateLanding()
     {
+        
         CheckClosestPlanet();
         FreezeShip();
         LanderSetUp();
+
     }
 
     private void CheckClosestPlanet()
@@ -274,6 +277,7 @@ public class LandingHandler : MonoBehaviour
         
         shipRB.velocity = new Vector3(3, 0, 0);
         StartCoroutine(runFlames());
+        Trail.main.startTrailCor();
     }
 
     IEnumerator runFlames()
