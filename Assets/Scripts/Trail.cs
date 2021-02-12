@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Trail : MonoBehaviour
 {
+    public static Trail main;
     public Shader lineShader;
     public Color linecolor;
     public GameObject Starship;
@@ -12,7 +13,13 @@ public class Trail : MonoBehaviour
 
     void Start()
     {
+        main = this;
         maketrail = true;
+        StartCoroutine("MakeLine");
+    }
+
+    public void StartTrailCor()
+    {
         StartCoroutine("MakeLine");
     }
 
@@ -27,7 +34,7 @@ public class Trail : MonoBehaviour
             var endpos = Starship.transform.position;
             if (Starship.transform.position.y > 2500)
             {
-                continue;
+                break;
             }
             Vector3[] positionArray = new[] { startpos, endpos };
             GameObject line = new GameObject();
