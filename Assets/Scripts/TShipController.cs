@@ -3,7 +3,7 @@
  * Written by Gavin (and sorta sam)
  * 
  * This script is a lightweight version of ShipController.cs
- * built for use in the games' tutorials.
+ * built for use in the game's tutorials.
  * 
  * It SHOULD feel just like the one in game.
  */
@@ -65,14 +65,6 @@ public class TShipController : MonoBehaviour
 
         // rotation
         rb.transform.Rotate(0, 0, -Input.GetAxis("Horizontal") * rotationSpeed);
-        //rb.inertiaTensor = Vector3.zero;
-        // EXPERIMENTAL
-        //if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow))
-        //{
-        //    //rb.AddTorque(0, 0, -Input.GetAxis("Horizontal") * rotationSpeed);
-        //    rb.angularVelocity = new Vector3(0, 0, -Input.GetAxis("Horizontal") * rotationSpeed);
-        //}
-        
 
         if (inCutScene)
         {

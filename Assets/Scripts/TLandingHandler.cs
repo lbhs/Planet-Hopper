@@ -55,9 +55,7 @@ public class TLandingHandler : MonoBehaviour
     }
 
     public void SetupLanding()
-    {
-        Debug.Log("I WORK!!!");
-        
+    {   
         // destroys ship / earth
         Destroy(ship);
         Destroy(earth);
@@ -69,10 +67,9 @@ public class TLandingHandler : MonoBehaviour
         // freeze the scene
         Time.timeScale = 0;
 
-        tutorialText.text = "Feel free to use the space below to get used to the lunar lander's movement. When you are ready, click continue below.";
+        tutorialText.text = "The Lunar Lander uses the same controls as the Starship– the arrow keys. \n\nWhen you are ready to test out the lander, click continue below.";
 
         // button gets pressed ... (`StartLunarLander`)
-
 
         return;
     }
@@ -81,6 +78,8 @@ public class TLandingHandler : MonoBehaviour
     {
         // unfreezes the scene
         Time.timeScale = 1;
+
+        tutorialText.text = "Feel free to use this space to get used to the Lunar Lander's movement. \n\nWhen you are ready to move on to the next tutorial, click continue below.";
 
         // user plays out the LL game
         TLanderController.main.StartLanderMotion();

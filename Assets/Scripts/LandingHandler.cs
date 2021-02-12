@@ -274,6 +274,7 @@ public class LandingHandler : MonoBehaviour
         
         shipRB.velocity = new Vector3(3, 0, 0);
         StartCoroutine(runFlames());
+        Trail.main.StartTrailCor();
     }
 
     IEnumerator runFlames()
