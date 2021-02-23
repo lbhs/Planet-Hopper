@@ -971,7 +971,7 @@ MonoBehaviour:
   Saturn: {fileID: 1659373320}
   Uranus: {fileID: 1486254595}
   Neptune: {fileID: 1923098713}
-  closestPlanet: {fileID: 0}
+  closestPlanet: {fileID: 1079091357}
   velocityPanel: {fileID: 0}
   minimap: {fileID: 0}
 --- !u!135 &218657601
@@ -985,7 +985,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.7
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &218657602
 MeshRenderer:
@@ -6812,7 +6812,7 @@ MonoBehaviour:
   Saturn: {fileID: 1659373320}
   Uranus: {fileID: 1486254595}
   Neptune: {fileID: 1923098713}
-  closestPlanet: {fileID: 0}
+  closestPlanet: {fileID: 428235775}
   velocityPanel: {fileID: 0}
   minimap: {fileID: 0}
 --- !u!135 &418275309
@@ -7392,7 +7392,7 @@ MonoBehaviour:
   Saturn: {fileID: 1659373320}
   Uranus: {fileID: 1486254595}
   Neptune: {fileID: 1923098713}
-  closestPlanet: {fileID: 0}
+  closestPlanet: {fileID: 1923098713}
   velocityPanel: {fileID: 0}
   minimap: {fileID: 0}
 --- !u!135 &464368646
@@ -14246,11 +14246,11 @@ MonoBehaviour:
   Venus: {fileID: 28631554}
   Earth: {fileID: 930159117}
   Mars: {fileID: 428235775}
-  Jupiter: {fileID: 1659373320}
+  Jupiter: {fileID: 427949405}
   Saturn: {fileID: 1659373320}
   Uranus: {fileID: 1486254595}
   Neptune: {fileID: 1923098713}
-  closestPlanet: {fileID: 0}
+  closestPlanet: {fileID: 427949405}
   velocityPanel: {fileID: 0}
   minimap: {fileID: 0}
 --- !u!135 &864914705
@@ -16184,7 +16184,7 @@ MonoBehaviour:
   Saturn: {fileID: 1659373320}
   Uranus: {fileID: 1486254595}
   Neptune: {fileID: 1923098713}
-  closestPlanet: {fileID: 0}
+  closestPlanet: {fileID: 1659373320}
   velocityPanel: {fileID: 0}
   minimap: {fileID: 0}
 --- !u!135 &1218504662
@@ -16500,7 +16500,7 @@ MonoBehaviour:
   initialShipPosition: {x: 0, y: 0, z: 0}
   launchForce: 500
   flameEmitter: {fileID: 0}
-  Mercury: {fileID: 28631554}
+  Mercury: {fileID: 1079091357}
   Venus: {fileID: 28631554}
   Earth: {fileID: 930159117}
   Mars: {fileID: 428235775}
@@ -16508,7 +16508,7 @@ MonoBehaviour:
   Saturn: {fileID: 1659373320}
   Uranus: {fileID: 1486254595}
   Neptune: {fileID: 1923098713}
-  closestPlanet: {fileID: 0}
+  closestPlanet: {fileID: 28631554}
   velocityPanel: {fileID: 0}
   minimap: {fileID: 0}
 --- !u!135 &1304682003
@@ -16522,7 +16522,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.7
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1304682004
 MeshRenderer:
@@ -19964,7 +19964,7 @@ MonoBehaviour:
   Saturn: {fileID: 1659373320}
   Uranus: {fileID: 1486254595}
   Neptune: {fileID: 1923098713}
-  closestPlanet: {fileID: 0}
+  closestPlanet: {fileID: 1486254595}
   velocityPanel: {fileID: 0}
   minimap: {fileID: 0}
 --- !u!135 &1831694903
