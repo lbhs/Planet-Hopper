@@ -960,7 +960,6 @@ MonoBehaviour:
   LanderCamera: {fileID: 2029746227}
   Lander: {fileID: 1847285784}
   landerLanded: 0
-  initialShipPosition: {x: 0, y: 0, z: 0}
   launchForce: 500
   flameEmitter: {fileID: 0}
   Mercury: {fileID: 1079091357}
@@ -6801,7 +6800,6 @@ MonoBehaviour:
   LanderCamera: {fileID: 748659890}
   Lander: {fileID: 640654223}
   landerLanded: 0
-  initialShipPosition: {x: 0, y: 0, z: 0}
   launchForce: 500
   flameEmitter: {fileID: 0}
   Mercury: {fileID: 1079091357}
@@ -7381,7 +7379,6 @@ MonoBehaviour:
   LanderCamera: {fileID: 248218513}
   Lander: {fileID: 1703156984}
   landerLanded: 0
-  initialShipPosition: {x: 0, y: 0, z: 0}
   launchForce: 500
   flameEmitter: {fileID: 0}
   Mercury: {fileID: 1079091357}
@@ -7701,7 +7698,6 @@ MonoBehaviour:
   LanderCamera: {fileID: 908838889}
   Lander: {fileID: 1512335892}
   landerLanded: 0
-  initialShipPosition: {x: 0, y: 0, z: 0}
   launchForce: 500
   flameEmitter: {fileID: 0}
   Mercury: {fileID: 1079091357}
@@ -14317,7 +14313,6 @@ MonoBehaviour:
   LanderCamera: {fileID: 1668959476}
   Lander: {fileID: 1439698393}
   landerLanded: 0
-  initialShipPosition: {x: 0, y: 0, z: 0}
   launchForce: 500
   flameEmitter: {fileID: 0}
   Mercury: {fileID: 1079091357}
@@ -16459,7 +16454,6 @@ MonoBehaviour:
   LanderCamera: {fileID: 1990134289}
   Lander: {fileID: 364632546}
   landerLanded: 0
-  initialShipPosition: {x: 0, y: 0, z: 0}
   launchForce: 500
   flameEmitter: {fileID: 0}
   Mercury: {fileID: 1079091357}
@@ -16783,7 +16777,6 @@ MonoBehaviour:
   LanderCamera: {fileID: 1835568291}
   Lander: {fileID: 1663646540}
   landerLanded: 0
-  initialShipPosition: {x: 0, y: 0, z: 0}
   launchForce: 500
   flameEmitter: {fileID: 0}
   Mercury: {fileID: 28631554}
@@ -20133,7 +20126,6 @@ MonoBehaviour:
   LanderCamera: {fileID: 231340134}
   Lander: {fileID: 1698275168}
   landerLanded: 0
-  initialShipPosition: {x: 0, y: 0, z: 0}
   launchForce: 500
   flameEmitter: {fileID: 0}
   Mercury: {fileID: 1079091357}
@@ -21972,6 +21964,15 @@ MonoBehaviour:
   PausedText: {fileID: 1757724542}
   Resume: {fileID: 1072317925}
   Restart: {fileID: 1863650533}
+  UIStuff:
+  - {fileID: 1375362041}
+  - {fileID: 482740601}
+  - {fileID: 341726534}
+  - {fileID: 305321290}
+  - {fileID: 806569899}
+  - {fileID: 1769708349}
+  - {fileID: 553898176}
+  - {fileID: 1536517407}
 --- !u!1 &2088913697
 GameObject:
   m_ObjectHideFlags: 0

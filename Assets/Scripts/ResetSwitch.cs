@@ -9,6 +9,8 @@ public class ResetSwitch : MonoBehaviour
     public Text PausedText;
     public GameObject Resume;
     public GameObject Restart;
+    public List<GameObject> UIStuff;
+    public List<GameObject> ToEnable;
 
     void Start()
     {
@@ -35,6 +37,17 @@ public class ResetSwitch : MonoBehaviour
         Resume.SetActive(true);
         Restart.SetActive(true);
         PausedText.enabled = true;
+        foreach (GameObject UI in UIStuff)
+        {
+            if (UI.active == false)
+            {
+                ToEnable.Add(UI);
+            }
+            else
+            {
+                UI.SetActive(false);
+            }
+        }
     }
 
     public void ResumeGame()
@@ -43,6 +56,14 @@ public class ResetSwitch : MonoBehaviour
         Restart.SetActive(false);
         PausedText.enabled = false;
         Time.timeScale = 1;
+        foreach (GameObject UI in UIStuff)
+        {
+            if (ToEnable.Contains(UI) == false)
+            {
+                UI.SetActive(true);
+            }
+        }
+        ToEnable.Clear();
     }
 
     public void ResetScene()
