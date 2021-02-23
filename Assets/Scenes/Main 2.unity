@@ -960,7 +960,6 @@ MonoBehaviour:
   LanderCamera: {fileID: 2029746227}
   Lander: {fileID: 1847285784}
   landerLanded: 0
-  initialShipPosition: {x: 0, y: 0, z: 0}
   launchForce: 500
   flameEmitter: {fileID: 0}
   Mercury: {fileID: 1079091357}
@@ -6801,7 +6800,6 @@ MonoBehaviour:
   LanderCamera: {fileID: 748659890}
   Lander: {fileID: 640654223}
   landerLanded: 0
-  initialShipPosition: {x: 0, y: 0, z: 0}
   launchForce: 500
   flameEmitter: {fileID: 0}
   Mercury: {fileID: 1079091357}
@@ -7381,7 +7379,6 @@ MonoBehaviour:
   LanderCamera: {fileID: 248218513}
   Lander: {fileID: 1703156984}
   landerLanded: 0
-  initialShipPosition: {x: 0, y: 0, z: 0}
   launchForce: 500
   flameEmitter: {fileID: 0}
   Mercury: {fileID: 1079091357}
@@ -7701,7 +7698,6 @@ MonoBehaviour:
   LanderCamera: {fileID: 908838889}
   Lander: {fileID: 1512335892}
   landerLanded: 0
-  initialShipPosition: {x: 0, y: 0, z: 0}
   launchForce: 500
   flameEmitter: {fileID: 0}
   Mercury: {fileID: 1079091357}
@@ -7712,7 +7708,7 @@ MonoBehaviour:
   Saturn: {fileID: 1659373320}
   Uranus: {fileID: 1486254595}
   Neptune: {fileID: 1923098713}
-  closestPlanet: {fileID: 0}
+  closestPlanet: {fileID: 930159117}
   velocityPanel: {fileID: 0}
   minimap: {fileID: 0}
 --- !u!135 &513037767
@@ -14239,7 +14235,6 @@ MonoBehaviour:
   LanderCamera: {fileID: 1668959476}
   Lander: {fileID: 1439698393}
   landerLanded: 0
-  initialShipPosition: {x: 0, y: 0, z: 0}
   launchForce: 500
   flameEmitter: {fileID: 0}
   Mercury: {fileID: 1079091357}
@@ -16173,7 +16168,6 @@ MonoBehaviour:
   LanderCamera: {fileID: 1990134289}
   Lander: {fileID: 364632546}
   landerLanded: 0
-  initialShipPosition: {x: 0, y: 0, z: 0}
   launchForce: 500
   flameEmitter: {fileID: 0}
   Mercury: {fileID: 1079091357}
@@ -16497,7 +16491,6 @@ MonoBehaviour:
   LanderCamera: {fileID: 1835568291}
   Lander: {fileID: 1663646540}
   landerLanded: 0
-  initialShipPosition: {x: 0, y: 0, z: 0}
   launchForce: 500
   flameEmitter: {fileID: 0}
   Mercury: {fileID: 1079091357}
@@ -19953,7 +19946,6 @@ MonoBehaviour:
   LanderCamera: {fileID: 231340134}
   Lander: {fileID: 1698275168}
   landerLanded: 0
-  initialShipPosition: {x: 0, y: 0, z: 0}
   launchForce: 500
   flameEmitter: {fileID: 0}
   Mercury: {fileID: 1079091357}
