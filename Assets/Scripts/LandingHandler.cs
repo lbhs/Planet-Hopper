@@ -45,7 +45,7 @@ public class LandingHandler : MonoBehaviour
     [SerializeField] public Camera LanderCamera;
     public Rigidbody Lander;
     public bool landerLanded = false;
-    public Vector3 initialShipPosition;
+    // public Vector3 initialShipPosition;
     public float launchForce = 500f;
     public GameObject flameEmitter;
     public GameObject Mercury;
@@ -148,15 +148,7 @@ public class LandingHandler : MonoBehaviour
 
     private void CheckClosestPlanet()
     {
-        GameObject[] planets = { Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, Neptune };
-        foreach (GameObject planet in planets)
-        {
-            if ((shipRB.transform.position - planet.GetComponent<Rigidbody>().transform.position).magnitude < 30)
-            {
-                closestPlanet = planet;
-            }
-        }
-
+        Debug.Log(closestPlanet + "this is closest planet");
     }
 
     private void FreezeShip()
@@ -220,7 +212,8 @@ public class LandingHandler : MonoBehaviour
                     else
                     {
                         landerLanded = true;
-                        PitStopUI.GetComponent<Canvas>().enabled = true;
+                        ExitPlanet();
+                        //PitStopUI.GetComponent<Canvas>().enabled = true;
                     }
                 }
             }
@@ -250,10 +243,11 @@ public class LandingHandler : MonoBehaviour
 
         landerLanded = false;
         minimap.SetActive(true);
-        PitStopUI.GetComponent<Canvas>().enabled = false;
+        //PitStopUI.GetComponent<Canvas>().enabled = false;
         velocityPanel.SetActive(true);
-        MainCamera.gameObject.SetActive(true);
         LanderCamera.gameObject.SetActive(false);
+        MainCamera.gameObject.SetActive(true);
+
         Lander.transform.position = Lander.transform.position + new Vector3(0, 10, 0);
         Lander.transform.rotation = Quaternion.Euler(0, 0, 0);
         Lander.isKinematic = true;
@@ -261,12 +255,13 @@ public class LandingHandler : MonoBehaviour
 
         if (closestPlanet == Jupiter ^ closestPlanet == Saturn)
             {
-
+            Debug.Log(closestPlanet + "this is closest planet2");
             shipRB.transform.position = closestPlanet.transform.position + new Vector3(0, 15, 0);
 
         }
         else
         {
+            Debug.Log(closestPlanet + "this is closest planet3");
             shipRB.transform.position = closestPlanet.transform.position + new Vector3(0, 10, 0);
         }
         
