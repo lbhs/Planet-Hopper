@@ -72,7 +72,9 @@ public class MinimapHandler : MonoBehaviour
                 var index = PlanetNames.IndexOf(text);
                 var planet = Planets[index];
                 var uipos = MinimapCam.WorldToScreenPoint(planet.transform.position);
-                var newx = uipos.x + 120;
+                var width = Screen.width;
+                UnityEngine.Debug.Log(width);
+                var newx = uipos.x + 120 * width/1000;
                 var newxy = new Vector2(newx, uipos.y);
                 text.transform.position = newxy;
                 text.color = Color.white;
