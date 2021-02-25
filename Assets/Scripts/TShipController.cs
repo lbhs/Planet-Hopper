@@ -93,4 +93,21 @@ public class TShipController : MonoBehaviour
         thrusterSound.Stop();
         flameEmitter.Stop();
     }
+
+    public void ImmobilizeShip()
+    {
+        rb.isKinematic = true;
+        if (thrusterSound.isPlaying || flameEmitter.isPlaying)
+        {
+            thrusterSound.Stop();
+            flameEmitter.Stop();
+        }
+        inCutScene = true;
+    }
+
+    public void MobilizeShip()
+    {
+        rb.isKinematic = false;
+        inCutScene = true;
+    }
 }
