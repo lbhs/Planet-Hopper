@@ -552,7 +552,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ship: {fileID: 867977415}
-  camSpeed: 50
+  camSpeed: 0.5
   orbitSpeed: 0.5
   debugRenderer: {fileID: 748732843}
 --- !u!4 &477189809
