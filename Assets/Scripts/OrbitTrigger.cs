@@ -14,21 +14,35 @@ using UnityEngine;
 public class OrbitTrigger : MonoBehaviour
 {
     public int triggerID;
+    private bool isActive;
+
+    private void Start()
+    {
+        isActive = true;
+    }
 
     private void OnTriggerEnter(Collider other)
     {
-        StartCoroutine("OrbitTimer");
+        if (isActive)
+        {
+            StartCoroutine("OrbitTimer");
+        }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        StopAllCoroutines();
+        if (isActive)
+        {
+            StopAllCoroutines();
+        }
     }
 
     private IEnumerator OrbitTimer()
     {
         yield return new WaitForSeconds(3);
+        isActive = false;
         OrbitHandler.main.InitiateOrbit(triggerID);
+        
     }
 }
 
