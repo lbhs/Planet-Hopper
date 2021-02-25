@@ -59,13 +59,13 @@ public class OrbitHandler : MonoBehaviour
     /* This function calculates the ship's position on the unit circle in radians
      * and sets that value to `pos`. It also finds the `radius` of the ship to
      * the planet.
+     * 
+     * TODO: Fix Q3/Q4 Bug! (I think it's something in here)
      */
     private void CalculateInitialOrbitPosition()
     {
         float x = planet.transform.position.x - ship.transform.position.x; // ship.transform.position.x - planet.transform.position.x;
         float y = planet.transform.position.y - ship.transform.position.y; // ship.transform.position.y - planet.transform.position.y;
-
-
 
         pos = Mathf.Atan(x/y);
         radius = Vector3.Distance(ship.transform.position, planet.transform.position);
