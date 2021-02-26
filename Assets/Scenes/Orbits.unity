@@ -910,7 +910,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f816a89b8fd444c7a3429cc2ddf75d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  triggerID: 0
+  planet: {fileID: 1233405149}
 --- !u!135 &748732842
 SphereCollider:
   m_ObjectHideFlags: 0
