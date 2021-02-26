@@ -33,6 +33,8 @@ public class OrbitHandler : MonoBehaviour
     public GameObject uranus;  // 6
     public GameObject neptune; // 7
 
+    public TextController OrbitText;
+
     // the planet that the ship is orbiting.
     private GameObject planet;
 
@@ -47,6 +49,8 @@ public class OrbitHandler : MonoBehaviour
     // smoooooth camera vars
     private float tCam = 0;
     private bool camReachedPlanet = false;
+
+    private bool leaving = false;
 
     void Start()
     {
@@ -147,6 +151,11 @@ public class OrbitHandler : MonoBehaviour
         {
             SetOrbitCamera();
         }
+
+        if (leaving)
+        {
+            LeaveOrbit();
+        }
     }
 
 
@@ -159,6 +168,23 @@ public class OrbitHandler : MonoBehaviour
             planet.transform.position.x + sx * (radius * Mathf.Sin(pos += (orbitSpeed * Time.deltaTime))),
             planet.transform.position.y + sy * (radius * Mathf.Cos(pos += (orbitSpeed * Time.deltaTime))),
             0);
+    }
+
+    public void LeaveOrbitButton()
+    {
+        leaving = true;
+    }
+
+    private void LeaveOrbit()
+    {
+        // some line here about making the camera follow the ship again
+
+        planet = null;
+        OrbitText.ToggleVisibility();
+        TShipController.main.MobilizeShip();
+        leaving = false;
+        tCam = 0f;
+        camReachedPlanet = false;
     }
 
     /* Assigns the `planet` variable its GameObject based on the ID from
@@ -210,5 +236,8 @@ public class OrbitHandler : MonoBehaviour
                 break;
         }
         Debug.Log("Putting the ship into orbit of " + debugNameOfPlanet);
+
+        OrbitText.UpdateMyTextTo("You're in Orbit of " + debugNameOfPlanet);
+        OrbitText.ToggleVisibility();
     }
 }
