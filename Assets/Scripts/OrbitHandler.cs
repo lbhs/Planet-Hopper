@@ -24,6 +24,15 @@ public class OrbitHandler : MonoBehaviour
     public float orbitSpeed;
     public MeshRenderer debugRenderer;
 
+    public GameObject mercury; // 0
+    public GameObject venus;   // 1
+    public GameObject earth;   // 2
+    public GameObject mars;    // 3
+    public GameObject jupiter; // 4
+    public GameObject saturn;  // 5
+    public GameObject uranus;  // 6
+    public GameObject neptune; // 7
+
     // the planet that the ship is orbiting.
     private GameObject planet;
 
@@ -55,16 +64,7 @@ public class OrbitHandler : MonoBehaviour
 
         TShipController.main.ImmobilizeShip();
 
-        string debugNameOfPlanet;
-        switch (ID)
-        {
-            case 0: debugNameOfPlanet = "Earth";
-                planet = GameObject.Find("Earth");
-                break;
-            default: debugNameOfPlanet = "An invalid planet!";
-                break;
-        }
-        Debug.Log("Putting the ship into orbit of " + debugNameOfPlanet);
+        AssignPlanet(ID);
         
         CalculateInitialOrbitPosition();
     }
@@ -159,5 +159,56 @@ public class OrbitHandler : MonoBehaviour
             planet.transform.position.x + sx * (radius * Mathf.Sin(pos += (orbitSpeed * Time.deltaTime))),
             planet.transform.position.y + sy * (radius * Mathf.Cos(pos += (orbitSpeed * Time.deltaTime))),
             0);
+    }
+
+    /* Assigns the `planet` variable its GameObject based on the ID from
+     * the Orbit Trigger. 
+     * 
+     * Note: There's probably a better way of doing this, like using an 
+     * array or something. Actually that would be so much easier. I'll get
+     * to that later.
+    */
+    private void AssignPlanet(int ID)
+    {
+        string debugNameOfPlanet;
+        switch (ID)
+        {
+            case 0:
+                debugNameOfPlanet = "Mercury";
+                planet = mercury;
+                break;
+            case 1:
+                debugNameOfPlanet = "Venus";
+                planet = venus;
+                break;
+            case 2:
+                debugNameOfPlanet = "Earth";
+                planet = earth;
+                break;
+            case 3:
+                debugNameOfPlanet = "Mars";
+                planet = mars;
+                break;
+            case 4:
+                debugNameOfPlanet = "Jupiter";
+                planet = jupiter;
+                break;
+            case 5:
+                debugNameOfPlanet = "Saturn";
+                planet = saturn;
+                break;
+            case 6:
+                debugNameOfPlanet = "Uranus";
+                planet = uranus;
+                break;
+            case 7:
+                debugNameOfPlanet = "Neptune";
+                planet = neptune;
+                break;
+            default:
+                debugNameOfPlanet = "An invalid planet!";
+                break;
+        }
+        Debug.Log("Putting the ship into orbit of " + debugNameOfPlanet);
     }
 }
