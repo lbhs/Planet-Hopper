@@ -6,7 +6,8 @@
  * of a planet. InitiateOrbit is called by `OrbitTrigger.cs` after staying within
  * a planets "Orbit Trigger" for 3 seconds.
  * 
- * While in the "orbiting" state, the player loses control of the ship. 
+ * While in the "orbiting" state, the player loses control of the ship. The ship's
+ * will move in a clockwise fashion
  *
  */
 using System.Collections;
@@ -17,18 +18,39 @@ public class OrbitHandler : MonoBehaviour
 {
     public static OrbitHandler main;
 
+    // public stuff ...
     public GameObject ship;
     public float camSpeed;
     public float orbitSpeed;
     public MeshRenderer debugRenderer;
 
+    public GameObject mercury; // 0
+    public GameObject venus;   // 1
+    public GameObject earth;   // 2
+    public GameObject mars;    // 3
+    public GameObject jupiter; // 4
+    public GameObject saturn;  // 5
+    public GameObject uranus;  // 6
+    public GameObject neptune; // 7
+
+    public TextController OrbitText;
+
+    // the planet that the ship is orbiting.
     private GameObject planet;
 
+    // important numbers
     private float pos;
     private float radius;
 
+    // signage coefficients for the orbit maths in `UpdateOrbitPosition`
+    private int sx = 1;
+    private int sy = 1;
+
+    // smoooooth camera vars
     private float tCam = 0;
     private bool camReachedPlanet = false;
+
+    private bool leaving = false;
 
     void Start()
     {
@@ -39,19 +61,14 @@ public class OrbitHandler : MonoBehaviour
      */
     public void InitiateOrbit(int ID)
     {
-        debugRenderer.enabled = false;
+        if (debugRenderer)
+        {
+            debugRenderer.enabled = false;
+        }
+
         TShipController.main.ImmobilizeShip();
 
-        string debugNameOfPlanet;
-        switch (ID)
-        {
-            case 0: debugNameOfPlanet = "Earth";
-                planet = GameObject.Find("Earth");
-                break;
-            default: debugNameOfPlanet = "An invalid planet!";
-                break;
-        }
-        Debug.Log("Putting the ship into orbit of " + debugNameOfPlanet);
+        AssignPlanet(ID);
         
         CalculateInitialOrbitPosition();
     }
@@ -59,15 +76,27 @@ public class OrbitHandler : MonoBehaviour
     /* This function calculates the ship's position on the unit circle in radians
      * and sets that value to `pos`. It also finds the `radius` of the ship to
      * the planet.
-     * 
-     * TODO: Fix Q3/Q4 Bug! (I think it's something in here)
      */
     private void CalculateInitialOrbitPosition()
     {
-        float x = planet.transform.position.x - ship.transform.position.x; // ship.transform.position.x - planet.transform.position.x;
-        float y = planet.transform.position.y - ship.transform.position.y; // ship.transform.position.y - planet.transform.position.y;
+        float x = ship.transform.position.x - planet.transform.position.x;
+        float y = ship.transform.position.y - planet.transform.position.y;
+
+        // Edge case for if y = 0 so that arctan isn't undefined...
+        if (y == 0)
+        {
+            y += 0.01f;
+        }
 
         pos = Mathf.Atan(x/y);
+
+        // THIS FIXED A HORRIBLE BUG AND I DON'T KNOW WHY. WE TAKE THOSE
+        if (y < 0)
+        {
+            sx = -1;
+            sy = -1;
+        }
+
         radius = Vector3.Distance(ship.transform.position, planet.transform.position);
 
         Debug.Log("Ship @ (" + x + ", " + y + ") relative to planet, " + pos + " in Radians.");
@@ -75,7 +104,6 @@ public class OrbitHandler : MonoBehaviour
 
     /* This function to interpolates the camera to a position over the planet using
      * `tCam` as its interpolater.
-     * 
      */
     private void SetOrbitCamera()
     {
@@ -99,7 +127,7 @@ public class OrbitHandler : MonoBehaviour
     {
         if (tCam > 1)
         {
-            Debug.Log("Done Lerping to Planet.");
+            Debug.Log("Done lerping Main Camera to Planet.");
             return true;
         }
         return false;
@@ -112,7 +140,7 @@ public class OrbitHandler : MonoBehaviour
         // can't progress the orbit if there's no planet ...
         if (!planet) return;
 
-        // orbit ??
+        // otherwise update the ship's orbit
         else
         {
             UpdateOrbitPosition();
@@ -123,13 +151,93 @@ public class OrbitHandler : MonoBehaviour
         {
             SetOrbitCamera();
         }
+
+        if (leaving)
+        {
+            LeaveOrbit();
+        }
     }
 
+
+    /* This function update's the ship's position in it's orbit around a planet,
+     * assuming that the ship has a planet to orbit around. 
+     */
     private void UpdateOrbitPosition()
     {
         ship.transform.position = new Vector3(
-            planet.transform.position.x + (radius * Mathf.Sin(pos += (orbitSpeed * Time.deltaTime))),
-            planet.transform.position.y + (radius * Mathf.Cos(pos += (orbitSpeed * Time.deltaTime))),
+            planet.transform.position.x + sx * (radius * Mathf.Sin(pos += (orbitSpeed * Time.deltaTime))),
+            planet.transform.position.y + sy * (radius * Mathf.Cos(pos += (orbitSpeed * Time.deltaTime))),
             0);
+    }
+
+    public void LeaveOrbitButton()
+    {
+        leaving = true;
+    }
+
+    private void LeaveOrbit()
+    {
+        // some line here about making the camera follow the ship again
+
+        planet = null;
+        OrbitText.ToggleVisibility();
+        TShipController.main.MobilizeShip();
+        leaving = false;
+        tCam = 0f;
+        camReachedPlanet = false;
+    }
+
+    /* Assigns the `planet` variable its GameObject based on the ID from
+     * the Orbit Trigger. 
+     * 
+     * Note: There's probably a better way of doing this, like using an 
+     * array or something. Actually that would be so much easier. I'll get
+     * to that later.
+    */
+    private void AssignPlanet(int ID)
+    {
+        string debugNameOfPlanet;
+        switch (ID)
+        {
+            case 0:
+                debugNameOfPlanet = "Mercury";
+                planet = mercury;
+                break;
+            case 1:
+                debugNameOfPlanet = "Venus";
+                planet = venus;
+                break;
+            case 2:
+                debugNameOfPlanet = "Earth";
+                planet = earth;
+                break;
+            case 3:
+                debugNameOfPlanet = "Mars";
+                planet = mars;
+                break;
+            case 4:
+                debugNameOfPlanet = "Jupiter";
+                planet = jupiter;
+                break;
+            case 5:
+                debugNameOfPlanet = "Saturn";
+                planet = saturn;
+                break;
+            case 6:
+                debugNameOfPlanet = "Uranus";
+                planet = uranus;
+                break;
+            case 7:
+                debugNameOfPlanet = "Neptune";
+                planet = neptune;
+                break;
+            default:
+                debugNameOfPlanet = "An invalid planet!";
+                break;
+        }
+        Debug.Log("Putting the ship into orbit of " + debugNameOfPlanet);
+
+        OrbitText.UpdateMyTextTo("You're in Orbit of " + debugNameOfPlanet);
+        OrbitText.ToggleVisibility();
     }
 }
