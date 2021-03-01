@@ -108,6 +108,6 @@ public class TShipController : MonoBehaviour
     public void MobilizeShip()
     {
         rb.isKinematic = false;
-        inCutScene = true;
+        inCutScene = false;
     }
 }

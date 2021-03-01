@@ -23,7 +23,7 @@ public class OrbitTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (isActive)
+        if (isActive && other.name == "Starship")
         {
             StartCoroutine("OrbitTimer");
         }
