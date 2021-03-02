@@ -84,6 +84,7 @@ public class OrbitHandler : MonoBehaviour
         AssignPlanet(ID);
 
         MoveCamera.main.ToggleFollowShip();
+        MoveCamera.main.ToggleCameraLerping();
 
         CalculateInitialOrbitPosition();
     }
@@ -143,6 +144,7 @@ public class OrbitHandler : MonoBehaviour
         if (tCam > 1)
         {
             Debug.Log("Done lerping Main Camera to Planet.");
+            MoveCamera.main.ToggleCameraLerping();
             return true;
         }
         return false;

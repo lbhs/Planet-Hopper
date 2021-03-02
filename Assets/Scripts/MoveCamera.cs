@@ -16,6 +16,8 @@ public class MoveCamera : MonoBehaviour
 
     bool followShip;
 
+    bool cameraLerping;
+
     private const int defaultCamSize = 10;
 
     // Start is called before the first frame update
@@ -27,12 +29,13 @@ public class MoveCamera : MonoBehaviour
         Target = RocketPosition;
         Cam = Camera.main;
         followShip = true;
+        cameraLerping = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (!followShip) return;
+        if (cameraLerping) return;
 
         // update camera position to ship...
         Cam.transform.position = new Vector3(Target.position.x, Target.position.y, -20);
@@ -93,5 +96,10 @@ public class MoveCamera : MonoBehaviour
         {
             Target = OrbitHandler.main.Planet.transform;
         }
+    }
+
+    public void ToggleCameraLerping()
+    {
+        cameraLerping = !cameraLerping;
     }
 }
