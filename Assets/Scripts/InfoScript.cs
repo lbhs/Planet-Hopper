@@ -84,7 +84,7 @@ public class InfoScript : MonoBehaviour
         {
             score += missionSuccessConstant + (int)ShipController.main.Fuel;
             scoreValue = GameObject.Find("ScoreValue");
-            scoreValue.GetComponent<Text>().text = "Score: " + score;
+            scoreValue.GetComponent<Text>().text = "Score: \n" + score;
         }
     }
 
