@@ -37,10 +37,18 @@ public class OrbitHandler : MonoBehaviour
 
     // the planet that the ship is orbiting.
     private GameObject planet;
+    private int currentPlanetID;
 
+    // used by MoveCamera.cs
     public GameObject Planet
     {
         get { return planet; }
+    }
+
+    // used by LanderGameHandler.cs
+    public int CurrentPlanetID
+    {
+        get { return currentPlanetID; }
     }
 
     // important numbers
@@ -223,6 +231,7 @@ public class OrbitHandler : MonoBehaviour
     */
     private void AssignPlanet(int ID)
     {
+        currentPlanetID = ID;
         string debugNameOfPlanet;
         switch (ID)
         {
