@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class MoveCamera : MonoBehaviour
 {
+    public static MoveCamera main;
     // This will always be the position of the rocketship.
     Transform RocketPosition;
 
@@ -13,19 +14,27 @@ public class MoveCamera : MonoBehaviour
     // The main camera
     Camera Cam;
 
+    bool followShip;
+
     private const int defaultCamSize = 10;
 
     // Start is called before the first frame update
     void Start()
     {
+        main = this;
+
         RocketPosition = gameObject.transform;
         Target = RocketPosition;
         Cam = Camera.main;
+        followShip = true;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (!followShip) return;
+
+        // update camera position to ship...
         Cam.transform.position = new Vector3(Target.position.x, Target.position.y, -20);
     }
 
@@ -69,6 +78,20 @@ public class MoveCamera : MonoBehaviour
             case "Uranus": return 20;
             case "Neptune": return 20;
             default: return defaultCamSize;
+        }
+    }
+
+    public void ToggleFollowShip()
+    {
+        followShip = !followShip;
+
+        if (followShip)
+        {
+            Target = RocketPosition;
+        }
+        else
+        {
+            Target = OrbitHandler.main.Planet.transform;
         }
     }
 }

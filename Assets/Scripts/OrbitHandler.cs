@@ -38,6 +38,11 @@ public class OrbitHandler : MonoBehaviour
     // the planet that the ship is orbiting.
     private GameObject planet;
 
+    public GameObject Planet
+    {
+        get { return planet; }
+    }
+
     // important numbers
     private float pos;
     private float radius;
@@ -66,10 +71,20 @@ public class OrbitHandler : MonoBehaviour
             debugRenderer.enabled = false;
         }
 
-        TShipController.main.ImmobilizeShip();
+        if (TShipController.main)
+        {
+            TShipController.main.ImmobilizeShip();
+        }
+        else
+        {
+            ShipController.main.ImmobilizeShip();
+        }
+
 
         AssignPlanet(ID);
-        
+
+        MoveCamera.main.ToggleFollowShip();
+
         CalculateInitialOrbitPosition();
     }
 
@@ -181,10 +196,20 @@ public class OrbitHandler : MonoBehaviour
 
         planet = null;
         OrbitText.ToggleVisibility();
-        TShipController.main.MobilizeShip();
+        if (TShipController.main)
+        {
+            TShipController.main.MobilizeShip();
+        }
+        else
+        {
+            ShipController.main.MobilizeShip();
+        }
+
         leaving = false;
         tCam = 0f;
         camReachedPlanet = false;
+
+        MoveCamera.main.ToggleFollowShip();
     }
 
     /* Assigns the `planet` variable its GameObject based on the ID from

@@ -129,6 +129,22 @@ public class ShipController : MonoBehaviour
 
     public void ImmobilizeShip()
     {
+        gm.isKinematic = true;
+        if (thrusterSound.isPlaying || flameEmitter.isPlaying)
+        {
+            thrusterSound.Stop();
+            flameEmitter.Stop();
+        }
         movementLocked = true;
+    }
+
+    public void MobilizeShip()
+    {
+        gm.isKinematic = false;
+        movementLocked = false;
+
+        // gives the ship a small boost in the direction it's facing
+
+        gm.AddForce(50 * gm.transform.up);
     }
 }
