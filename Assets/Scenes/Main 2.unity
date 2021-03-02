@@ -1578,7 +1578,7 @@ GameObject:
   - component: {fileID: 218657601}
   - component: {fileID: 218657600}
   m_Layer: 0
-  m_Name: Landing Trigger
+  m_Name: Orbit Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1593,7 +1593,7 @@ Transform:
   m_GameObject: {fileID: 218657598}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.1, y: 2.1, z: 2.1}
+  m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children: []
   m_Father: {fileID: 1079091361}
   m_RootOrder: 2
@@ -1607,36 +1607,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 218657598}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3571f548644fb49f0aa043a25d7595a5, type: 3}
+  m_Script: {fileID: 11500000, guid: 2f816a89b8fd444c7a3429cc2ddf75d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ship: {fileID: 6810218856465537437}
-  speedLimit: 300
-  angleLimit: 10
-  shipRB: {fileID: 0}
-  GUI: {fileID: 1848744299}
-  PitStopUI: {fileID: 2028289372}
-  FuelText: {fileID: 1986590965}
-  isLanded: 0
-  thrusterSound: {fileID: 0}
-  Explosion: {fileID: 693367702}
-  MainCamera: {fileID: 519420031}
-  LanderCamera: {fileID: 2029746227}
-  Lander: {fileID: 1847285784}
-  landerLanded: 0
-  launchForce: 500
-  flameEmitter: {fileID: 0}
-  Mercury: {fileID: 1079091357}
-  Venus: {fileID: 28631554}
-  Earth: {fileID: 930159117}
-  Mars: {fileID: 428235775}
-  Jupiter: {fileID: 427949405}
-  Saturn: {fileID: 1659373320}
-  Uranus: {fileID: 1486254595}
-  Neptune: {fileID: 1923098713}
-  closestPlanet: {fileID: 1079091357}
-  velocityPanel: {fileID: 0}
-  minimap: {fileID: 0}
+  triggerID: 0
 --- !u!135 &218657601
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1823,7 +1797,7 @@ Camera:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 231340131}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_ClearFlags: 1
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
@@ -1906,7 +1880,7 @@ Camera:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 248218510}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_ClearFlags: 1
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
@@ -2035,7 +2009,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &263633070
 Transform:
   m_ObjectHideFlags: 0
@@ -2410,7 +2384,7 @@ Transform:
   - {fileID: 1669090696}
   - {fileID: 694751630}
   m_Father: {fileID: 0}
-  m_RootOrder: 32
+  m_RootOrder: 33
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &317137485
 GameObject:
@@ -2430,7 +2404,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &317137486
 Transform:
   m_ObjectHideFlags: 0
@@ -2773,7 +2747,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &346846307
 Transform:
   m_ObjectHideFlags: 0
@@ -7986,7 +7960,7 @@ GameObject:
   - component: {fileID: 418275309}
   - component: {fileID: 418275308}
   m_Layer: 0
-  m_Name: Landing Trigger
+  m_Name: Orbit Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8001,7 +7975,7 @@ Transform:
   m_GameObject: {fileID: 418275306}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.1, y: 2.1, z: 2.1}
+  m_LocalScale: {x: 15, y: 15, z: 15}
   m_Children: []
   m_Father: {fileID: 428235779}
   m_RootOrder: 2
@@ -8015,36 +7989,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 418275306}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3571f548644fb49f0aa043a25d7595a5, type: 3}
+  m_Script: {fileID: 11500000, guid: 2f816a89b8fd444c7a3429cc2ddf75d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ship: {fileID: 6810218856465537437}
-  speedLimit: 300
-  angleLimit: 10
-  shipRB: {fileID: 0}
-  GUI: {fileID: 1848744299}
-  PitStopUI: {fileID: 2028289372}
-  FuelText: {fileID: 1986590965}
-  isLanded: 0
-  thrusterSound: {fileID: 0}
-  Explosion: {fileID: 693367702}
-  MainCamera: {fileID: 519420031}
-  LanderCamera: {fileID: 748659890}
-  Lander: {fileID: 640654223}
-  landerLanded: 0
-  launchForce: 500
-  flameEmitter: {fileID: 0}
-  Mercury: {fileID: 1079091357}
-  Venus: {fileID: 28631554}
-  Earth: {fileID: 930159117}
-  Mars: {fileID: 428235775}
-  Jupiter: {fileID: 427949405}
-  Saturn: {fileID: 1659373320}
-  Uranus: {fileID: 1486254595}
-  Neptune: {fileID: 1923098713}
-  closestPlanet: {fileID: 428235775}
-  velocityPanel: {fileID: 0}
-  minimap: {fileID: 0}
+  triggerID: 3
 --- !u!135 &418275309
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -8105,6 +8053,84 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 418275306}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &419644758
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 419644759}
+  - component: {fileID: 419644761}
+  - component: {fileID: 419644760}
+  m_Layer: 5
+  m_Name: Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &419644759
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 419644758}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1022910832}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &419644760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 419644758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 14
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: Leave Orbit
+--- !u!222 &419644761
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 419644758}
+  m_CullTransparentMesh: 0
 --- !u!1 &427949405
 GameObject:
   m_ObjectHideFlags: 0
@@ -8565,7 +8591,7 @@ GameObject:
   - component: {fileID: 464368646}
   - component: {fileID: 464368645}
   m_Layer: 0
-  m_Name: Landing Trigger
+  m_Name: Orbit Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8594,36 +8620,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 464368643}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3571f548644fb49f0aa043a25d7595a5, type: 3}
+  m_Script: {fileID: 11500000, guid: 2f816a89b8fd444c7a3429cc2ddf75d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ship: {fileID: 6810218856465537437}
-  speedLimit: 300
-  angleLimit: 10
-  shipRB: {fileID: 0}
-  GUI: {fileID: 1848744299}
-  PitStopUI: {fileID: 2028289372}
-  FuelText: {fileID: 1986590965}
-  isLanded: 0
-  thrusterSound: {fileID: 0}
-  Explosion: {fileID: 693367702}
-  MainCamera: {fileID: 519420031}
-  LanderCamera: {fileID: 248218513}
-  Lander: {fileID: 1703156984}
-  landerLanded: 0
-  launchForce: 500
-  flameEmitter: {fileID: 0}
-  Mercury: {fileID: 1079091357}
-  Venus: {fileID: 28631554}
-  Earth: {fileID: 930159117}
-  Mars: {fileID: 428235775}
-  Jupiter: {fileID: 427949405}
-  Saturn: {fileID: 1659373320}
-  Uranus: {fileID: 1486254595}
-  Neptune: {fileID: 1923098713}
-  closestPlanet: {fileID: 1923098713}
-  velocityPanel: {fileID: 0}
-  minimap: {fileID: 0}
+  triggerID: 7
 --- !u!135 &464368646
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -8882,9 +8882,9 @@ GameObject:
   - component: {fileID: 513037769}
   - component: {fileID: 513037768}
   - component: {fileID: 513037767}
-  - component: {fileID: 513037766}
+  - component: {fileID: 513037770}
   m_Layer: 0
-  m_Name: Landing Trigger
+  m_Name: Orbit Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8899,50 +8899,11 @@ Transform:
   m_GameObject: {fileID: 513037764}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.1, y: 2.1, z: 2.1}
+  m_LocalScale: {x: 8, y: 8, z: 8}
   m_Children: []
   m_Father: {fileID: 930159121}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &513037766
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 513037764}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3571f548644fb49f0aa043a25d7595a5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ship: {fileID: 6810218856465537437}
-  speedLimit: 300
-  angleLimit: 10
-  shipRB: {fileID: 0}
-  GUI: {fileID: 1848744299}
-  PitStopUI: {fileID: 2028289372}
-  FuelText: {fileID: 1986590965}
-  isLanded: 0
-  thrusterSound: {fileID: 0}
-  Explosion: {fileID: 693367702}
-  MainCamera: {fileID: 519420031}
-  LanderCamera: {fileID: 908838889}
-  Lander: {fileID: 1512335892}
-  landerLanded: 0
-  launchForce: 500
-  flameEmitter: {fileID: 0}
-  Mercury: {fileID: 1079091357}
-  Venus: {fileID: 28631554}
-  Earth: {fileID: 930159117}
-  Mars: {fileID: 428235775}
-  Jupiter: {fileID: 427949405}
-  Saturn: {fileID: 1659373320}
-  Uranus: {fileID: 1486254595}
-  Neptune: {fileID: 1923098713}
-  closestPlanet: {fileID: 930159117}
-  velocityPanel: {fileID: 0}
-  minimap: {fileID: 0}
 --- !u!135 &513037767
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -8954,7 +8915,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.9
+  m_Radius: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &513037768
 MeshRenderer:
@@ -9003,6 +8964,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 513037764}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &513037770
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 513037764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f816a89b8fd444c7a3429cc2ddf75d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerID: 2
 --- !u!1 &515776647
 GameObject:
   m_ObjectHideFlags: 0
@@ -9830,6 +9804,99 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 553898176}
+  m_CullTransparentMesh: 0
+--- !u!1 &596996561
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 596996563}
+  - component: {fileID: 596996565}
+  - component: {fileID: 596996564}
+  - component: {fileID: 596996562}
+  m_Layer: 5
+  m_Name: Orbit Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &596996562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 596996561}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26d79a2955f8a4b3db11ae230cbc721c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  t: {fileID: 596996564}
+  b: {fileID: 1022910828}
+--- !u!224 &596996563
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 596996561}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1848744300}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 0, y: -75}
+  m_SizeDelta: {x: 200, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &596996564
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 596996561}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 20
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 1
+    m_MaxSize: 40
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: Orbits Test Scene
+--- !u!222 &596996565
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 596996561}
   m_CullTransparentMesh: 0
 --- !u!1 &600286480
 GameObject:
@@ -15247,7 +15314,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 513037766}
+      - m_Target: {fileID: 0}
         m_MethodName: ExitPlanet
         m_Mode: 1
         m_Arguments:
@@ -15448,7 +15515,7 @@ Camera:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 748659887}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_ClearFlags: 1
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
@@ -16198,7 +16265,7 @@ GameObject:
   - component: {fileID: 864914705}
   - component: {fileID: 864914704}
   m_Layer: 0
-  m_Name: Landing Trigger
+  m_Name: Orbit Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16227,36 +16294,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 864914702}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3571f548644fb49f0aa043a25d7595a5, type: 3}
+  m_Script: {fileID: 11500000, guid: 2f816a89b8fd444c7a3429cc2ddf75d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ship: {fileID: 6810218856465537437}
-  speedLimit: 300
-  angleLimit: 10
-  shipRB: {fileID: 0}
-  GUI: {fileID: 1848744299}
-  PitStopUI: {fileID: 2028289372}
-  FuelText: {fileID: 1986590965}
-  isLanded: 0
-  thrusterSound: {fileID: 0}
-  Explosion: {fileID: 693367702}
-  MainCamera: {fileID: 519420031}
-  LanderCamera: {fileID: 1668959476}
-  Lander: {fileID: 1439698393}
-  landerLanded: 0
-  launchForce: 500
-  flameEmitter: {fileID: 0}
-  Mercury: {fileID: 1079091357}
-  Venus: {fileID: 28631554}
-  Earth: {fileID: 930159117}
-  Mars: {fileID: 428235775}
-  Jupiter: {fileID: 427949405}
-  Saturn: {fileID: 1659373320}
-  Uranus: {fileID: 1486254595}
-  Neptune: {fileID: 1923098713}
-  closestPlanet: {fileID: 427949405}
-  velocityPanel: {fileID: 0}
-  minimap: {fileID: 0}
+  triggerID: 4
 --- !u!135 &864914705
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -16676,7 +16717,7 @@ Camera:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 908838886}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_ClearFlags: 1
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
@@ -16744,7 +16785,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1.0019379
+  m_Radius: 1
   m_Center: {x: -0.0038909912, y: 0, z: 0}
 --- !u!23 &930159119
 MeshRenderer:
@@ -17257,6 +17298,136 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1004259353}
   m_CullTransparentMesh: 0
+--- !u!1 &1022910828
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1022910832}
+  - component: {fileID: 1022910831}
+  - component: {fileID: 1022910830}
+  - component: {fileID: 1022910829}
+  m_Layer: 5
+  m_Name: Orbit Button
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &1022910829
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1022910828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1022910830}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1253202289}
+        m_MethodName: LeaveOrbitButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1022910830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1022910828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1022910831
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1022910828}
+  m_CullTransparentMesh: 0
+--- !u!224 &1022910832
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1022910828}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 419644759}
+  m_Father: {fileID: 1848744300}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 0, y: 100}
+  m_SizeDelta: {x: 160, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1023369966
 GameObject:
   m_ObjectHideFlags: 0
@@ -17308,7 +17479,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1025693766
 Transform:
   m_ObjectHideFlags: 0
@@ -18145,7 +18316,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1157813362
 Transform:
   m_ObjectHideFlags: 0
@@ -18611,7 +18782,7 @@ Transform:
   - {fileID: 250697915}
   - {fileID: 1586412766}
   m_Father: {fileID: 0}
-  m_RootOrder: 33
+  m_RootOrder: 34
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1207300830
 GameObject:
@@ -18701,7 +18872,7 @@ GameObject:
   - component: {fileID: 1218504662}
   - component: {fileID: 1218504661}
   m_Layer: 0
-  m_Name: Landing Trigger
+  m_Name: Orbit Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18716,7 +18887,7 @@ Transform:
   m_GameObject: {fileID: 1218504659}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.01, y: 2.01, z: 2.01}
+  m_LocalScale: {x: 7, y: 7, z: 7}
   m_Children: []
   m_Father: {fileID: 1659373324}
   m_RootOrder: 3
@@ -18730,36 +18901,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1218504659}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3571f548644fb49f0aa043a25d7595a5, type: 3}
+  m_Script: {fileID: 11500000, guid: 2f816a89b8fd444c7a3429cc2ddf75d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ship: {fileID: 6810218856465537437}
-  speedLimit: 300
-  angleLimit: 10
-  shipRB: {fileID: 0}
-  GUI: {fileID: 1848744299}
-  PitStopUI: {fileID: 2028289372}
-  FuelText: {fileID: 1986590965}
-  isLanded: 0
-  thrusterSound: {fileID: 0}
-  Explosion: {fileID: 693367702}
-  MainCamera: {fileID: 519420031}
-  LanderCamera: {fileID: 1990134289}
-  Lander: {fileID: 364632546}
-  landerLanded: 0
-  launchForce: 500
-  flameEmitter: {fileID: 0}
-  Mercury: {fileID: 1079091357}
-  Venus: {fileID: 28631554}
-  Earth: {fileID: 930159117}
-  Mars: {fileID: 428235775}
-  Jupiter: {fileID: 427949405}
-  Saturn: {fileID: 1659373320}
-  Uranus: {fileID: 1486254595}
-  Neptune: {fileID: 1923098713}
-  closestPlanet: {fileID: 1659373320}
-  velocityPanel: {fileID: 0}
-  minimap: {fileID: 0}
+  triggerID: 5
 --- !u!135 &1218504662
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -18929,6 +19074,62 @@ Transform:
   m_Father: {fileID: 6181491047642415911}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1253202288
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1253202290}
+  - component: {fileID: 1253202289}
+  m_Layer: 0
+  m_Name: Orbit Handler
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1253202289
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1253202288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 972a8fb3f04794b7fbb906f11f4a7abf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ship: {fileID: 6810218856465537437}
+  camSpeed: 0.5
+  orbitSpeed: 0.5
+  debugRenderer: {fileID: 0}
+  mercury: {fileID: 1079091357}
+  venus: {fileID: 28631554}
+  earth: {fileID: 930159117}
+  mars: {fileID: 428235775}
+  jupiter: {fileID: 427949405}
+  saturn: {fileID: 1659373320}
+  uranus: {fileID: 1486254595}
+  neptune: {fileID: 1923098713}
+  OrbitText: {fileID: 596996562}
+--- !u!4 &1253202290
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1253202288}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 300.39648, y: 0.1458149, z: -1.3546677}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 31
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1253476226
 GameObject:
   m_ObjectHideFlags: 0
@@ -19095,7 +19296,7 @@ GameObject:
   - component: {fileID: 1304682003}
   - component: {fileID: 1304682002}
   m_Layer: 0
-  m_Name: Landing Trigger
+  m_Name: Orbit Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19110,7 +19311,7 @@ Transform:
   m_GameObject: {fileID: 1304682000}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.1000001, y: 2.1000001, z: 2}
+  m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children: []
   m_Father: {fileID: 28631558}
   m_RootOrder: 2
@@ -19124,36 +19325,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1304682000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3571f548644fb49f0aa043a25d7595a5, type: 3}
+  m_Script: {fileID: 11500000, guid: 2f816a89b8fd444c7a3429cc2ddf75d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ship: {fileID: 6810218856465537437}
-  speedLimit: 300
-  angleLimit: 10
-  shipRB: {fileID: 0}
-  GUI: {fileID: 1848744299}
-  PitStopUI: {fileID: 2028289372}
-  FuelText: {fileID: 1986590965}
-  isLanded: 0
-  thrusterSound: {fileID: 0}
-  Explosion: {fileID: 693367702}
-  MainCamera: {fileID: 519420031}
-  LanderCamera: {fileID: 1835568291}
-  Lander: {fileID: 1663646540}
-  landerLanded: 0
-  launchForce: 500
-  flameEmitter: {fileID: 0}
-  Mercury: {fileID: 1079091357}
-  Venus: {fileID: 28631554}
-  Earth: {fileID: 930159117}
-  Mars: {fileID: 428235775}
-  Jupiter: {fileID: 427949405}
-  Saturn: {fileID: 1659373320}
-  Uranus: {fileID: 1486254595}
-  Neptune: {fileID: 1923098713}
-  closestPlanet: {fileID: 28631554}
-  velocityPanel: {fileID: 0}
-  minimap: {fileID: 0}
+  triggerID: 1
 --- !u!135 &1304682003
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -20069,7 +20244,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1449440512
 Transform:
   m_ObjectHideFlags: 0
@@ -20757,7 +20932,7 @@ Transform:
   - {fileID: 187979002}
   - {fileID: 115098454}
   m_Father: {fileID: 0}
-  m_RootOrder: 35
+  m_RootOrder: 36
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1512335888
 PrefabInstance:
@@ -22015,7 +22190,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1667605756
 Transform:
   m_ObjectHideFlags: 0
@@ -22138,7 +22313,7 @@ Camera:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1668959473}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_ClearFlags: 1
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
@@ -23039,7 +23214,7 @@ Transform:
   - {fileID: 54792785}
   - {fileID: 810044089}
   m_Father: {fileID: 0}
-  m_RootOrder: 31
+  m_RootOrder: 32
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1821343418
 GameObject:
@@ -23161,7 +23336,7 @@ GameObject:
   - component: {fileID: 1831694903}
   - component: {fileID: 1831694902}
   m_Layer: 0
-  m_Name: Landing Trigger
+  m_Name: Orbit Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23176,7 +23351,7 @@ Transform:
   m_GameObject: {fileID: 1831694900}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.01, y: 2.01, z: 2.01}
+  m_LocalScale: {x: 7, y: 7, z: 7}
   m_Children: []
   m_Father: {fileID: 1486254599}
   m_RootOrder: 2
@@ -23190,36 +23365,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1831694900}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3571f548644fb49f0aa043a25d7595a5, type: 3}
+  m_Script: {fileID: 11500000, guid: 2f816a89b8fd444c7a3429cc2ddf75d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ship: {fileID: 6810218856465537437}
-  speedLimit: 300
-  angleLimit: 10
-  shipRB: {fileID: 0}
-  GUI: {fileID: 1848744299}
-  PitStopUI: {fileID: 2028289372}
-  FuelText: {fileID: 1986590965}
-  isLanded: 0
-  thrusterSound: {fileID: 0}
-  Explosion: {fileID: 693367702}
-  MainCamera: {fileID: 519420031}
-  LanderCamera: {fileID: 231340134}
-  Lander: {fileID: 1698275168}
-  landerLanded: 0
-  launchForce: 500
-  flameEmitter: {fileID: 0}
-  Mercury: {fileID: 1079091357}
-  Venus: {fileID: 28631554}
-  Earth: {fileID: 930159117}
-  Mars: {fileID: 428235775}
-  Jupiter: {fileID: 427949405}
-  Saturn: {fileID: 1659373320}
-  Uranus: {fileID: 1486254595}
-  Neptune: {fileID: 1923098713}
-  closestPlanet: {fileID: 1486254595}
-  velocityPanel: {fileID: 0}
-  minimap: {fileID: 0}
+  triggerID: 6
 --- !u!135 &1831694903
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -23327,7 +23476,7 @@ Camera:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1835568288}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_ClearFlags: 1
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
@@ -23650,6 +23799,8 @@ RectTransform:
   - {fileID: 1769708350}
   - {fileID: 553898177}
   - {fileID: 87796405}
+  - {fileID: 596996563}
+  - {fileID: 1022910832}
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -23964,7 +24115,7 @@ Transform:
   - {fileID: 2080386848}
   - {fileID: 1742444836}
   m_Father: {fileID: 0}
-  m_RootOrder: 34
+  m_RootOrder: 35
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1905327751
 GameObject:
@@ -24517,7 +24668,7 @@ Camera:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1990134286}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_ClearFlags: 1
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
@@ -24780,7 +24931,7 @@ Camera:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2029746224}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_ClearFlags: 1
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
@@ -25004,7 +25155,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2088913698
 Transform:
   m_ObjectHideFlags: 0
