@@ -89,7 +89,7 @@ public class LandingHandler : MonoBehaviour
 
             InitiateLanding();
             string planet = gameObject.transform.parent.name; // name of the planet landed on
-            InfoScript.main.UpdateScore(planet);
+            InfoScript.main.UpdateScore(0); // RIP LANDING HANDLER 2020-2021
 
         }
     }

@@ -53,7 +53,7 @@ public class MoveCamera : MonoBehaviour
 
             Cam.orthographicSize = zoomedCamSize;
             Target = other.gameObject.transform;
-            Cam.transform.position = new Vector3(Target.position.x, Target.position.y, -20);
+            Cam.transform.position = new Vector3(Target.position.x, Target.position.y, 0); // -20);
         }
     }
 
@@ -91,10 +91,13 @@ public class MoveCamera : MonoBehaviour
         if (followShip)
         {
             Target = RocketPosition;
+            Cam.orthographicSize = defaultCamSize;
         }
         else
         {
             Target = OrbitHandler.main.Planet.transform;
+            int zoomedCamSize = getZoomedCamSize(OrbitHandler.main.Planet.name);
+            Cam.orthographicSize = zoomedCamSize;
         }
     }
 

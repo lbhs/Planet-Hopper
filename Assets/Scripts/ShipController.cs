@@ -15,7 +15,7 @@ public class ShipController : MonoBehaviour
     private Rigidbody gm;
     public float Fuel;
 
-    public Text T;
+    // public Text T;
     public Text pitStopText;
 
     public bool pitStopped = false;
@@ -36,7 +36,7 @@ public class ShipController : MonoBehaviour
         main = this;
         Fuel = baseFuelValue;
         gm = GetComponent<Rigidbody>();
-        T = GameObject.Find("FuelValue").GetComponent<Text>();
+        // T = GameObject.Find("FuelValue").GetComponent<Text>();
     }
 
     void FixedUpdate()
@@ -120,7 +120,7 @@ public class ShipController : MonoBehaviour
 
     private void UpdateFuelText()
     {
-        T.text = "Fuel: " + Fuel;
+        // T.text = "Fuel: " + Fuel;
         pitStopText.text = "Your fuel is currently: " + Fuel;
     //    rotation = 104.491f - (119.767f * (Fuel / 500f));
         rotation = -15.276f + (119.767f * (1f - Fuel / 500f));
