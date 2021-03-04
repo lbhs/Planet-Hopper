@@ -138,13 +138,13 @@ public class ShipController : MonoBehaviour
         movementLocked = true;
     }
 
-    public void MobilizeShip()
+    public void MobilizeShip(float radius)
     {
         gm.isKinematic = false;
         movementLocked = false;
 
         // gives the ship a small boost in the direction it's facing
 
-        gm.AddForce(50 * gm.transform.up);
+        gm.AddForce(radius * 100 * gm.transform.up);
     }
 }

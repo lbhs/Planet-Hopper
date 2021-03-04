@@ -17,12 +17,13 @@ public class KillShip : MonoBehaviour
     {
         switch (gameObject.name)
         {
-            case "DeathField": InfoScript.main.gameOverMessage = "Lost in Space...";
+            case "DeathField":
+                InfoScript.main.EndGame("Lost in Space...");
                 break;
-            case "Sun": InfoScript.main.gameOverMessage = "You Flew Too Close to the Sun!";
+            case "Sun":
+                InfoScript.main.EndGame("You Flew Too Close to the Sun!");
                 break;
         }
-        InfoScript.main.EndGame();
     }
 
     private void OnTriggerEnter(Collider other)

@@ -20,6 +20,7 @@ public class OrbitHandler : MonoBehaviour
 
     // public stuff ...
     public GameObject ship;
+    public Rigidbody shipRB;
     public float camSpeed;
     public float orbitSpeed;
     public MeshRenderer debugRenderer;
@@ -32,6 +33,8 @@ public class OrbitHandler : MonoBehaviour
     public GameObject saturn;  // 5
     public GameObject uranus;  // 6
     public GameObject neptune; // 7
+
+    private int numPlanetsVisited;
 
     public TextController OrbitText;
 
@@ -74,6 +77,11 @@ public class OrbitHandler : MonoBehaviour
      */
     public void InitiateOrbit(int ID)
     {
+        if (numPlanetsVisited >= 7)
+        {
+            InfoScript.main.EndGame("You Won!");
+        }
+
         if (debugRenderer)
         {
             debugRenderer.enabled = false;
@@ -103,6 +111,8 @@ public class OrbitHandler : MonoBehaviour
      */
     private void CalculateInitialOrbitPosition()
     {
+        shipRB.velocity = Vector3.zero;
+
         float x = ship.transform.position.x - planet.transform.position.x;
         float y = ship.transform.position.y - planet.transform.position.y;
 
@@ -123,6 +133,8 @@ public class OrbitHandler : MonoBehaviour
 
         radius = Vector3.Distance(ship.transform.position, planet.transform.position);
 
+        orbitSpeed = 1 / radius;
+
         Debug.Log("Ship @ (" + x + ", " + y + ") relative to planet, " + pos + " in Radians.");
     }
 
@@ -137,11 +149,24 @@ public class OrbitHandler : MonoBehaviour
             new Vector3(planet.transform.position.x, planet.transform.position.y, -10f),
             tCam);
 
+        ship.transform.rotation = Quaternion.Lerp(
+            ship.transform.rotation,
+            Quaternion.EulerRotation(0, 0,
+            (3 * (Mathf.PI / 2)) - pos),
+            tCam);
+
         // update camera interpolater for next iteration
         tCam += camSpeed * Time.deltaTime;
 
+
+
         // update `camReachedPlanet` if we reached the planet
         camReachedPlanet = CheckCameraPosition();
+    }
+
+    private void SetOrbitRotation()
+    {
+
     }
 
     /* Checks if the Camera has reached it's destination. 
@@ -183,6 +208,7 @@ public class OrbitHandler : MonoBehaviour
         }
     }
 
+    int logonce = 0;
 
     /* This function update's the ship's position in it's orbit around a planet,
      * assuming that the ship has a planet to orbit around. 
@@ -193,6 +219,14 @@ public class OrbitHandler : MonoBehaviour
             planet.transform.position.x + sx * (radius * Mathf.Sin(pos += (orbitSpeed * Time.deltaTime))),
             planet.transform.position.y + sy * (radius * Mathf.Cos(pos += (orbitSpeed * Time.deltaTime))),
             0);
+
+
+        // not 100% sure why this works but we take those
+        if (camReachedPlanet)
+        {
+            ship.transform.rotation = Quaternion.EulerRotation(0, 0,
+                sx * (3 * (Mathf.PI / 2)) - pos );
+        }
     }
 
     public void LeaveOrbitButton()
@@ -206,13 +240,19 @@ public class OrbitHandler : MonoBehaviour
 
         planet = null;
         OrbitText.ToggleVisibility();
+
+        if (!camReachedPlanet)
+        {
+            MoveCamera.main.ToggleCameraLerping();
+        }
+
         if (TShipController.main)
         {
             TShipController.main.MobilizeShip();
         }
         else
         {
-            ShipController.main.MobilizeShip();
+            ShipController.main.MobilizeShip(radius);
         }
 
         leaving = false;
