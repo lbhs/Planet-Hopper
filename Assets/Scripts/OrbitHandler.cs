@@ -77,6 +77,8 @@ public class OrbitHandler : MonoBehaviour
      */
     public void InitiateOrbit(int ID)
     {
+        InfoScript.main.UpdateScore((int)ShipController.main.Fuel); // updates score bonus points for fuel efficiency.
+
         if (numPlanetsVisited >= 7)
         {
             InfoScript.main.EndGame("You Won!");
