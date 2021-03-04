@@ -8921,7 +8921,6 @@ GameObject:
   m_Component:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
-  - component: {fileID: 519420029}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -8929,27 +8928,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &519420029
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 519420028}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b598e59d7ceffa042ba15c6a1cde2be1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MercuryLanderCamera: {fileID: 0}
-  VenusLanderCamera: {fileID: 0}
-  EarthLanderCamera: {fileID: 0}
-  MarsLanderCamera: {fileID: 0}
-  JupiterLanderCamera: {fileID: 0}
-  SaturnLanderCamera: {fileID: 0}
-  UranusLanderCamera: {fileID: 0}
-  NeptuneLanderCamera: {fileID: 0}
-  MainCamera: {fileID: 519420031}
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -18602,6 +18580,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ship: {fileID: 6810218856465537437}
+  shipRB: {fileID: 6810218856465537440}
   camSpeed: 0.5
   orbitSpeed: 0.5
   debugRenderer: {fileID: 0}
@@ -21726,7 +21705,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1746868649}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!20 &1746868651
 Camera:
   m_ObjectHideFlags: 0
@@ -21734,7 +21713,7 @@ Camera:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1746868649}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_ClearFlags: 1
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}

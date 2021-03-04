@@ -22,7 +22,7 @@ public class InfoScript : MonoBehaviour
 {
     public static InfoScript main;
     //public AudioSource music;
-    
+
     private float currentFuel;
 
     // These bools record which planets the player has landed on.
@@ -64,8 +64,10 @@ public class InfoScript : MonoBehaviour
         SceneManager.LoadScene(1); // change me back to 1 later!!
     }
 
-    public void EndGame()
+    public void EndGame(string message)
     {
+        gameOverMessage = message;
+
         DontDestroyOnLoad(gameObject);
         //DontDestroyOnLoad(music);
         SceneManager.LoadScene(2); // Load the end scene.
