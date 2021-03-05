@@ -18350,6 +18350,7 @@ MonoBehaviour:
   camSpeed: 0.5
   orbitSpeed: 0.5
   debugRenderer: {fileID: 0}
+  CameraToggle: 0
   mercury: {fileID: 1079091357}
   venus: {fileID: 28631554}
   earth: {fileID: 930159117}
@@ -24035,8 +24036,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be15fc3bce8b8ea4fbdeba70c3fc0cba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 2103629214}
+  MinimapRawImage: {fileID: 166048336}
+  MainCameraRenderTexture: {fileID: 8400000, guid: 6c4a1147672e6ee449a967ca4dc3bf22,
+    type: 2}
+  MinimapRenderTexture: {fileID: 8400000, guid: 82110331679c9fc47b97d438a1642bc3,
+    type: 2}
   CameraToggle: {fileID: 166048340}
+  MainCamera: {fileID: 519420031}
+  MinimapCamera: {fileID: 2103629214}
+  cam: {fileID: 2103629214}
   SelectedPlanet: {fileID: 1187329209}
   panel: {fileID: 806569899}
   Starship: {fileID: 6810218856465537437}
