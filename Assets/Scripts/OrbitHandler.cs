@@ -136,6 +136,7 @@ public class OrbitHandler : MonoBehaviour
         }
 
         radius = Vector3.Distance(ship.transform.position, planet.transform.position);
+        Debug.Log(radius);
 
         orbitSpeed = 1 / radius;
 

@@ -7,7 +7,7 @@ public class TextController : MonoBehaviour
 {
     public Text t;
     public GameObject b;
-    public GameObject b2;
+    //public GameObject b2;
     public Toggle camToggle;
 
     // sorry I'll fix this later...
@@ -21,7 +21,7 @@ public class TextController : MonoBehaviour
     {
         t.enabled = !t.enabled;
         b.active = !b.active;
-        b2.active = !b2.active;
+        //b2.active = !b2.active;
         if (camToggle.isOn)
         {
             camToggle.isOn = false;

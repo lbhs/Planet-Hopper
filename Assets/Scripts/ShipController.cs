@@ -145,6 +145,6 @@ public class ShipController : MonoBehaviour
 
         // gives the ship a small boost in the direction it's facing
 
-        gm.AddForce((100 / radius) * gm.transform.up);
+        gm.AddForce(100 * radius * gm.transform.up);
     }
 }

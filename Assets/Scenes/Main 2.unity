@@ -9292,6 +9292,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   t: {fileID: 596996564}
   b: {fileID: 1022910828}
+  b2: {fileID: 0}
   camToggle: {fileID: 166048340}
 --- !u!224 &596996563
 RectTransform:
@@ -15846,7 +15847,6 @@ GameObject:
   - component: {fileID: 930159118}
   - component: {fileID: 930159123}
   - component: {fileID: 930159122}
-  - component: {fileID: 930159124}
   m_Layer: 0
   m_Name: Earth
   m_TagString: Untagged
@@ -15964,18 +15964,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 120
   m_CollisionDetection: 0
---- !u!114 &930159124
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 930159117}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00bddcedc00f943518d2413329b34f25, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &932221606
 PrefabInstance:
   m_ObjectHideFlags: 0
