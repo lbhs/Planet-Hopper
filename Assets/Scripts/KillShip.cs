@@ -23,6 +23,9 @@ public class KillShip : MonoBehaviour
             case "Sun":
                 InfoScript.main.EndGame("You Flew Too Close to the Sun!");
                 break;
+            default:
+                InfoScript.main.EndGame("You Crashed!");
+                break;
         }
     }
 
@@ -30,9 +33,16 @@ public class KillShip : MonoBehaviour
     {
         Debug.Log("Trigger Entered");
         Debug.Log(other.name);
-        if (other.name == "Starship")
+        if (other.name == "Starship" && gameObject.name == "DeathField")
         {
-            Debug.Log("Death activated");
+            Death();
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.collider.name == "Starship")
+        {
             Death();
         }
     }

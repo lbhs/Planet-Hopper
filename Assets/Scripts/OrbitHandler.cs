@@ -25,6 +25,8 @@ public class OrbitHandler : MonoBehaviour
     public float orbitSpeed;
     public MeshRenderer debugRenderer;
 
+    public bool CameraToggle;
+
     public GameObject mercury; // 0
     public GameObject venus;   // 1
     public GameObject earth;   // 2
