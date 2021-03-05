@@ -3,11 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class MinimapHandler : MonoBehaviour
+public class MinimapController : MonoBehaviour
 {
+    public GameObject MinimapRawImage;
+    public Texture MainCameraRenderTexture;
+    public Texture MinimapRenderTexture;
+    public Toggle CameraToggle;
+    public Camera MainCamera;
+    public Camera MinimapCamera;
+
     private bool UpdateMenu;
     public Camera cam;
-    public Toggle CameraToggle;
     private float camsize;
     public Text SelectedPlanet;
     public GameObject panel;
@@ -31,6 +37,7 @@ public class MinimapHandler : MonoBehaviour
 
     void Start()
     {
+        CameraToggle.GetComponent<Toggle>().isOn = false;
         Mercury.enabled = false;
         Venus.enabled = false;
         Earth.enabled = false;
@@ -44,6 +51,21 @@ public class MinimapHandler : MonoBehaviour
         camsize = 650;
     }
 
+    public void FixedUpdate()
+    {
+        if (CameraToggle.GetComponent<Toggle>().isOn == true)
+        {
+            MinimapRawImage.GetComponent<RawImage>().texture = MainCameraRenderTexture;
+            MinimapCamera.enabled = true;
+            MainCamera.enabled = false;
+        }
+        if (CameraToggle.GetComponent<Toggle>().isOn == false)
+        {
+            MinimapRawImage.GetComponent<RawImage>().texture = MinimapRenderTexture;
+            MinimapCamera.enabled = false;
+            MainCamera.enabled = true;
+        }
+    }
 
     void Update()
     {
