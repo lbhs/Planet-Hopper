@@ -5,6 +5,8 @@ using UnityEngine;
 public class LanderGameHandler : MonoBehaviour
 {
     public static LanderGameHandler main;
+    public TextController OrbitText;
+    public LanderController LanderController;
 
     // the Lander used for the LanderGame
     public GameObject lander;
@@ -35,6 +37,9 @@ public class LanderGameHandler : MonoBehaviour
         // these lines move the camera & lander to the arena corresponding to the orbited planet
         gameCam.transform.position = LanderGameArenas[landerGameID];
         lander.transform.position = LanderGameArenas[landerGameID] + new Vector3(0, 0, 80);
+        OrbitText.ToggleVisibility();
+        LanderController.toggleIsInScene();
+
         
 
         // not sure if this would actually work, but the idea is that it switches the camera to the game camera.
