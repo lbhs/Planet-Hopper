@@ -13,7 +13,7 @@ using UnityEngine.SceneManagement;
 
 public class KillShip : MonoBehaviour
 { 
-    void Death()
+    public void Death()
     {
         switch (gameObject.name)
         {

@@ -17,6 +17,13 @@ public class LanderGameHandler : MonoBehaviour
     private int landerGameID;  // the ID of the planet (taken from OrbitHandler.cs)
     public Vector3[] LanderGameArenas;  // an Array of the positions of the Lander Game Arenas. Ordered from middle of galaxy to perimeter
 
+    // UI to disable when entering laner game
+    public List<GameObject> UIStuff;
+    public List<GameObject> UIDontEnable;
+    public GameObject Closest;
+    public GameObject Selected;
+    public GameObject PlanetMenu;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -35,12 +42,25 @@ public class LanderGameHandler : MonoBehaviour
         landerGameID = OrbitHandler.main.CurrentPlanetID;
 
         // these lines move the camera & lander to the arena corresponding to the orbited planet
+        lander.SetActive(true);
         gameCam.transform.position = LanderGameArenas[landerGameID];
         lander.transform.position = LanderGameArenas[landerGameID] + new Vector3(0, 0, 80);
         OrbitText.ToggleVisibility();
         LanderController.toggleIsInScene();
 
-        
+        PlanetMenu.GetComponent<PlanetMenu>().StopCor();
+        foreach (GameObject UI in UIStuff)
+        {
+            if (UI.active == false)
+            {
+                UIDontEnable.Add(UI);
+            }
+            else
+            {
+                UI.SetActive(false);
+            }
+        }
+        Selected.SetActive(false);
 
         // not sure if this would actually work, but the idea is that it switches the camera to the game camera.
         gameCam.enabled = true;
@@ -60,5 +80,22 @@ public class LanderGameHandler : MonoBehaviour
         // pretty sure the lines below will switch the Camera back to the ship.
         Camera.main.enabled = true;
         gameCam.enabled = false;
+
+        foreach (GameObject UI in UIStuff)
+        {
+            if (UIDontEnable.Contains(UI))
+            {
+                UI.SetActive(false);
+            }
+            else
+            {
+                UI.SetActive(true);
+            }
+        }
+        UIDontEnable.Clear();
+        if (Closest.active == true)
+        {
+            PlanetMenu.GetComponent<PlanetMenu>().StartCor();
+        }
     }
 }

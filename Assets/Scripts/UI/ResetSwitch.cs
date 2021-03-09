@@ -11,6 +11,9 @@ public class ResetSwitch : MonoBehaviour
     public GameObject Restart;
     public List<GameObject> UIStuff;
     public List<GameObject> ToEnable;
+    public GameObject Closest;
+    public GameObject Selected;
+    public GameObject PlanetMenu;
 
     void Start()
     {
@@ -37,6 +40,7 @@ public class ResetSwitch : MonoBehaviour
         Resume.SetActive(true);
         Restart.SetActive(true);
         PausedText.enabled = true;
+        PlanetMenu.GetComponent<PlanetMenu>().StopCor();
         foreach (GameObject UI in UIStuff)
         {
             if (UI.active == false)
@@ -48,6 +52,7 @@ public class ResetSwitch : MonoBehaviour
                 UI.SetActive(false);
             }
         }
+        Selected.SetActive(false);
     }
 
     public void ResumeGame()
@@ -64,6 +69,10 @@ public class ResetSwitch : MonoBehaviour
             }
         }
         ToEnable.Clear();
+        if (Closest.active == true)
+        {
+            PlanetMenu.GetComponent<PlanetMenu>().StartCor();
+        }
     }
 
     public void ResetScene()

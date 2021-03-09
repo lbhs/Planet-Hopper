@@ -26,7 +26,16 @@ public class PlanetMenu : MonoBehaviour
         StartCoroutine("UpdatePlanetMenu");
     }
 
-    IEnumerator UpdatePlanetMenu()
+    public void StopCor()
+    {
+        StopCoroutine("UpdatePlanetMenu");
+    }
+    public void StartCor()
+    {
+        StartCoroutine("UpdatePlanetMenu");
+    }
+
+    public IEnumerator UpdatePlanetMenu()
     {
         while (UpdateMenu == true && Starship != null)
         {
