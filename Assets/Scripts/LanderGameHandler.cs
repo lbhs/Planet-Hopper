@@ -97,5 +97,6 @@ public class LanderGameHandler : MonoBehaviour
         {
             PlanetMenu.GetComponent<PlanetMenu>().StartCor();
         }
+        LanderController.toggleIsInScene();
     }
 }

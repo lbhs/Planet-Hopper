@@ -18,6 +18,7 @@ public class CollisionDetector : MonoBehaviour
         if (Floors.Contains(col.gameObject))
         {
             LanderController.GetComponent<LanderController>().Completed = true;
+            LanderController.GetComponent<LanderController>().Collided = true;
         }
     }
 }

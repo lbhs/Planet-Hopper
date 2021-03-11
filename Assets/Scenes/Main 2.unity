@@ -22074,7 +22074,15 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   LanderController: {fileID: 683818131}
-  Floors: []
+  Floors:
+  - {fileID: 1520048898}
+  - {fileID: 452985733}
+  - {fileID: 1467410063}
+  - {fileID: 1054939579}
+  - {fileID: 1161457558}
+  - {fileID: 1917224348}
+  - {fileID: 1357915498}
+  - {fileID: 1751293766}
 --- !u!1 &1848019338
 GameObject:
   m_ObjectHideFlags: 0

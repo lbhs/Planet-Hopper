@@ -23,7 +23,9 @@ public class LanderController : MonoBehaviour
         Crashed.enabled = false;
         CompletedText.enabled = false;
         isInScene = false;
-
+        Completed = false;
+        Collided = false;
+        isrunning = false;
     }
 
     public void toggleIsInScene()
@@ -41,11 +43,11 @@ public class LanderController : MonoBehaviour
     }
     void FixedUpdate()
     {
-        if (isInScene == false && moveable == true)
+        if (isInScene == false)
         {
             return;
         }
-        else
+        if (moveable == true)
         {
             lander.AddForce(0, -0.5f, 0);
             if (Input.GetKey(KeyCode.LeftArrow))
@@ -77,6 +79,7 @@ public class LanderController : MonoBehaviour
     {
         if (Completed)
         {
+            UnityEngine.Debug.Log("yuh");
             // Say u won then return to orbit
             moveable = false;
             CompletedText.enabled = true;
