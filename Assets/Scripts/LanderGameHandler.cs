@@ -98,5 +98,8 @@ public class LanderGameHandler : MonoBehaviour
             PlanetMenu.GetComponent<PlanetMenu>().StartCor();
         }
         LanderController.toggleIsInScene();
+
+        ShipController.main.Refuel();
+        InfoScript.main.UpdateScore(-500); // SCUFFED sorry
     }
 }
