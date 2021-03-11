@@ -80,7 +80,7 @@ public class LanderGameHandler : MonoBehaviour
         // pretty sure the lines below will switch the Camera back to the ship.
         Camera.main.enabled = true;
         gameCam.enabled = false;
-
+        OrbitText.ToggleVisibilityEnd();
         foreach (GameObject UI in UIStuff)
         {
             if (UIDontEnable.Contains(UI))
