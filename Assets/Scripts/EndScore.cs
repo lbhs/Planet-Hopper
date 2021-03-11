@@ -11,6 +11,7 @@ public class EndScore : MonoBehaviour
     void Start()
     {
         scoreText.text = "" + InfoScript.main.score; // sorry I know this looks gross
+        gameOverText.text = "" + InfoScript.main.gameOverMessage;
     }
 
     public void RestartGame()

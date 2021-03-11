@@ -33,7 +33,7 @@ public class KillShip : MonoBehaviour
     {
         Debug.Log("Trigger Entered");
         Debug.Log(other.name);
-        if (other.name == "Starship" && gameObject.name == "DeathField")
+        if (other.name == "Starship" && gameObject.name == "CrashField")
         {
             Death();
         }

@@ -339,7 +339,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: You Crashed!
+  m_Text: Game Over!
 --- !u!222 &242559828
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -845,7 +845,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 2062979384}
-  gameOverText: {fileID: 0}
+  gameOverText: {fileID: 242559827}
 --- !u!1 &2109529738
 GameObject:
   m_ObjectHideFlags: 0

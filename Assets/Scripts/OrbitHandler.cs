@@ -68,6 +68,9 @@ public class OrbitHandler : MonoBehaviour
     private float tCam = 0;
     private bool camReachedPlanet = false;
 
+    public bool refuelOnOrbit = true;
+    public bool instaWin = false;
+
     private bool leaving = false;
 
     void Start()
@@ -81,7 +84,10 @@ public class OrbitHandler : MonoBehaviour
     {
         InfoScript.main.UpdateScore((int)ShipController.main.Fuel); // updates score bonus points for fuel efficiency.
 
-        if (numPlanetsVisited >= 7)
+        numPlanetsVisited++;
+        Debug.Log(numPlanetsVisited + " Planets Visited.");
+
+        if (numPlanetsVisited >= 7 || instaWin)
         {
             InfoScript.main.EndGame("You Won!");
         }
@@ -98,6 +104,11 @@ public class OrbitHandler : MonoBehaviour
         else
         {
             ShipController.main.ImmobilizeShip();
+        }
+
+        if (refuelOnOrbit)
+        {
+            ShipController.main.Refuel();
         }
 
 
