@@ -77,6 +77,7 @@ public class ResetSwitch : MonoBehaviour
 
     public void ResetScene()
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene(0);
     }
 }
