@@ -19,12 +19,26 @@ public class TextController : MonoBehaviour
 
     public void ToggleVisibility()
     {
+        if (b.active == true && b2.active == false)
+        {
+            t.enabled = !t.enabled;
+            b.active = !b.active;
+        }
+        else {
+            t.enabled = !t.enabled;
+            b.active = !b.active;
+            b2.active = !b2.active;
+            if (camToggle.isOn)
+            {
+                camToggle.isOn = false;
+            }
+        }
+
+    }
+
+    public void ToggleVisibilityEnd()
+    {
         t.enabled = !t.enabled;
         b.active = !b.active;
-        b2.active = !b2.active;
-        if (camToggle.isOn)
-        {
-            camToggle.isOn = false;
-        } 
     }
 }
