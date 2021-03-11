@@ -357,13 +357,26 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Welcome to Planet Hopper! The goal of the game is to visit every planet
-    in the solar system. \n\nTo visit a planet, fly near it for 3 seconds to go into
-    orbit. Be careful! If you come into contact with a planet, you will crash!\n\nWhile
-    in orbit, you can choose to continue flying, or to land on the planet for bonus
-    points and a ship refuel.\n\nAlso, while flying the ship, clicking on the minimap
-    will expand it. Clicking a planet on the map will give you some additional info
-    on the Planet.\n\nGood luck and have fun!"
+  m_Text: 'Welcome to Planet Hopper! The goal of the game is to visit every planet
+    in the solar system. The ship is controlled with the arrow keys.
+
+
+    To visit
+    a planet, fly near it for 3 seconds to go into orbit. Be careful! If you come
+    into contact with a planet, you will crash!
+
+
+    While in orbit, you can choose
+    to continue flying, or to land on the planet for bonus points and a ship refuel.
+
+
+    Also,
+    while flying the ship, clicking on the minimap will expand it. Clicking a planet
+    on the map will give you some additional info on the Planet.
+
+
+    Good luck
+    and have fun!'
 --- !u!222 &278108716
 CanvasRenderer:
   m_ObjectHideFlags: 0
