@@ -43,8 +43,8 @@ public class LanderGameHandler : MonoBehaviour
 
         // these lines move the camera & lander to the arena corresponding to the orbited planet
         lander.SetActive(true);
-        gameCam.transform.position = LanderGameArenas[landerGameID];
-        lander.transform.position = LanderGameArenas[landerGameID] + new Vector3(0, 0, 80);
+        gameCam.transform.position = LanderGameArenas[landerGameID] - new Vector3(0, 3.4f, 80);
+        lander.transform.position = LanderGameArenas[landerGameID];
         OrbitText.ToggleVisibility();
         LanderController.toggleIsInScene();
 
